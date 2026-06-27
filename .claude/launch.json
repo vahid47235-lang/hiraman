@@ -1,0 +1,26 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Next.js Web (apps/web)",
+      "runtimeExecutable": "/Users/vahid/.nvm/versions/node/v26.1.0/bin/pnpm",
+      "runtimeArgs": ["--filter", "web", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "Go API (backend)",
+      "runtimeExecutable": "/usr/bin/env",
+      "runtimeArgs": [
+        "DATABASE_URL=postgres://hiraban:changeme_dev@localhost:5432/hiraban?sslmode=disable",
+        "JWT_SECRET=dev-secret-change-in-production",
+        "REDIS_URL=redis://localhost:6379",
+        "PORT=8080",
+        "APP_ENV=development",
+        "/usr/local/go/bin/go",
+        "-C", "/Users/vahid/Desktop/Claude Projects/hiraban/backend",
+        "run", "./cmd/api/main.go"
+      ],
+      "port": 8080
+    }
+  ]
+}

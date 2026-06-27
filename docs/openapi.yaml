@@ -1,0 +1,696 @@
+openapi: 3.1.0
+info:
+  title: HIRABAN API
+  description: |
+    REST API for HIRABAN — Luxury Nature, Wellness & Adventure Resort.
+
+    All monetary values are in IRR (Iranian Tomans) as integer64.
+    All timestamps are in UTC ISO-8601.
+    Numbers in responses are always Western digits (0-9).
+    The Accept-Language header controls response locale (fa | en).
+  version: 1.0.0
+  contact:
+    name: HIRABAN Technical Team
+    email: tech@hiraban.ir
+
+servers:
+  - url: https://api.hiraban.ir/api/v1
+    description: Production
+  - url: https://api-staging.hiraban.ir/api/v1
+    description: Staging
+  - url: http://localhost:8080/api/v1
+    description: Local development
+
+tags:
+  - name: availability
+    description: Search and check accommodation availability
+  - name: accommodations
+    description: Accommodation types and unit details
+  - name: bookings
+    description: Reservation lifecycle
+  - name: services
+    description: Experiences and service bookings
+  - name: payments
+    description: Payment initiation and gateway callbacks
+  - name: reviews
+    description: Guest reviews
+  - name: auth
+    description: Authentication and session management
+  - name: content
+    description: CMS pages, blog, FAQ
+
+paths:
+  /availability:
+    get:
+      tags: [availability]
+      summary: Search accommodation availability
+      operationId: searchAvailability
+      parameters:
+        - name: checkin
+          in: query
+          required: true
+          schema: { type: string, format: date }
+          example: "2026-08-01"
+        - name: checkout
+          in: query
+          required: true
+          schema: { type: string, format: date }
+          example: "2026-08-05"
+        - name: adults
+          in: query
+          required: true
+          schema: { type: integer, minimum: 1, maximum: 12 }
+        - name: children
+          in: query
+          schema: { type: integer, minimum: 0, default: 0 }
+        - name: pool
+          in: query
+          description: Filter to units with private pool
+          schema: { type: boolean, default: false }
+      responses:
+        '200':
+          description: Available units
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AvailabilityResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+  /accommodations:
+    get:
+      tags: [accommodations]
+      summary: List accommodation types
+      operationId: listAccommodations
+      parameters:
+        - name: type
+          in: query
+          schema:
+            type: string
+            enum: [cabin, villa]
+        - name: pool
+          in: query
+          schema: { type: boolean }
+      responses:
+        '200':
+          description: Accommodation types
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AccommodationType'
+
+  /accommodations/{slug}:
+    get:
+      tags: [accommodations]
+      summary: Get accommodation type detail
+      operationId: getAccommodation
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Accommodation type detail
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/AccommodationTypeDetail'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /holds:
+    post:
+      tags: [bookings]
+      summary: Create a booking hold (inventory reservation during checkout)
+      operationId: createHold
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateHoldRequest'
+      responses:
+        '201':
+          description: Hold created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/Hold'
+        '409':
+          description: Unit unavailable for selected dates
+          $ref: '#/components/responses/Conflict'
+
+  /reservations:
+    post:
+      tags: [bookings]
+      summary: Confirm a reservation (after successful payment)
+      operationId: createReservation
+      security:
+        - cookieAuth: []
+        - {}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateReservationRequest'
+      responses:
+        '201':
+          description: Reservation confirmed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/Reservation'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          description: Price mismatch or policy violation
+
+  /payments/initiate:
+    post:
+      tags: [payments]
+      summary: Initiate a payment for a hold
+      operationId: initiatePayment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [hold_id, amount_irr, idempotency_key]
+              properties:
+                hold_id:
+                  type: string
+                  format: uuid
+                amount_irr:
+                  type: integer
+                  format: int64
+                idempotency_key:
+                  type: string
+      responses:
+        '200':
+          description: Payment gateway redirect URL
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      payment_url:
+                        type: string
+                        format: uri
+                      payment_id:
+                        type: string
+                        format: uuid
+
+  /payments/callback:
+    post:
+      tags: [payments]
+      summary: Receive payment gateway webhook
+      description: |
+        This endpoint is called by the payment gateway after a transaction.
+        Must verify the gateway signature before processing.
+        Must be idempotent — safe to call multiple times.
+      operationId: paymentCallback
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Gateway-specific callback payload
+      responses:
+        '200':
+          description: Acknowledged
+
+  /auth/login:
+    post:
+      tags: [auth]
+      summary: Log in with email and password
+      operationId: login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                  minLength: 8
+      responses:
+        '200':
+          description: Authenticated — session cookie set
+        '401':
+          description: Invalid credentials
+        '429':
+          description: Too many attempts — rate limited
+
+  /services:
+    get:
+      tags: [services]
+      summary: List available services and experiences
+      operationId: listServices
+      parameters:
+        - name: category
+          in: query
+          schema:
+            type: string
+            enum: [wellness, massage, yoga, horse_riding, atv, family, restaurant, cafe]
+        - name: date
+          in: query
+          schema: { type: string, format: date }
+      responses:
+        '200':
+          description: Services
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Service'
+
+  /reviews:
+    get:
+      tags: [reviews]
+      summary: List published reviews
+      operationId: listReviews
+      parameters:
+        - name: accommodation_type
+          in: query
+          schema: { type: string }
+        - name: travel_type
+          in: query
+          schema:
+            type: string
+            enum: [couples, family, group, solo, wellness]
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [newest, highest, lowest]
+            default: newest
+        - name: page
+          in: query
+          schema: { type: integer, default: 1 }
+        - name: per_page
+          in: query
+          schema: { type: integer, default: 10, maximum: 50 }
+      responses:
+        '200':
+          description: Reviews
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      reviews:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Review'
+                      summary:
+                        $ref: '#/components/schemas/ReviewSummary'
+                      pagination:
+                        $ref: '#/components/schemas/Pagination'
+
+components:
+  schemas:
+    AvailabilityResult:
+      type: object
+      properties:
+        type_id:
+          type: string
+          format: uuid
+        unit_id:
+          type: string
+          format: uuid
+        check_in:
+          type: string
+          format: date
+        check_out:
+          type: string
+          format: date
+        nights:
+          type: integer
+        price_per_night:
+          type: integer
+          format: int64
+          description: Price per night in IRR (Tomans)
+        total_irr:
+          type: integer
+          format: int64
+        plan_id:
+          type: string
+          format: uuid
+        available:
+          type: boolean
+
+    AccommodationType:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        slug:
+          type: string
+        type:
+          type: string
+          enum: [cabin, villa]
+        area_m2:
+          type: integer
+        pool_type:
+          type: string
+          enum: [none, private_heated, private_unheated, shared]
+        bedrooms:
+          type: integer
+        base_guests:
+          type: integer
+        max_guests:
+          type: integer
+        name:
+          type: string
+          description: Localized name
+        description:
+          type: string
+          description: Localized description
+        starting_price_irr:
+          type: integer
+          format: int64
+        rating:
+          type: number
+          format: float
+        review_count:
+          type: integer
+        amenities:
+          type: array
+          items:
+            type: object
+            properties:
+              slug: { type: string }
+              name: { type: string }
+              highlighted: { type: boolean }
+
+    AccommodationTypeDetail:
+      allOf:
+        - $ref: '#/components/schemas/AccommodationType'
+        - type: object
+          properties:
+            gallery:
+              type: array
+              items:
+                type: object
+                properties:
+                  url: { type: string, format: uri }
+                  alt: { type: string }
+            floor_plan_url:
+              type: string
+              format: uri
+            bed_configuration:
+              type: string
+            check_in_time:
+              type: string
+            check_out_time:
+              type: string
+            cancellation_policy:
+              type: string
+            seasonal_rates:
+              type: array
+              items:
+                type: object
+                properties:
+                  date_from: { type: string, format: date }
+                  date_to: { type: string, format: date }
+                  price_irr: { type: integer, format: int64 }
+
+    CreateHoldRequest:
+      type: object
+      required: [unit_id, check_in, check_out, session_id]
+      properties:
+        unit_id:
+          type: string
+          format: uuid
+        check_in:
+          type: string
+          format: date
+        check_out:
+          type: string
+          format: date
+        session_id:
+          type: string
+          description: Anonymous session identifier for hold ownership
+
+    Hold:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        expires_at:
+          type: string
+          format: date-time
+        seconds_remaining:
+          type: integer
+
+    CreateReservationRequest:
+      type: object
+      required: [hold_id, session_id, unit_id, plan_id, check_in, check_out, adults, agreed_total_irr, guest, policy_version]
+      properties:
+        hold_id:
+          type: string
+          format: uuid
+        session_id:
+          type: string
+        unit_id:
+          type: string
+          format: uuid
+        plan_id:
+          type: string
+          format: uuid
+        check_in:
+          type: string
+          format: date
+        check_out:
+          type: string
+          format: date
+        adults:
+          type: integer
+          minimum: 1
+        children:
+          type: integer
+          default: 0
+        children_ages:
+          type: array
+          items:
+            type: integer
+        agreed_total_irr:
+          type: integer
+          format: int64
+          description: Total the guest agreed to pay — verified server-side against current pricing
+        special_requests:
+          type: string
+          maxLength: 1000
+        policy_version:
+          type: string
+          description: Version of booking T&C accepted by guest
+        guest:
+          type: object
+          required: [full_name, email, phone]
+          properties:
+            full_name:
+              type: string
+            email:
+              type: string
+              format: email
+            phone:
+              type: string
+
+    Reservation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        reservation_no:
+          type: string
+          example: "HIR-20250001"
+        check_in:
+          type: string
+          format: date
+        check_out:
+          type: string
+          format: date
+        nights:
+          type: integer
+        adults:
+          type: integer
+        children:
+          type: integer
+        status:
+          type: string
+          enum: [pending, hold, confirmed, modified, cancelled, no_show, completed]
+        total_irr:
+          type: integer
+          format: int64
+        unit:
+          $ref: '#/components/schemas/AccommodationType'
+        payment_status:
+          type: string
+          enum: [pending, authorized, captured, failed, refunded, partially_refunded]
+        confirmation_sent_at:
+          type: string
+          format: date-time
+        cancellation_policy:
+          type: string
+
+    Service:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        slug:
+          type: string
+        category:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        duration_minutes:
+          type: integer
+        max_capacity:
+          type: integer
+        min_age:
+          type: integer
+        requires_deposit:
+          type: boolean
+        deposit_pct:
+          type: number
+
+    Review:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        author_name:
+          type: string
+        travel_type:
+          type: string
+        unit_name:
+          type: string
+        overall_rating:
+          type: integer
+          minimum: 1
+          maximum: 5
+        title:
+          type: string
+        body:
+          type: string
+        management_response:
+          type: string
+          nullable: true
+        reviewed_at:
+          type: string
+          format: date
+        verified_stay:
+          type: boolean
+
+    ReviewSummary:
+      type: object
+      properties:
+        total_count:
+          type: integer
+        average_rating:
+          type: number
+          format: float
+        distribution:
+          type: array
+          items:
+            type: integer
+          minItems: 5
+          maxItems: 5
+
+    Pagination:
+      type: object
+      properties:
+        page:
+          type: integer
+        per_page:
+          type: integer
+        total:
+          type: integer
+        total_pages:
+          type: integer
+
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+
+  responses:
+    BadRequest:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Conflict:
+      description: Conflict
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: hiraban_session
