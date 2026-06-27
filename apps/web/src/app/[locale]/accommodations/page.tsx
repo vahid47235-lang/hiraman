@@ -1,14 +1,13 @@
 import { getTranslations } from 'next-intl/server'
-import Image from 'next/image'
 import Link from 'next/link'
 import { getContent } from '@/data/content'
 import AccommodationCard from '@/components/accommodation/AccommodationCard'
+import AccommodationsHero from '@/components/accommodation/AccommodationsHero'
 
 type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'metadata' })
   return {
     title: locale === 'fa' ? 'اقامتگاه‌ها — لوتکا' : 'Accommodations — Lootka',
   }
@@ -21,22 +20,7 @@ export default async function AccommodationsPage({ params }: Props) {
 
   return (
     <div className={isFa ? 'text-right' : 'text-left'}>
-      {/* Hero */}
-      <section className="relative h-64 md:h-80 bg-deep-forest overflow-hidden">
-        <Image
-          src="https://picsum.photos/seed/accommodations-hero/1920/600"
-          alt={isFa ? 'اقامتگاه‌های لوتکا' : 'Lootka Accommodations'}
-          fill className="object-cover opacity-50"
-        />
-        <div className="absolute inset-0 flex items-center container-content pt-16">
-          <div>
-            <p className="eyebrow mb-3">{isFa ? 'اقامتگاه‌ها' : 'Accommodations'}</p>
-            <h1 className={`text-display text-warm-ivory ${isFa ? 'font-persian-display' : 'font-display'}`}>
-              {isFa ? 'کلبه‌ها و ویلاهای ما' : 'Our Cabins & Villas'}
-            </h1>
-          </div>
-        </div>
-      </section>
+      <AccommodationsHero locale={locale} />
 
       {/* Content */}
       <section className="section bg-warm-ivory">
