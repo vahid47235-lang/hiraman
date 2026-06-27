@@ -5,7 +5,7 @@ type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params
-  return { title: locale === 'fa' ? 'تماس — هیرابان' : 'Contact — Hiraban' }
+  return { title: locale === 'fa' ? 'تماس — لوتکا' : 'Contact — Lootka' }
 }
 
 export default async function ContactPage({ params }: Props) {
@@ -39,37 +39,37 @@ export default async function ContactPage({ params }: Props) {
 
               <div className="space-y-6">
                 <div className={`flex items-start gap-4 ${isFa ? 'flex-row-reverse' : ''}`}>
-                  <div className="w-10 h-10 rounded-full bg-hiraban-pine/10 flex items-center justify-center flex-shrink-0 text-forest-moss">📞</div>
+                  <div className="w-10 h-10 rounded-full bg-lootka-pine/10 flex items-center justify-center flex-shrink-0 text-forest-moss">📞</div>
                   <div>
                     <div className="text-body-sm font-semibold text-charcoal mb-1">{isFa ? 'تلفن' : 'Phone'}</div>
-                    <a href={`tel:${content.contact.phone}`} className="text-body text-warm-gray hover:text-hiraban-pine transition-colors num" dir="ltr">
+                    <a href={`tel:${content.contact.phone}`} className="text-body text-warm-gray hover:text-lootka-pine transition-colors num" dir="ltr">
                       {content.contact.phone}
                     </a>
                   </div>
                 </div>
 
                 <div className={`flex items-start gap-4 ${isFa ? 'flex-row-reverse' : ''}`}>
-                  <div className="w-10 h-10 rounded-full bg-hiraban-pine/10 flex items-center justify-center flex-shrink-0 text-forest-moss">💬</div>
+                  <div className="w-10 h-10 rounded-full bg-lootka-pine/10 flex items-center justify-center flex-shrink-0 text-forest-moss">💬</div>
                   <div>
                     <div className="text-body-sm font-semibold text-charcoal mb-1">WhatsApp</div>
-                    <a href={`https://wa.me/${content.contact.phone.replace(/[^0-9]/g, '')}`} className="text-body text-warm-gray hover:text-hiraban-pine transition-colors num" dir="ltr">
+                    <a href={`https://wa.me/${content.contact.phone.replace(/[^0-9]/g, '')}`} className="text-body text-warm-gray hover:text-lootka-pine transition-colors num" dir="ltr">
                       {content.contact.phone}
                     </a>
                   </div>
                 </div>
 
                 <div className={`flex items-start gap-4 ${isFa ? 'flex-row-reverse' : ''}`}>
-                  <div className="w-10 h-10 rounded-full bg-hiraban-pine/10 flex items-center justify-center flex-shrink-0 text-forest-moss">✉️</div>
+                  <div className="w-10 h-10 rounded-full bg-lootka-pine/10 flex items-center justify-center flex-shrink-0 text-forest-moss">✉️</div>
                   <div>
                     <div className="text-body-sm font-semibold text-charcoal mb-1">{isFa ? 'ایمیل' : 'Email'}</div>
-                    <a href={`mailto:${content.contact.email}`} className="text-body text-warm-gray hover:text-hiraban-pine transition-colors">
+                    <a href={`mailto:${content.contact.email}`} className="text-body text-warm-gray hover:text-lootka-pine transition-colors">
                       {content.contact.email}
                     </a>
                   </div>
                 </div>
 
                 <div className={`flex items-start gap-4 ${isFa ? 'flex-row-reverse' : ''}`}>
-                  <div className="w-10 h-10 rounded-full bg-hiraban-pine/10 flex items-center justify-center flex-shrink-0 text-forest-moss">📍</div>
+                  <div className="w-10 h-10 rounded-full bg-lootka-pine/10 flex items-center justify-center flex-shrink-0 text-forest-moss">📍</div>
                   <div>
                     <div className="text-body-sm font-semibold text-charcoal mb-1">{isFa ? 'آدرس' : 'Address'}</div>
                     <p className="text-body text-warm-gray leading-relaxed">
@@ -100,31 +100,31 @@ export default async function ContactPage({ params }: Props) {
                   <label className="text-body-sm font-medium text-charcoal block mb-1.5">
                     {isFa ? 'نام و نام خانوادگی' : 'Full name'}
                   </label>
-                  <input type="text" className="w-full px-4 py-3 border border-stone rounded-lg text-body focus:outline-none focus:border-hiraban-pine transition-colors" />
+                  <input type="text" className="w-full px-4 py-3 border border-stone rounded-lg text-body focus:outline-none focus:border-lootka-pine transition-colors" />
                 </div>
                 <div>
                   <label className="text-body-sm font-medium text-charcoal block mb-1.5">
                     {isFa ? 'شماره تماس' : 'Phone number'}
                   </label>
-                  <input type="tel" dir="ltr" className="w-full px-4 py-3 border border-stone rounded-lg text-body focus:outline-none focus:border-hiraban-pine transition-colors" />
+                  <input type="tel" dir="ltr" className="w-full px-4 py-3 border border-stone rounded-lg text-body focus:outline-none focus:border-lootka-pine transition-colors" />
                 </div>
                 <div>
                   <label className="text-body-sm font-medium text-charcoal block mb-1.5">
                     {isFa ? 'ایمیل' : 'Email'}
                   </label>
-                  <input type="email" dir="ltr" className="w-full px-4 py-3 border border-stone rounded-lg text-body focus:outline-none focus:border-hiraban-pine transition-colors" />
+                  <input type="email" dir="ltr" className="w-full px-4 py-3 border border-stone rounded-lg text-body focus:outline-none focus:border-lootka-pine transition-colors" />
                 </div>
                 <div>
                   <label className="text-body-sm font-medium text-charcoal block mb-1.5">
                     {isFa ? 'موضوع' : 'Subject'}
                   </label>
-                  <input type="text" className="w-full px-4 py-3 border border-stone rounded-lg text-body focus:outline-none focus:border-hiraban-pine transition-colors" />
+                  <input type="text" className="w-full px-4 py-3 border border-stone rounded-lg text-body focus:outline-none focus:border-lootka-pine transition-colors" />
                 </div>
                 <div>
                   <label className="text-body-sm font-medium text-charcoal block mb-1.5">
                     {isFa ? 'پیام' : 'Message'}
                   </label>
-                  <textarea rows={4} className="w-full px-4 py-3 border border-stone rounded-lg text-body focus:outline-none focus:border-hiraban-pine transition-colors resize-none" />
+                  <textarea rows={4} className="w-full px-4 py-3 border border-stone rounded-lg text-body focus:outline-none focus:border-lootka-pine transition-colors resize-none" />
                 </div>
                 <button type="submit" className="btn btn-primary w-full">
                   {isFa ? 'ارسال پیام' : 'Send message'}
@@ -140,7 +140,7 @@ export default async function ContactPage({ params }: Props) {
               <div className="text-center text-warm-ivory">
                 <div className="text-3xl mb-2">📍</div>
                 <div className={`text-title font-medium ${isFa ? 'font-persian-display' : 'font-display'}`}>
-                  {isFa ? 'هیرابان — جنگل هیرکانی، شمال ایران' : 'Hiraban — Hyrcanian Forest, Northern Iran'}
+                  {isFa ? 'لوتکا — جنگل هیرکانی، شمال ایران' : 'Lootka — Hyrcanian Forest, Northern Iran'}
                 </div>
               </div>
             </div>

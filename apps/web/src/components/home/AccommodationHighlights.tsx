@@ -15,7 +15,7 @@ export default function AccommodationHighlights({ locale }: Props) {
       <div className="container-content">
         {/* Header */}
         <div className={cn('mb-12', isFa ? 'text-end' : '')}>
-          <p className="eyebrow mb-4">{isFa ? 'اقامتگاه‌های هیرابان' : 'Where you\'ll stay'}</p>
+          <p className="eyebrow mb-4">{isFa ? 'اقامتگاه‌های لوتکا' : 'Where you\'ll stay'}</p>
           <div className={cn('flex items-end justify-between gap-8', isFa && 'flex-row-reverse')}>
             <div>
               <h2 className={cn('text-headline text-charcoal', isFa ? 'font-persian-display' : 'font-display')}>
@@ -45,8 +45,8 @@ export default function AccommodationHighlights({ locale }: Props) {
               className={cn(
                 'px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all',
                 tab.filter === 'all'
-                  ? 'bg-hiraban-pine text-warm-ivory'
-                  : 'bg-white text-warm-gray border border-stone hover:border-hiraban-pine hover:text-charcoal',
+                  ? 'bg-lootka-pine text-warm-ivory'
+                  : 'bg-white text-warm-gray border border-stone hover:border-lootka-pine hover:text-charcoal',
               )}
             >
               {tab.label}

@@ -48,7 +48,7 @@ export default function FloatingActions({ locale }: Props) {
         target="_blank"
         rel="noopener noreferrer"
         className="w-12 h-12 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200"
-        aria-label={isFa ? 'پیام واتس‌اپ به هیرابان' : 'WhatsApp Hiraban'}
+        aria-label={isFa ? 'پیام واتس‌اپ به لوتکا' : 'WhatsApp Lootka'}
       >
         <MessageCircle size={20} />
       </a>
@@ -56,8 +56,8 @@ export default function FloatingActions({ locale }: Props) {
       {/* Phone */}
       <a
         href="tel:+989125584407"
-        className="w-12 h-12 bg-hiraban-pine text-warm-ivory rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200"
-        aria-label={isFa ? 'تماس تلفنی با هیرابان: شماره 989125584407' : 'Call Hiraban: +989125584407'}
+        className="w-12 h-12 bg-lootka-pine text-warm-ivory rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200"
+        aria-label={isFa ? 'تماس تلفنی با لوتکا: شماره 989125584407' : 'Call Lootka: +989125584407'}
       >
         <Phone size={18} />
       </a>

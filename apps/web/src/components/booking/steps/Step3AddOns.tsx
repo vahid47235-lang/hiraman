@@ -82,8 +82,8 @@ const ADD_ONS: AddOnDef[] = [
     id: 'horse',
     nameEn: 'Horse Riding',
     nameFa: 'اسب‌سواری',
-    descEn: '1-hour guided horse ride through the Hiraban trails.',
-    descFa: '۱ ساعت اسب‌سواری هدایت‌شده در مسیرهای هیرابان.',
+    descEn: '1-hour guided horse ride through the Lootka trails.',
+    descFa: '۱ ساعت اسب‌سواری هدایت‌شده در مسیرهای لوتکا.',
     icon: '🐴',
     pricePerUnit: 900_000,
     unit: 'per_person',
@@ -183,8 +183,8 @@ export default function Step3AddOns({ locale }: Props) {
         </h2>
         <p className={cn('text-body text-warm-gray', isFa && 'text-end')}>
           {isFa
-            ? 'اقامت خود را با خدمات ویژه هیرابان کامل‌تر کنید. همه موارد اختیاری هستند.'
-            : 'Enhance your stay with curated HIRABAN experiences. All optional.'}
+            ? 'اقامت خود را با خدمات ویژه لوتکا کامل‌تر کنید. همه موارد اختیاری هستند.'
+            : 'Enhance your stay with curated LOOTKA experiences. All optional.'}
         </p>
       </div>
 
@@ -221,8 +221,8 @@ export default function Step3AddOns({ locale }: Props) {
                         className={cn(
                           'w-full text-start flex items-start gap-3 p-4 rounded-xl border-2 transition-all',
                           isSelected
-                            ? 'border-hiraban-pine bg-hiraban-pine/5'
-                            : 'border-stone hover:border-hiraban-pine/40 bg-white',
+                            ? 'border-lootka-pine bg-lootka-pine/5'
+                            : 'border-stone hover:border-lootka-pine/40 bg-white',
                           isFa && 'flex-row-reverse',
                         )}
                         aria-pressed={isSelected}
@@ -242,7 +242,7 @@ export default function Step3AddOns({ locale }: Props) {
                               {unitLabel(def)}
                             </span>
                             {isSelected && (
-                              <span className="num text-sm font-semibold text-hiraban-pine" dir="ltr">
+                              <span className="num text-sm font-semibold text-lootka-pine" dir="ltr">
                                 +{formatNumber(lineTotal)}{' '}
                                 <span className="text-caption font-normal">{isFa ? 'تومان' : 'IRR'}</span>
                               </span>
@@ -252,7 +252,7 @@ export default function Step3AddOns({ locale }: Props) {
                         <div
                           className={cn(
                             'w-5 h-5 rounded border-2 flex-shrink-0 flex items-center justify-center mt-0.5',
-                            isSelected ? 'bg-hiraban-pine border-hiraban-pine' : 'border-stone',
+                            isSelected ? 'bg-lootka-pine border-lootka-pine' : 'border-stone',
                           )}
                         >
                           {isSelected && <Check size={12} className="text-warm-ivory" />}

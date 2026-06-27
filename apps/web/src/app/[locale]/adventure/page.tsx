@@ -5,7 +5,7 @@ type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params
-  return { title: locale === 'fa' ? 'ماجراجویی — هیرابان' : 'Adventure — Hiraban' }
+  return { title: locale === 'fa' ? 'ماجراجویی — لوتکا' : 'Adventure — Lootka' }
 }
 
 const adventures = {

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "siteName": "HIRABAN",
+    "siteName": "LOOTKA",
     "siteDescription": "Nature, Wellness & Adventure Resort | Luxury Forest Stay in Northern Iran",
     "locale": "en_US",
     "dir": "ltr"
@@ -27,11 +27,11 @@
     "tagline": "Leave the noise behind.",
     "description": "Private forest stays, wellness, family experiences and soft adventure in one thoughtfully designed destination.",
     "cta_primary": "Explore Accommodations",
-    "cta_secondary": "Hiraban Experiences",
+    "cta_secondary": "Lootka Experiences",
     "scroll": "Scroll",
     "video_pause": "Pause video",
     "video_play": "Play video",
-    "video_alt": "Hiraban forest scenery and nature"
+    "video_alt": "Lootka forest scenery and nature"
   },
   "search": {
     "title": "Find Your Stay",
@@ -48,7 +48,7 @@
     "night": "night"
   },
   "accommodation": {
-    "title": "Hiraban Accommodations",
+    "title": "Lootka Accommodations",
     "subtitle": "17 unique forest dwellings",
     "filter_all": "All",
     "filter_cabin": "Cabin",
@@ -74,7 +74,7 @@
     }
   },
   "experiences": {
-    "title": "Hiraban Experiences",
+    "title": "Lootka Experiences",
     "subtitle": "Beyond a stay — a complete destination",
     "wellness": "Wellness",
     "adventure": "Adventure",
@@ -106,7 +106,7 @@
     "email": "Email",
     "phone": "Phone",
     "special_requests": "Special requests",
-    "terms_accept": "I agree to Hiraban's terms and conditions",
+    "terms_accept": "I agree to Lootka's terms and conditions",
     "continue_as_guest": "Continue as guest",
     "sign_in": "Sign in",
     "create_account": "Create account after confirmation",
@@ -135,7 +135,7 @@
     "lowest": "Lowest rated"
   },
   "contact": {
-    "title": "Contact Hiraban",
+    "title": "Contact Lootka",
     "phone": "+989125584407",
     "whatsapp": "WhatsApp",
     "email_label": "Email",
@@ -154,7 +154,7 @@
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "subtitle": "Everything you need to know about Hiraban"
+    "subtitle": "Everything you need to know about Lootka"
   },
   "footer": {
     "tagline": "Nature, Wellness & Adventure Resort",
@@ -166,9 +166,9 @@
     "cookies": "Cookie policy",
     "accessibility": "Accessibility",
     "copyright": "All rights reserved",
-    "find_us": "Find Hiraban on leading travel platforms",
+    "find_us": "Find Lootka on leading travel platforms",
     "social": "Follow us",
-    "newsletter_title": "Hiraban Newsletter",
+    "newsletter_title": "Lootka Newsletter",
     "newsletter_desc": "Be the first to hear about offers and new experiences",
     "newsletter_placeholder": "Your email",
     "newsletter_submit": "Subscribe",

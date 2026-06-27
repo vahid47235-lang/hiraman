@@ -70,7 +70,7 @@ const defaultContent = {
       nameFa: 'ویلای جنگلی',
       categoryEn: 'Forest Villa 128m²',
       categoryFa: 'ویلای جنگلی ۱۲۸ متری',
-      descEn: 'A three-bedroom luxury villa with a heated private pool, full gourmet kitchen and panoramic forest terrace. The ultimate Hiraban retreat for families.',
+      descEn: 'A three-bedroom luxury villa with a heated private pool, full gourmet kitchen and panoramic forest terrace. The ultimate Lootka retreat for families.',
       descFa: 'ویلای لوکس سه‌خوابه با استخر گرم اختصاصی، آشپزخانه کامل و تراس جنگلی پانوراما. بهترین انتخاب برای خانواده‌ها.',
       areaM2: 128,
       maxGuests: 8,
@@ -119,7 +119,7 @@ const defaultContent = {
       descFa: 'باغ حیوانات، فعالیت‌های گلخانه‌ای و زمین بازی ایمن کودکان زیر نظر مربیان آموزش دیده طبیعت.',
       href: '/family',
       image: img('family-forest', 800, 500),
-      imageAlt: 'Family exploring nature at Hiraban',
+      imageAlt: 'Family exploring nature at Lootka',
     },
     {
       key: 'dining',
@@ -129,13 +129,13 @@ const defaultContent = {
       descFa: 'منوهای فصلی الهام گرفته از آشپزی شمال ایران — گیاهان تازه از باغ ما، قزل‌آلای محلی از رودخانه‌های کوهستانی.',
       href: '/restaurant',
       image: img('restaurant-table', 800, 500),
-      imageAlt: 'Hiraban forest restaurant with open kitchen',
+      imageAlt: 'Lootka forest restaurant with open kitchen',
     },
   ],
 
   wellness: {
     image: img('outdoor-spa', 800, 1000),
-    imageAlt: 'Outdoor forest spa terrace at Hiraban',
+    imageAlt: 'Outdoor forest spa terrace at Lootka',
     servicesEn: ['Forest Aroma Massage', 'Hot Stone Therapy', 'Cold Spring Immersion', 'Sunrise Yoga', 'Sound Bath', 'Herbal Steam Room'],
     servicesFa: ['ماساژ آروما جنگلی', 'سنگ درمانی گرم', 'غوطه‌وری آب سرد', 'یوگای طلوع آفتاب', 'حمام صوتی', 'اتاق بخار گیاهی'],
   },
@@ -143,7 +143,7 @@ const defaultContent = {
   family: {
     collageImages: [
       { src: img('family-forest', 600, 900), alt: 'Children exploring the forest' },
-      { src: img('kids-garden', 600, 500), alt: 'Family activities at Hiraban' },
+      { src: img('kids-garden', 600, 500), alt: 'Family activities at Lootka' },
       { src: img('greenhouse-nature', 600, 500), alt: 'Nature play area for children' },
     ],
     highlightsEn: ['Animal garden with 20+ local species', 'Guided forest walks for all ages', 'Organic greenhouse and cooking class', 'Pottery and craft workshop', 'Star-gazing nights with telescope'],
@@ -152,7 +152,7 @@ const defaultContent = {
 
   adventure: {
     atvImage: img('atv-trail', 900, 600),
-    atvAlt: 'ATV riding through Hiraban forest trails',
+    atvAlt: 'ATV riding through Lootka forest trails',
     horseImage: img('horse-riding', 900, 600),
     horseAlt: 'Horse riding through the Hyrcanian forest',
   },
@@ -202,17 +202,17 @@ const defaultContent = {
   faq: [
     {
       id: 'f1',
-      questionEn: 'How far is Hiraban from Tehran?',
-      questionFa: 'فاصله هیرابان تا تهران چقدر است؟',
-      answerEn: 'Hiraban is approximately 140 km from Tehran — about 2.5 to 3 hours by car via the Chalus road (Route 59). We recommend departing early to enjoy the scenic mountain drive.',
-      answerFa: 'هیرابان تقریباً ۱۴۰ کیلومتر از تهران فاصله دارد — حدود ۲.۵ تا ۳ ساعت با ماشین از جاده چالوس. توصیه می‌کنیم صبح زود حرکت کنید تا از مسیر کوهستانی زیبا لذت ببرید.',
+      questionEn: 'How far is Lootka from Tehran?',
+      questionFa: 'فاصله لوتکا تا تهران چقدر است؟',
+      answerEn: 'Lootka is approximately 140 km from Tehran — about 2.5 to 3 hours by car via the Chalus road (Route 59). We recommend departing early to enjoy the scenic mountain drive.',
+      answerFa: 'لوتکا تقریباً ۱۴۰ کیلومتر از تهران فاصله دارد — حدود ۲.۵ تا ۳ ساعت با ماشین از جاده چالوس. توصیه می‌کنیم صبح زود حرکت کنید تا از مسیر کوهستانی زیبا لذت ببرید.',
     },
     {
       id: 'f2',
       questionEn: 'What is the best season to visit?',
       questionFa: 'بهترین فصل برای بازدید کدام است؟',
-      answerEn: 'Hiraban is beautiful year-round. Spring (Nowruz season) brings wildflowers and fresh greenery. Summer is warm and perfect for the pools. Autumn turns the forest gold. Winter offers snow-covered cabins and fireside evenings.',
-      answerFa: 'هیرابان در تمام فصول زیباست. بهار (فصل نوروز) گل‌های وحشی و سبزی تازه می‌آورد. تابستان گرم و عالی برای استخرها است. پاییز جنگل را طلایی می‌کند. زمستان کلبه‌های برف‌پوش و شب‌های کنار شومینه دارد.',
+      answerEn: 'Lootka is beautiful year-round. Spring (Nowruz season) brings wildflowers and fresh greenery. Summer is warm and perfect for the pools. Autumn turns the forest gold. Winter offers snow-covered cabins and fireside evenings.',
+      answerFa: 'لوتکا در تمام فصول زیباست. بهار (فصل نوروز) گل‌های وحشی و سبزی تازه می‌آورد. تابستان گرم و عالی برای استخرها است. پاییز جنگل را طلایی می‌کند. زمستان کلبه‌های برف‌پوش و شب‌های کنار شومینه دارد.',
     },
     {
       id: 'f3',
@@ -254,9 +254,9 @@ const defaultContent = {
   contact: {
     phone: '+98 912 558 4407',
     whatsapp: '989125584407',
-    email: 'stay@hiraban.ir',
-    addressEn: 'Hiraban Forest Resort, Chalus Road, Alborz Province, Iran',
-    addressFa: 'دهکده جنگلی هیرابان، جاده چالوس، استان البرز، ایران',
+    email: 'stay@lootka.ir',
+    addressEn: 'Lootka Forest Resort, Chalus Road, Alborz Province, Iran',
+    addressFa: 'دهکده جنگلی لوتکا، جاده چالوس، استان البرز، ایران',
     googleMapsEmbed: 'https://maps.google.com/maps?q=36.2,51.3&z=12&output=embed',
     coordinates: { lat: 36.2, lng: 51.3 },
     receptionHoursEn: 'Daily 8:00 AM – 10:00 PM',

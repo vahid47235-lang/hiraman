@@ -10,7 +10,7 @@ export default function WellnessSection({ locale }: Props) {
   const services = isFa ? content.wellness.servicesFa : content.wellness.servicesEn
 
   return (
-    <section className="section bg-hiraban-pine text-warm-ivory overflow-hidden">
+    <section className="section bg-lootka-pine text-warm-ivory overflow-hidden">
       <div className="container-content">
         <div className={cn('grid lg:grid-cols-2 gap-16 items-center', isFa && 'lg:flex lg:flex-row-reverse')}>
           <div className="relative aspect-[4/3] lg:aspect-auto lg:h-[520px] rounded-2xl overflow-hidden">

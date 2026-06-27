@@ -5,7 +5,7 @@ type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params
-  return { title: locale === 'fa' ? 'تجربه خانوادگی — هیرابان' : 'Family Experience — Hiraban' }
+  return { title: locale === 'fa' ? 'تجربه خانوادگی — لوتکا' : 'Family Experience — Lootka' }
 }
 
 const activities = {
@@ -46,8 +46,8 @@ export default async function FamilyPage({ params }: Props) {
         <div className="container-content">
           <p className="text-body text-warm-gray max-w-2xl mb-12 leading-relaxed">
             {isFa
-              ? 'هیرابان مقصدی ایده‌آل برای خانواده‌هاست. فعالیت‌های متنوع برای کودکان، فضاهای امن و محیط طبیعی بی‌نظیر، اقامتی به‌یادماندنی برای همه اعضای خانواده فراهم می‌کند.'
-              : 'Hiraban is an ideal destination for families. Diverse activities for children, safe spaces and a stunning natural environment create an unforgettable stay for every family member.'}
+              ? 'لوتکا مقصدی ایده‌آل برای خانواده‌هاست. فعالیت‌های متنوع برای کودکان، فضاهای امن و محیط طبیعی بی‌نظیر، اقامتی به‌یادماندنی برای همه اعضای خانواده فراهم می‌کند.'
+              : 'Lootka is an ideal destination for families. Diverse activities for children, safe spaces and a stunning natural environment create an unforgettable stay for every family member.'}
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             {acts.map((act) => (

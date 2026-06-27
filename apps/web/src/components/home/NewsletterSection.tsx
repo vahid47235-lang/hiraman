@@ -27,12 +27,12 @@ export default function NewsletterSection({ locale }: Props) {
   }
 
   return (
-    <section className="py-16 bg-hiraban-pine text-warm-ivory">
+    <section className="py-16 bg-lootka-pine text-warm-ivory">
       <div className="container-content">
         <div className="max-w-xl mx-auto text-center">
           <p className="eyebrow mb-4">{isFa ? 'خبرنامه' : 'Newsletter'}</p>
           <h2 className={cn('text-headline mb-4', isFa ? 'font-persian-display' : 'font-display')}>
-            {isFa ? 'با هیرابان در ارتباط باشید' : 'Stay connected with Hiraban'}
+            {isFa ? 'با لوتکا در ارتباط باشید' : 'Stay connected with Lootka'}
           </h2>
           <p className="text-body text-warm-ivory/70 mb-8">
             {isFa
@@ -81,8 +81,8 @@ export default function NewsletterSection({ locale }: Props) {
                 />
                 <span className="text-caption text-warm-ivory/60">
                   {isFa
-                    ? 'موافقت می‌کنم که هیرابان ایمیل‌های خبرنامه برای من ارسال کند. هر زمان می‌توانم اشتراک را لغو کنم.'
-                    : 'I agree to receive Hiraban\'s newsletter emails. I can unsubscribe at any time.'}
+                    ? 'موافقت می‌کنم که لوتکا ایمیل‌های خبرنامه برای من ارسال کند. هر زمان می‌توانم اشتراک را لغو کنم.'
+                    : 'I agree to receive Lootka\'s newsletter emails. I can unsubscribe at any time.'}
                 </span>
               </label>
 

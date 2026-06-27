@@ -6,7 +6,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Hiraban Admin',
+  title: 'Lootka Admin',
   robots: { index: false, follow: false },
 }
 

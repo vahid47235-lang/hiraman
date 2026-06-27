@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: Props) {
   const content = await getContent()
   const unit = content.accommodations.find((u) => u.slug === slug)
   if (!unit) return {}
-  return { title: `${locale === 'fa' ? unit.nameFa : unit.nameEn} — هیرابان` }
+  return { title: `${locale === 'fa' ? unit.nameFa : unit.nameEn} — لوتکا` }
 }
 
 export default async function AccommodationDetailPage({ params }: Props) {

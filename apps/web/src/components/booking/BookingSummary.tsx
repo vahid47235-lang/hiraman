@@ -48,7 +48,7 @@ export default function BookingSummary({ locale, className }: Props) {
           {isFa ? 'خلاصه رزرو' : 'Booking summary'}
         </span>
         <div className={cn('flex items-center gap-3', isFa && 'flex-row-reverse')}>
-          <span className="num text-sm font-semibold text-hiraban-pine" dir="ltr">
+          <span className="num text-sm font-semibold text-lootka-pine" dir="ltr">
             {formatPrice(grandTotal, 'IRR', locale)}
           </span>
           <ChevronDown size={16} className={cn('text-warm-gray transition-transform', expanded && 'rotate-180')} />
@@ -151,7 +151,7 @@ export default function BookingSummary({ locale, className }: Props) {
           <span className="text-sm font-semibold text-charcoal">
             {isFa ? 'مبلغ قابل پرداخت' : 'Total payable'}
           </span>
-          <span className="num text-title font-semibold text-hiraban-pine" dir="ltr">
+          <span className="num text-title font-semibold text-lootka-pine" dir="ltr">
             {formatPrice(grandTotal, 'IRR', locale)}
           </span>
         </div>

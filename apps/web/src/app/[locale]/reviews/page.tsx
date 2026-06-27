@@ -4,7 +4,7 @@ type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params
-  return { title: locale === 'fa' ? 'نظرات مهمانان — هیرابان' : 'Guest Reviews — Hiraban' }
+  return { title: locale === 'fa' ? 'نظرات مهمانان — لوتکا' : 'Guest Reviews — Lootka' }
 }
 
 export default async function ReviewsPage({ params }: Props) {
@@ -14,7 +14,7 @@ export default async function ReviewsPage({ params }: Props) {
 
   return (
     <div className={isFa ? 'text-right' : 'text-left'}>
-      <section className="py-20 bg-hiraban-pine text-warm-ivory pt-32">
+      <section className="py-20 bg-lootka-pine text-warm-ivory pt-32">
         <div className="container-content text-center">
           <p className="eyebrow mb-4">{isFa ? 'نظرات مهمانان' : 'Guest Reviews'}</p>
           <h1 className={`text-display text-warm-ivory mb-4 ${isFa ? 'font-persian-display' : 'font-display'}`}>

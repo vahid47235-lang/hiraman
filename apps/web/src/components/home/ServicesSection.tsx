@@ -104,8 +104,8 @@ export default function ServicesSection({ locale }: Props) {
           </h2>
           <p className="text-body text-warm-gray mt-4 max-w-2xl mx-auto">
             {isFa
-              ? 'هیرابان هر آنچه برای یک اقامت بی‌نظیر نیاز دارید را فراهم کرده است.'
-              : 'Hiraban offers everything you need for an unforgettable luxury retreat in nature.'}
+              ? 'لوتکا هر آنچه برای یک اقامت بی‌نظیر نیاز دارید را فراهم کرده است.'
+              : 'Lootka offers everything you need for an unforgettable luxury retreat in nature.'}
           </p>
         </div>
 
@@ -118,7 +118,7 @@ export default function ServicesSection({ locale }: Props) {
                 isFa && 'text-center',
               )}
             >
-              <div className="text-forest-moss group-hover:text-hiraban-pine transition-colors duration-200">
+              <div className="text-forest-moss group-hover:text-lootka-pine transition-colors duration-200">
                 {service.icon}
               </div>
               <span className={cn(

@@ -7,8 +7,8 @@ import { useBookingStore } from '@/store/booking'
 
 type Props = { locale: string }
 
-const HIRABAN_PHONE = '+982133445566'
-const HIRABAN_WHATSAPP = '982133445566'
+const LOOTKA_PHONE = '+982133445566'
+const LOOTKA_WHATSAPP = '982133445566'
 
 export default function Step5Confirmation({ locale }: Props) {
   const isFa = locale === 'fa'
@@ -30,20 +30,20 @@ export default function Step5Confirmation({ locale }: Props) {
 
   const handleAddToCalendar = () => {
     if (!checkIn || !checkOut || !unit) return
-    const title = `HIRABAN – ${isFa ? unit.nameFa : unit.nameEn}`
+    const title = `LOOTKA – ${isFa ? unit.nameFa : unit.nameEn}`
     const start = checkIn.replace(/-/g, '')
     const end = checkOut.replace(/-/g, '')
-    const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${start}/${end}&location=${encodeURIComponent('HIRABAN Resort, Alborz, Iran')}`
+    const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${start}/${end}&location=${encodeURIComponent('LOOTKA Resort, Alborz, Iran')}`
     window.open(url, '_blank', 'noopener,noreferrer')
   }
 
   const handleShare = async () => {
     const text = isFa
-      ? `رزرو هیرابان: ${unit ? unit.nameFa : ''} — کد رزرو: ${resNo}`
-      : `HIRABAN Reservation: ${unit ? unit.nameEn : ''} — Booking #${resNo}`
+      ? `رزرو لوتکا: ${unit ? unit.nameFa : ''} — کد رزرو: ${resNo}`
+      : `LOOTKA Reservation: ${unit ? unit.nameEn : ''} — Booking #${resNo}`
     if (navigator.share) {
       try {
-        await navigator.share({ title: 'HIRABAN', text })
+        await navigator.share({ title: 'LOOTKA', text })
       } catch {}
     } else {
       await navigator.clipboard.writeText(text)
@@ -54,7 +54,7 @@ export default function Step5Confirmation({ locale }: Props) {
     <div className={cn('max-w-lg', isFa && 'text-end')}>
       {/* Success header */}
       <div className={cn('flex items-start gap-4 mb-8', isFa && 'flex-row-reverse')}>
-        <CheckCircle size={48} className="text-hiraban-pine flex-shrink-0 mt-1" strokeWidth={1.5} />
+        <CheckCircle size={48} className="text-lootka-pine flex-shrink-0 mt-1" strokeWidth={1.5} />
         <div>
           <h2 className={cn('text-headline text-charcoal mb-1', isFa ? 'font-persian-display' : 'font-display')}>
             {isFa ? 'رزرو شما تأیید شد!' : 'Your reservation is confirmed!'}
@@ -89,7 +89,7 @@ export default function Step5Confirmation({ locale }: Props) {
               <div className="text-sm font-semibold text-charcoal">
                 {isFa ? unit.nameFa : unit.nameEn}
               </div>
-              <div className="text-caption text-warm-gray">{isFa ? 'هیرابان، البرز، ایران' : 'HIRABAN, Alborz, Iran'}</div>
+              <div className="text-caption text-warm-gray">{isFa ? 'لوتکا، البرز، ایران' : 'LOOTKA, Alborz, Iran'}</div>
             </div>
           </div>
         )}
@@ -149,7 +149,7 @@ export default function Step5Confirmation({ locale }: Props) {
       {/* Total */}
       <div className={cn('flex items-center justify-between p-4 bg-warm-ivory rounded-xl mb-6', isFa && 'flex-row-reverse')}>
         <span className="text-sm font-semibold text-charcoal">{isFa ? 'مبلغ پرداخت شده' : 'Total paid'}</span>
-        <span className="num text-base font-bold text-hiraban-pine" dir="ltr">
+        <span className="num text-base font-bold text-lootka-pine" dir="ltr">
           {formatNumber(grandTotal)}{' '}
           <span className="text-warm-gray font-normal text-sm">{isFa ? 'تومان' : 'IRR'}</span>
         </span>
@@ -199,14 +199,14 @@ export default function Step5Confirmation({ locale }: Props) {
         </h4>
         <div className={cn('flex flex-wrap gap-3', isFa && 'flex-row-reverse')}>
           <a
-            href={`tel:${HIRABAN_PHONE}`}
-            className={cn('flex items-center gap-2 text-sm text-hiraban-pine hover:underline', isFa && 'flex-row-reverse')}
+            href={`tel:${LOOTKA_PHONE}`}
+            className={cn('flex items-center gap-2 text-sm text-lootka-pine hover:underline', isFa && 'flex-row-reverse')}
           >
             <Phone size={14} />
-            <span className="num" dir="ltr">{HIRABAN_PHONE}</span>
+            <span className="num" dir="ltr">{LOOTKA_PHONE}</span>
           </a>
           <a
-            href={`https://wa.me/${HIRABAN_WHATSAPP}`}
+            href={`https://wa.me/${LOOTKA_WHATSAPP}`}
             target="_blank"
             rel="noopener noreferrer"
             className={cn('flex items-center gap-2 text-sm text-[#25D366] hover:underline', isFa && 'flex-row-reverse')}

@@ -5,7 +5,7 @@ type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params
-  return { title: locale === 'fa' ? 'درباره هیرابان' : 'About Hiraban' }
+  return { title: locale === 'fa' ? 'درباره لوتکا' : 'About Lootka' }
 }
 
 export default async function AboutPage({ params }: Props) {
@@ -20,7 +20,7 @@ export default async function AboutPage({ params }: Props) {
           <div>
             <p className="eyebrow mb-3">{isFa ? 'درباره ما' : 'About Us'}</p>
             <h1 className={`text-display text-warm-ivory ${isFa ? 'font-persian-display' : 'font-display'}`}>
-              {isFa ? 'داستان هیرابان' : 'The Hiraban Story'}
+              {isFa ? 'داستان لوتکا' : 'The Lootka Story'}
             </h1>
           </div>
         </div>
@@ -36,8 +36,8 @@ export default async function AboutPage({ params }: Props) {
               </h2>
               <p className="text-body text-warm-gray mb-5 leading-relaxed">
                 {isFa
-                  ? 'هیرابان از یک رویا آغاز شد؛ رویای ترکیب لوکس‌ترین خدمات اقامتی با طبیعت بکر و دست‌نخورده جنگل‌های هیرکانی در شمال ایران.'
-                  : 'Hiraban began with a dream — to combine the finest hospitality with the pristine, untouched nature of the Hyrcanian forests in northern Iran.'}
+                  ? 'لوتکا از یک رویا آغاز شد؛ رویای ترکیب لوکس‌ترین خدمات اقامتی با طبیعت بکر و دست‌نخورده جنگل‌های هیرکانی در شمال ایران.'
+                  : 'Lootka began with a dream — to combine the finest hospitality with the pristine, untouched nature of the Hyrcanian forests in northern Iran.'}
               </p>
               <p className="text-body text-warm-gray mb-5 leading-relaxed">
                 {isFa
@@ -46,8 +46,8 @@ export default async function AboutPage({ params }: Props) {
               </p>
               <p className="text-body text-warm-gray leading-relaxed">
                 {isFa
-                  ? 'هر کلبه، هر تجربه و هر لحظه در هیرابان با دقت و عشق طراحی شده تا سفر شما به شمال ایران را به خاطره‌ای ماندگار تبدیل کند.'
-                  : 'Every cabin, every experience and every moment at Hiraban is designed with care and love to make your journey to northern Iran an unforgettable memory.'}
+                  ? 'هر کلبه، هر تجربه و هر لحظه در لوتکا با دقت و عشق طراحی شده تا سفر شما به شمال ایران را به خاطره‌ای ماندگار تبدیل کند.'
+                  : 'Every cabin, every experience and every moment at Lootka is designed with care and love to make your journey to northern Iran an unforgettable memory.'}
               </p>
             </div>
             <div className="relative aspect-square rounded-2xl overflow-hidden">

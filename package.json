@@ -1,8 +1,8 @@
 {
-  "name": "hiraban",
+  "name": "lootka",
   "private": true,
   "version": "1.0.0",
-  "description": "HIRABAN — Luxury Nature, Wellness & Adventure Resort",
+  "description": "LOOTKA — Luxury Nature, Wellness & Adventure Resort",
   "workspaces": [
     "apps/*",
     "packages/*"

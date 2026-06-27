@@ -7,10 +7,10 @@ type LogoProps = {
 }
 
 /**
- * HIRABAN typographic wordmark — SVG implementation of a custom-kerned
+ * LOOTKA typographic wordmark — SVG implementation of a custom-kerned
  * luxury serif logotype. No icons, trees, or symbols.
  */
-export default function HirabanLogo({ locale, variant = 'dark', className }: LogoProps) {
+export default function LootkaLogo({ locale, variant = 'dark', className }: LogoProps) {
   const isFa = locale === 'fa'
 
   const colors = {
@@ -24,7 +24,7 @@ export default function HirabanLogo({ locale, variant = 'dark', className }: Log
       <span
         className={cn('inline-flex flex-col items-center gap-0', className)}
         role="img"
-        aria-label="هیرابان"
+        aria-label="لوتکا"
       >
         <span
           style={{
@@ -37,7 +37,7 @@ export default function HirabanLogo({ locale, variant = 'dark', className }: Log
             direction: 'rtl',
           }}
         >
-          هیرابان
+          لوتکا
         </span>
         <span
           style={{
@@ -59,9 +59,9 @@ export default function HirabanLogo({ locale, variant = 'dark', className }: Log
       viewBox="0 0 200 44"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-label="HIRABAN"
+      aria-label="LOOTKA"
     >
-      <title>HIRABAN</title>
+      <title>LOOTKA</title>
       {/* English wordmark — Cormorant Garamond inspired elegant serif */}
       <text
         x="100"
@@ -73,7 +73,7 @@ export default function HirabanLogo({ locale, variant = 'dark', className }: Log
         fill={colors.primary}
         letterSpacing="8"
       >
-        HIRABAN
+        LOOTKA
       </text>
       {/* Gold underline accent */}
       <rect x="62" y="38" width="76" height="0.75" fill={colors.accent} opacity="0.7" />
@@ -82,7 +82,7 @@ export default function HirabanLogo({ locale, variant = 'dark', className }: Log
 }
 
 /** Minimal favicon H/هـ mark for small sizes */
-export function HirabanMark({ variant = 'dark', className }: Omit<LogoProps, 'locale'>) {
+export function LootkaMark({ variant = 'dark', className }: Omit<LogoProps, 'locale'>) {
   const colors = {
     light: '#F4F0E7',
     dark: '#0B1A13',

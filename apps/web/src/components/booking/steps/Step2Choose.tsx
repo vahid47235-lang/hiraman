@@ -183,8 +183,8 @@ export default function Step2Choose({ locale }: Props) {
                   className={cn(
                     'relative text-start rounded-xl border-2 overflow-hidden transition-all group',
                     isSelected
-                      ? 'border-hiraban-pine shadow-md'
-                      : 'border-stone hover:border-hiraban-pine/50',
+                      ? 'border-lootka-pine shadow-md'
+                      : 'border-stone hover:border-lootka-pine/50',
                   )}
                   aria-pressed={isSelected}
                   aria-label={isFa ? unit.nameFa : unit.nameEn}
@@ -200,7 +200,7 @@ export default function Step2Choose({ locale }: Props) {
                     />
                     {/* Selected overlay */}
                     {isSelected && (
-                      <div className="absolute top-3 end-3 w-7 h-7 rounded-full bg-hiraban-pine flex items-center justify-center">
+                      <div className="absolute top-3 end-3 w-7 h-7 rounded-full bg-lootka-pine flex items-center justify-center">
                         <Check size={14} className="text-warm-ivory" />
                       </div>
                     )}
@@ -244,7 +244,7 @@ export default function Step2Choose({ locale }: Props) {
                         <div className="text-caption text-warm-gray">
                           {isFa ? 'مجموع برای اقامت' : 'Total for stay'}
                         </div>
-                        <div className="num text-base font-bold text-hiraban-pine" dir="ltr">
+                        <div className="num text-base font-bold text-lootka-pine" dir="ltr">
                           {formatNumber(total)}{' '}
                           <span className="text-sm font-normal text-warm-gray">{isFa ? 'تومان' : 'IRR'}</span>
                         </div>

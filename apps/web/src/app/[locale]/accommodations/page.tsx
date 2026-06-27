@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: Props) {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'metadata' })
   return {
-    title: locale === 'fa' ? 'اقامتگاه‌ها — هیرابان' : 'Accommodations — Hiraban',
+    title: locale === 'fa' ? 'اقامتگاه‌ها — لوتکا' : 'Accommodations — Lootka',
   }
 }
 
@@ -25,7 +25,7 @@ export default async function AccommodationsPage({ params }: Props) {
       <section className="relative h-64 md:h-80 bg-deep-forest overflow-hidden">
         <Image
           src="https://picsum.photos/seed/accommodations-hero/1920/600"
-          alt={isFa ? 'اقامتگاه‌های هیرابان' : 'Hiraban Accommodations'}
+          alt={isFa ? 'اقامتگاه‌های لوتکا' : 'Lootka Accommodations'}
           fill className="object-cover opacity-50"
         />
         <div className="absolute inset-0 flex items-center container-content pt-16">
@@ -43,8 +43,8 @@ export default async function AccommodationsPage({ params }: Props) {
         <div className="container-content">
           <p className="text-body text-warm-gray mb-10 max-w-2xl">
             {isFa
-              ? 'هر واحد اقامتی هیرابان با دقت طراحی شده تا بهترین تجربه اقامتی در دل طبیعت را برای شما فراهم کند.'
-              : 'Each Hiraban unit is carefully designed to give you the finest nature retreat experience.'}
+              ? 'هر واحد اقامتی لوتکا با دقت طراحی شده تا بهترین تجربه اقامتی در دل طبیعت را برای شما فراهم کند.'
+              : 'Each Lootka unit is carefully designed to give you the finest nature retreat experience.'}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {content.accommodations.map((unit) => (

@@ -24,15 +24,15 @@ export default function FamilySection({ locale }: Props) {
       <div className="container-content">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className={isFa ? 'text-end lg:order-2' : ''}>
-            <p className="eyebrow mb-5">{isFa ? 'هیرابان برای خانواده' : 'Hiraban for families'}</p>
+            <p className="eyebrow mb-5">{isFa ? 'لوتکا برای خانواده' : 'Lootka for families'}</p>
             <h2 className={cn('text-headline text-charcoal mb-6', isFa ? 'font-persian-display' : 'font-display')}>
               {isFa ? 'خاطرات خانوادگی که ماندگار می‌شوند' : 'Family memories that last'}
             </h2>
             <span className="divider-gold mb-6 block" style={{ marginInlineStart: isFa ? 'auto' : undefined }} />
             <p className="text-body-lg text-warm-gray mb-8 leading-relaxed">
               {isFa
-                ? 'هیرابان برای خانواده‌های با کودک طراحی شده است. از باغچه حیوانات و گلخانه تا فضای بازی ایمن و تجربه‌های آموزشی — هر لحظه‌ای که کودکان شما در هیرابان می‌گذرانند، لحظه‌ای آموزنده و به‌یادماندنی خواهد بود.'
-                : "Hiraban is thoughtfully designed for families with children. From the animal garden and greenhouse to the safe playground and hands-on nature activities — every moment your children spend at Hiraban will be both educational and unforgettable."}
+                ? 'لوتکا برای خانواده‌های با کودک طراحی شده است. از باغچه حیوانات و گلخانه تا فضای بازی ایمن و تجربه‌های آموزشی — هر لحظه‌ای که کودکان شما در لوتکا می‌گذرانند، لحظه‌ای آموزنده و به‌یادماندنی خواهد بود.'
+                : "Lootka is thoughtfully designed for families with children. From the animal garden and greenhouse to the safe playground and hands-on nature activities — every moment your children spend at Lootka will be both educational and unforgettable."}
             </p>
             <div className="grid grid-cols-1 gap-4 mb-8">
               {highlights.map((h) => (

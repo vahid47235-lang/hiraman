@@ -26,8 +26,8 @@ export default function PlatformLogos({ locale }: Props) {
       <div className="container-content">
         <p className={cn('text-caption text-warm-gray mb-6', isFa ? 'text-end' : '')}>
           {isFa
-            ? 'هیرابان را در پلتفرم‌های گردشگری پیدا کنید'
-            : 'Find Hiraban on leading travel platforms'}
+            ? 'لوتکا را در پلتفرم‌های گردشگری پیدا کنید'
+            : 'Find Lootka on leading travel platforms'}
         </p>
         <div className={cn('flex flex-wrap items-center gap-8', isFa && 'flex-row-reverse')}>
           {enabled.map((platform) => (
@@ -38,7 +38,7 @@ export default function PlatformLogos({ locale }: Props) {
                 target="_blank"
                 rel="noopener noreferrer nofollow"
                 className="text-body-sm font-medium text-warm-gray hover:text-charcoal transition-colors grayscale hover:grayscale-0"
-                aria-label={`${isFa ? 'مشاهده هیرابان در' : 'View Hiraban on'} ${platform.label}`}
+                aria-label={`${isFa ? 'مشاهده لوتکا در' : 'View Lootka on'} ${platform.label}`}
               >
                 {platform.label}
               </a>

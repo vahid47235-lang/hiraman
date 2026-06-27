@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl'
 import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import HirabanLogo from '@/components/ui/HirabanLogo'
+import LootkaLogo from '@/components/ui/LootkaLogo'
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher'
 
 type NavItem = {
@@ -80,10 +80,10 @@ export default function Header({ locale }: HeaderProps) {
           {/* Logo */}
           <Link
             href={localePath('/')}
-            aria-label="HIRABAN — برگشت به صفحه اصلی"
+            aria-label="LOOTKA — برگشت به صفحه اصلی"
             className="flex-shrink-0"
           >
-            <HirabanLogo locale={locale} variant="light" className="h-10" />
+            <LootkaLogo locale={locale} variant="light" className="h-10" />
           </Link>
 
           {/* Desktop Nav */}
@@ -136,7 +136,7 @@ export default function Header({ locale }: HeaderProps) {
                       <Link
                         key={child.key}
                         href={localePath(child.href)}
-                        className="block px-4 py-2.5 text-sm text-warm-ivory/80 hover:text-aged-brass hover:bg-hiraban-pine/50 transition-colors duration-150"
+                        className="block px-4 py-2.5 text-sm text-warm-ivory/80 hover:text-aged-brass hover:bg-lootka-pine/50 transition-colors duration-150"
                         onClick={() => setActiveDropdown(null)}
                       >
                         {t(child.key)}
@@ -186,9 +186,9 @@ export default function Header({ locale }: HeaderProps) {
           aria-label={locale === 'fa' ? 'منوی موبایل' : 'Mobile menu'}
         >
           {/* Header */}
-          <div className="flex items-center justify-between px-5 py-4 border-b border-hiraban-pine">
+          <div className="flex items-center justify-between px-5 py-4 border-b border-lootka-pine">
             <Link href={localePath('/')} onClick={() => setMobileOpen(false)}>
-              <HirabanLogo locale={locale} variant="light" className="h-9" />
+              <LootkaLogo locale={locale} variant="light" className="h-9" />
             </Link>
             <button
               onClick={() => setMobileOpen(false)}
@@ -213,7 +213,7 @@ export default function Header({ locale }: HeaderProps) {
                         key={child.key}
                         href={localePath(child.href)}
                         className={cn(
-                          'block py-3 ps-4 text-base text-warm-ivory/80 hover:text-aged-brass transition-colors border-b border-hiraban-pine/30',
+                          'block py-3 ps-4 text-base text-warm-ivory/80 hover:text-aged-brass transition-colors border-b border-lootka-pine/30',
                           pathname.startsWith(localePath(child.href)) && 'text-aged-brass',
                         )}
                       >
@@ -225,7 +225,7 @@ export default function Header({ locale }: HeaderProps) {
                   <Link
                     href={localePath(item.href)}
                     className={cn(
-                      'block py-3 text-base text-warm-ivory/80 hover:text-aged-brass transition-colors border-b border-hiraban-pine/30',
+                      'block py-3 text-base text-warm-ivory/80 hover:text-aged-brass transition-colors border-b border-lootka-pine/30',
                       pathname.startsWith(localePath(item.href)) && 'text-aged-brass',
                     )}
                   >
@@ -237,7 +237,7 @@ export default function Header({ locale }: HeaderProps) {
           </nav>
 
           {/* Bottom actions */}
-          <div className="px-5 py-6 space-y-3 border-t border-hiraban-pine">
+          <div className="px-5 py-6 space-y-3 border-t border-lootka-pine">
             <Link
               href={localePath('/reserve')}
               className="btn btn-primary w-full"

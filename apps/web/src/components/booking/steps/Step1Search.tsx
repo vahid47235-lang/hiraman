@@ -70,7 +70,7 @@ export default function Step1Search({ locale }: Props) {
             onClick={() => { setShowDatePicker(true); setShowGuestPicker(false) }}
             className={cn(
               'w-full flex items-center gap-3 px-4 py-4 bg-white border rounded-xl transition-colors text-start',
-              showDatePicker ? 'border-hiraban-pine ring-1 ring-hiraban-pine/20' : 'border-stone hover:border-hiraban-pine/50',
+              showDatePicker ? 'border-lootka-pine ring-1 ring-lootka-pine/20' : 'border-stone hover:border-lootka-pine/50',
               isFa && 'flex-row-reverse',
             )}
             aria-expanded={showDatePicker}
@@ -122,7 +122,7 @@ export default function Step1Search({ locale }: Props) {
             onClick={() => { setShowGuestPicker(!showGuestPicker); setShowDatePicker(false) }}
             className={cn(
               'w-full flex items-center gap-3 px-4 py-4 bg-white border rounded-xl transition-colors text-start',
-              showGuestPicker ? 'border-hiraban-pine ring-1 ring-hiraban-pine/20' : 'border-stone hover:border-hiraban-pine/50',
+              showGuestPicker ? 'border-lootka-pine ring-1 ring-lootka-pine/20' : 'border-stone hover:border-lootka-pine/50',
               isFa && 'flex-row-reverse',
             )}
             aria-expanded={showGuestPicker}
@@ -155,8 +155,8 @@ export default function Step1Search({ locale }: Props) {
           className={cn(
             'w-full flex items-center gap-3 px-4 py-3.5 rounded-xl border transition-all text-start',
             requirePool
-              ? 'bg-hiraban-pine text-warm-ivory border-hiraban-pine'
-              : 'bg-white text-charcoal border-stone hover:border-hiraban-pine/50',
+              ? 'bg-lootka-pine text-warm-ivory border-lootka-pine'
+              : 'bg-white text-charcoal border-stone hover:border-lootka-pine/50',
             isFa && 'flex-row-reverse',
           )}
           aria-pressed={requirePool}

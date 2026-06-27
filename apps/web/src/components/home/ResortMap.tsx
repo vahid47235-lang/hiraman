@@ -18,7 +18,7 @@ export default function ResortMap({ locale }: Props) {
           <div className={isFa ? 'text-end lg:order-2' : ''}>
             <p className="eyebrow mb-5">{isFa ? 'مکان و دسترسی' : 'Location & access'}</p>
             <h2 className={cn('text-headline text-charcoal mb-6', isFa ? 'font-persian-display' : 'font-display')}>
-              {isFa ? 'چگونه به هیرابان برسیم؟' : 'Getting to Hiraban'}
+              {isFa ? 'چگونه به لوتکا برسیم؟' : 'Getting to Lootka'}
             </h2>
             <span className="divider-gold mb-6 block" style={{ marginInlineStart: isFa ? 'auto' : undefined }} />
 
@@ -44,7 +44,7 @@ export default function ResortMap({ locale }: Props) {
                   </div>
                   <a
                     href="tel:+989125584407"
-                    className="text-body text-hiraban-pine hover:text-aged-brass transition-colors num"
+                    className="text-body text-lootka-pine hover:text-aged-brass transition-colors num"
                     dir="ltr"
                   >
                     +98 912 558 4407
@@ -57,7 +57,7 @@ export default function ResortMap({ locale }: Props) {
               <a
                 href="tel:+989125584407"
                 className="btn btn-outline-dark flex items-center gap-2"
-                aria-label={isFa ? 'تماس تلفنی با هیرابان' : 'Call Hiraban'}
+                aria-label={isFa ? 'تماس تلفنی با لوتکا' : 'Call Lootka'}
               >
                 <Phone size={16} />
                 {isFa ? 'تماس' : 'Call'}
@@ -67,7 +67,7 @@ export default function ResortMap({ locale }: Props) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary flex items-center gap-2"
-                aria-label={isFa ? 'پیام واتس‌اپ به هیرابان' : 'WhatsApp Hiraban'}
+                aria-label={isFa ? 'پیام واتس‌اپ به لوتکا' : 'WhatsApp Lootka'}
               >
                 <MessageCircle size={16} />
                 {isFa ? 'واتس‌اپ' : 'WhatsApp'}
@@ -86,7 +86,7 @@ export default function ResortMap({ locale }: Props) {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title={isFa ? 'موقعیت هیرابان روی نقشه' : 'Hiraban location on map'}
+                title={isFa ? 'موقعیت لوتکا روی نقشه' : 'Lootka location on map'}
                 className="absolute inset-0 w-full h-full"
               />
             ) : (

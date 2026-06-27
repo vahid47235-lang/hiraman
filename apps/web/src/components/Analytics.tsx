@@ -16,7 +16,7 @@ export function Analytics() {
  */
 export function track(event: string, properties?: Record<string, string | number | boolean>) {
   if (typeof window === 'undefined') return
-  if (localStorage.getItem('hiraban_cookie_consent') !== 'accepted') return
+  if (localStorage.getItem('lootka_cookie_consent') !== 'accepted') return
 
   // Replace with your analytics provider's event API
   if (process.env.NODE_ENV === 'development') {

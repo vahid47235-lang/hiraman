@@ -11,17 +11,17 @@ export default function CookieConsent({ locale }: Props) {
   const [show, setShow] = useState(false)
 
   useEffect(() => {
-    const consent = localStorage.getItem('hiraban_cookie_consent')
+    const consent = localStorage.getItem('lootka_cookie_consent')
     if (!consent) setShow(true)
   }, [])
 
   const accept = () => {
-    localStorage.setItem('hiraban_cookie_consent', 'accepted')
+    localStorage.setItem('lootka_cookie_consent', 'accepted')
     setShow(false)
   }
 
   const decline = () => {
-    localStorage.setItem('hiraban_cookie_consent', 'declined')
+    localStorage.setItem('lootka_cookie_consent', 'declined')
     setShow(false)
   }
 
@@ -40,12 +40,12 @@ export default function CookieConsent({ locale }: Props) {
       <div className="glass-light rounded-xl shadow-xl p-5">
         <p className={cn('text-body-sm text-charcoal mb-4', isFa && 'text-end')}>
           {isFa
-            ? 'هیرابان از کوکی‌ها برای بهبود تجربه شما و تحلیل ترافیک استفاده می‌کند.'
-            : 'Hiraban uses cookies to improve your experience and analyse traffic.'}
+            ? 'لوتکا از کوکی‌ها برای بهبود تجربه شما و تحلیل ترافیک استفاده می‌کند.'
+            : 'Lootka uses cookies to improve your experience and analyse traffic.'}
           {' '}
           <Link
             href={`/${locale}/legal/cookies`}
-            className="text-hiraban-pine hover:text-aged-brass underline"
+            className="text-lootka-pine hover:text-aged-brass underline"
           >
             {isFa ? 'اطلاعات بیشتر' : 'Learn more'}
           </Link>

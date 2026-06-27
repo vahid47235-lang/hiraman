@@ -6,11 +6,11 @@
 export function generateOrganizationSchema(locale: string) {
   return {
     '@type': 'Organization',
-    '@id': 'https://hiraban.ir/#organization',
-    name: 'HIRABAN هیرابان',
-    alternateName: locale === 'fa' ? 'هیرابان' : 'Hiraban',
-    url: `https://hiraban.ir/${locale}`,
-    logo: 'https://hiraban.ir/images/logo.png',
+    '@id': 'https://lootka.ir/#organization',
+    name: 'LOOTKA لوتکا',
+    alternateName: locale === 'fa' ? 'لوتکا' : 'Lootka',
+    url: `https://lootka.ir/${locale}`,
+    logo: 'https://lootka.ir/images/logo.png',
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+989125584407',
@@ -24,13 +24,13 @@ export function generateOrganizationSchema(locale: string) {
 export function generateLodgingSchema(locale: string) {
   return {
     '@type': 'LodgingBusiness',
-    '@id': 'https://hiraban.ir/#lodging',
-    name: locale === 'fa' ? 'هیرابان — دهکده طبیعت، آرامش و ماجراجویی' : 'HIRABAN — Nature, Wellness & Adventure Resort',
+    '@id': 'https://lootka.ir/#lodging',
+    name: locale === 'fa' ? 'لوتکا — دهکده طبیعت، آرامش و ماجراجویی' : 'LOOTKA — Nature, Wellness & Adventure Resort',
     description:
       locale === 'fa'
         ? 'دهکده توریستی جنگلی با 17 واحد اقامتی لوکس، استخرهای اختصاصی، رستوران، کافه، برنامه‌های سلامتی و ماجراجویی در جنگل هیرکانی شمال ایران.'
         : 'Luxury forest tourism village with 17 accommodation units, private pools, restaurant, café, wellness and adventure experiences in the Hyrcanian forest of northern Iran.',
-    url: `https://hiraban.ir/${locale}`,
+    url: `https://lootka.ir/${locale}`,
     telephone: '+989125584407',
     numberOfRooms: 17,
     amenityFeature: [
@@ -64,7 +64,7 @@ export function generateAccommodationSchema(unit: {
 }) {
   return {
     '@type': 'VacationRental',
-    '@id': `https://hiraban.ir/${unit.locale}/accommodations/${unit.slug}#unit`,
+    '@id': `https://lootka.ir/${unit.locale}/accommodations/${unit.slug}#unit`,
     name: unit.name,
     description: unit.description,
     floorSize: { '@type': 'QuantitativeValue', value: unit.areaM2, unitCode: 'MTK' },
@@ -115,8 +115,8 @@ export function generateBlogPostSchema(post: {
     url: post.url,
     publisher: {
       '@type': 'Organization',
-      name: 'HIRABAN',
-      logo: 'https://hiraban.ir/images/logo.png',
+      name: 'LOOTKA',
+      logo: 'https://lootka.ir/images/logo.png',
     },
   }
 }

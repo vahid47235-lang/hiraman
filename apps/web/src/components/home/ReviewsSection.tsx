@@ -31,7 +31,7 @@ export default function ReviewsSection({ locale }: Props) {
               <span className="divider-gold mt-4 block" />
             </div>
             {/* Overall rating badge */}
-            <div className={cn('flex items-center gap-2 text-hiraban-pine', isFa && 'flex-row-reverse')}>
+            <div className={cn('flex items-center gap-2 text-lootka-pine', isFa && 'flex-row-reverse')}>
               <div className="text-4xl font-display font-medium">4.9</div>
               <div>
                 <div className="flex gap-0.5">

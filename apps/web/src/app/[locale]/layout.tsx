@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'metadata' })
 
   const isRtl = locale === 'fa'
-  const canonical = `https://hiraban.ir/${locale}`
+  const canonical = `https://lootka.ir/${locale}`
 
   return {
     title: t('siteName'),
@@ -31,15 +31,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical,
       languages: {
-        fa: 'https://hiraban.ir/fa',
-        en: 'https://hiraban.ir/en',
-        'x-default': 'https://hiraban.ir/fa',
+        fa: 'https://lootka.ir/fa',
+        en: 'https://lootka.ir/en',
+        'x-default': 'https://lootka.ir/fa',
       },
     },
     openGraph: {
       locale: isRtl ? 'fa_IR' : 'en_US',
       alternateLocale: isRtl ? 'en_US' : 'fa_IR',
-      siteName: 'HIRABAN هیرابان',
+      siteName: 'LOOTKA لوتکا',
       type: 'website',
     },
     other: {

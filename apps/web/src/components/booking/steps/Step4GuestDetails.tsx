@@ -52,7 +52,7 @@ export default function Step4GuestDetails({ locale }: Props) {
     setCouponError(null)
     // TODO: call API POST /api/v1/coupons/validate
     await new Promise(r => setTimeout(r, 800))
-    if (couponInput.trim().toUpperCase() === 'HIRABAN10') {
+    if (couponInput.trim().toUpperCase() === 'LOOTKA10') {
       setCoupon(couponInput.trim().toUpperCase(), 10) // 10% discount
     } else {
       setCouponError(isFa ? 'کد تخفیف نامعتبر است.' : 'Invalid coupon code.')
@@ -99,7 +99,7 @@ export default function Step4GuestDetails({ locale }: Props) {
           'w-full px-4 py-3 border rounded-xl text-sm bg-white text-charcoal placeholder:text-stone transition-colors focus:outline-none focus:ring-1',
           errors[id as string]
             ? 'border-natural-clay focus:border-natural-clay focus:ring-natural-clay/20'
-            : 'border-stone focus:border-hiraban-pine focus:ring-hiraban-pine/20',
+            : 'border-stone focus:border-lootka-pine focus:ring-lootka-pine/20',
           isFa && !isNum && 'text-end',
         )}
         aria-invalid={!!errors[id as string]}
@@ -151,7 +151,7 @@ export default function Step4GuestDetails({ locale }: Props) {
               value={guest?.specialRequests ?? ''}
               onChange={e => setGuestInfo({ ...guest, specialRequests: e.target.value } as NonNullable<typeof guest>)}
               className={cn(
-                'w-full px-4 py-3 border border-stone rounded-xl text-sm bg-white text-charcoal placeholder:text-stone transition-colors focus:outline-none focus:border-hiraban-pine focus:ring-1 focus:ring-hiraban-pine/20 resize-none',
+                'w-full px-4 py-3 border border-stone rounded-xl text-sm bg-white text-charcoal placeholder:text-stone transition-colors focus:outline-none focus:border-lootka-pine focus:ring-1 focus:ring-lootka-pine/20 resize-none',
                 isFa && 'text-end',
               )}
             />
@@ -165,7 +165,7 @@ export default function Step4GuestDetails({ locale }: Props) {
           </h3>
           {couponCode ? (
             <div className={cn('flex items-center gap-2', isFa && 'flex-row-reverse')}>
-              <div className={cn('flex items-center gap-2 bg-hiraban-pine/10 text-hiraban-pine px-3 py-2 rounded-lg flex-1', isFa && 'flex-row-reverse')}>
+              <div className={cn('flex items-center gap-2 bg-lootka-pine/10 text-lootka-pine px-3 py-2 rounded-lg flex-1', isFa && 'flex-row-reverse')}>
                 <Tag size={14} />
                 <span className="num text-sm font-medium" dir="ltr">{couponCode}</span>
                 <span className="text-sm">
@@ -185,7 +185,7 @@ export default function Step4GuestDetails({ locale }: Props) {
                 value={couponInput}
                 onChange={e => { setCouponInput(e.target.value.toUpperCase()); setCouponError(null) }}
                 onKeyDown={e => e.key === 'Enter' && handleApplyCoupon()}
-                className="flex-1 px-4 py-2.5 border border-stone rounded-xl text-sm bg-white text-charcoal focus:outline-none focus:border-hiraban-pine focus:ring-1 focus:ring-hiraban-pine/20"
+                className="flex-1 px-4 py-2.5 border border-stone rounded-xl text-sm bg-white text-charcoal focus:outline-none focus:border-lootka-pine focus:ring-1 focus:ring-lootka-pine/20"
               />
               <button
                 onClick={handleApplyCoupon}
@@ -211,24 +211,24 @@ export default function Step4GuestDetails({ locale }: Props) {
               type="checkbox"
               checked={agreedToTerms}
               onChange={e => setTerms(e.target.checked)}
-              className="mt-0.5 w-4 h-4 accent-hiraban-pine flex-shrink-0"
+              className="mt-0.5 w-4 h-4 accent-lootka-pine flex-shrink-0"
               aria-describedby="terms-error"
             />
             <span className={cn('text-sm text-charcoal leading-relaxed', isFa && 'text-end')}>
               {isFa ? (
                 <>
-                  قوانین و شرایط هیرابان از جمله{' '}
-                  <a href="/fa/legal/cancellation" target="_blank" className="text-hiraban-pine underline">سیاست لغو رزرو</a>{' '}
+                  قوانین و شرایط لوتکا از جمله{' '}
+                  <a href="/fa/legal/cancellation" target="_blank" className="text-lootka-pine underline">سیاست لغو رزرو</a>{' '}
                   و{' '}
-                  <a href="/fa/legal/privacy" target="_blank" className="text-hiraban-pine underline">سیاست حریم خصوصی</a>{' '}
+                  <a href="/fa/legal/privacy" target="_blank" className="text-lootka-pine underline">سیاست حریم خصوصی</a>{' '}
                   را خوانده‌ام و می‌پذیرم.
                 </>
               ) : (
                 <>
-                  I have read and accept HIRABAN's{' '}
-                  <a href="/en/legal/cancellation" target="_blank" className="text-hiraban-pine underline">Cancellation Policy</a>{' '}
+                  I have read and accept LOOTKA's{' '}
+                  <a href="/en/legal/cancellation" target="_blank" className="text-lootka-pine underline">Cancellation Policy</a>{' '}
                   and{' '}
-                  <a href="/en/legal/privacy" target="_blank" className="text-hiraban-pine underline">Privacy Policy</a>.
+                  <a href="/en/legal/privacy" target="_blank" className="text-lootka-pine underline">Privacy Policy</a>.
                 </>
               )}
             </span>

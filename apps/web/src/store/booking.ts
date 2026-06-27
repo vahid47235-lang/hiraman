@@ -171,7 +171,7 @@ export const useBookingStore = create<BookingState>()(
       },
     }),
     {
-      name: 'hiraban-booking',
+      name: 'lootka-booking',
       partialize: (s) => ({
         checkIn: s.checkIn,
         checkOut: s.checkOut,

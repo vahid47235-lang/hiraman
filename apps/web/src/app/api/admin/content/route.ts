@@ -4,7 +4,7 @@ import path from 'path'
 import { invalidateContent } from '@/data/content'
 
 const OVERRIDE_PATH = path.join(process.cwd(), 'src', 'data', 'content.override.json')
-const ADMIN_TOKEN = process.env.ADMIN_TOKEN ?? 'hiraban-admin-dev'
+const ADMIN_TOKEN = process.env.ADMIN_TOKEN ?? 'lootka-admin-dev'
 
 function unauthorized() {
   return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })

@@ -21,7 +21,7 @@ export default function ExperiencesSection({ locale }: Props) {
       <div className="container-content">
         {/* Header */}
         <div className={cn('mb-12', isFa ? 'text-end' : '')}>
-          <p className="eyebrow mb-4">{isFa ? 'تجربه‌های هیرابان' : 'Hiraban experiences'}</p>
+          <p className="eyebrow mb-4">{isFa ? 'تجربه‌های لوتکا' : 'Lootka experiences'}</p>
           <h2 className={cn('text-headline', isFa ? 'font-persian-display' : 'font-display')}>
             {isFa ? 'فراتر از اقامت — یک مقصد کامل' : 'Beyond a stay — a complete destination'}
           </h2>

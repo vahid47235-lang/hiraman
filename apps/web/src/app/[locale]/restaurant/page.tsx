@@ -5,7 +5,7 @@ type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params
-  return { title: locale === 'fa' ? 'رستوران — هیرابان' : 'Restaurant — Hiraban' }
+  return { title: locale === 'fa' ? 'رستوران — لوتکا' : 'Restaurant — Lootka' }
 }
 
 export default async function RestaurantPage({ params }: Props) {
@@ -46,8 +46,8 @@ export default async function RestaurantPage({ params }: Props) {
               </h2>
               <p className="text-body text-warm-gray mb-8 leading-relaxed">
                 {isFa
-                  ? 'رستوران هیرابان از مواد اولیه تازه و ارگانیک که مستقیم از باغ‌ها و مزارع محلی تهیه می‌شود، بهره می‌گیرد.'
-                  : 'Hiraban restaurant uses fresh organic ingredients sourced directly from local gardens and farms.'}
+                  ? 'رستوران لوتکا از مواد اولیه تازه و ارگانیک که مستقیم از باغ‌ها و مزارع محلی تهیه می‌شود، بهره می‌گیرد.'
+                  : 'Lootka restaurant uses fresh organic ingredients sourced directly from local gardens and farms.'}
               </p>
               {menu.map((section) => (
                 <div key={section.cat} className="mb-6">

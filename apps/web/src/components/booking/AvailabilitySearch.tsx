@@ -78,7 +78,7 @@ export default function AvailabilitySearch({ locale, className, compact = false 
         >
           {/* Check-in */}
           <button
-            className="flex-1 min-w-0 flex items-center gap-3 px-4 py-3 bg-white border border-stone rounded-lg hover:border-hiraban-pine transition-colors text-start"
+            className="flex-1 min-w-0 flex items-center gap-3 px-4 py-3 bg-white border border-stone rounded-lg hover:border-lootka-pine transition-colors text-start"
             onClick={() => { setShowCheckin(!showCheckin); setShowCheckout(false); setShowGuestPicker(false) }}
             aria-label={t('checkin')}
             aria-expanded={showCheckin}
@@ -106,7 +106,7 @@ export default function AvailabilitySearch({ locale, className, compact = false 
 
           {/* Check-out */}
           <button
-            className="flex-1 min-w-0 flex items-center gap-3 px-4 py-3 bg-white border border-stone rounded-lg hover:border-hiraban-pine transition-colors text-start"
+            className="flex-1 min-w-0 flex items-center gap-3 px-4 py-3 bg-white border border-stone rounded-lg hover:border-lootka-pine transition-colors text-start"
             onClick={() => { setShowCheckout(!showCheckout); setShowCheckin(false); setShowGuestPicker(false) }}
             aria-label={t('checkout')}
             aria-expanded={showCheckout}
@@ -124,7 +124,7 @@ export default function AvailabilitySearch({ locale, className, compact = false 
 
           {/* Guests */}
           <button
-            className="flex-1 min-w-0 flex items-center gap-3 px-4 py-3 bg-white border border-stone rounded-lg hover:border-hiraban-pine transition-colors text-start"
+            className="flex-1 min-w-0 flex items-center gap-3 px-4 py-3 bg-white border border-stone rounded-lg hover:border-lootka-pine transition-colors text-start"
             onClick={() => { setShowGuestPicker(!showGuestPicker); setShowCheckin(false); setShowCheckout(false) }}
             aria-label={t('guests')}
             aria-expanded={showGuestPicker}
@@ -143,8 +143,8 @@ export default function AvailabilitySearch({ locale, className, compact = false 
             className={cn(
               'flex items-center gap-2 px-4 py-3 rounded-lg border transition-all text-sm font-medium',
               state.privatePool
-                ? 'bg-hiraban-pine text-warm-ivory border-hiraban-pine'
-                : 'bg-white text-charcoal border-stone hover:border-hiraban-pine',
+                ? 'bg-lootka-pine text-warm-ivory border-lootka-pine'
+                : 'bg-white text-charcoal border-stone hover:border-lootka-pine',
             )}
             onClick={() => setState(s => ({ ...s, privatePool: !s.privatePool }))}
             aria-pressed={state.privatePool}
@@ -219,7 +219,7 @@ function GuestCounter({
       </div>
       <div className="flex items-center gap-3">
         <button
-          className="w-8 h-8 rounded-full border border-stone flex items-center justify-center text-charcoal hover:border-hiraban-pine hover:text-hiraban-pine transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+          className="w-8 h-8 rounded-full border border-stone flex items-center justify-center text-charcoal hover:border-lootka-pine hover:text-lootka-pine transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
           onClick={() => onChange(Math.max(min, value - 1))}
           disabled={value <= min}
           aria-label={`Decrease ${label}`}
@@ -228,7 +228,7 @@ function GuestCounter({
         </button>
         <span className="num w-4 text-center font-medium" dir="ltr">{value}</span>
         <button
-          className="w-8 h-8 rounded-full border border-stone flex items-center justify-center text-charcoal hover:border-hiraban-pine hover:text-hiraban-pine transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+          className="w-8 h-8 rounded-full border border-stone flex items-center justify-center text-charcoal hover:border-lootka-pine hover:text-lootka-pine transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
           onClick={() => onChange(Math.min(max, value + 1))}
           disabled={value >= max}
           aria-label={`Increase ${label}`}

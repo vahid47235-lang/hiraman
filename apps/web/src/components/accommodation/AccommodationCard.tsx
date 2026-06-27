@@ -72,7 +72,7 @@ export default function AccommodationCard({ unit, locale, className }: Props) {
             </span>
           )}
           {unit.instantConfirm && (
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-hiraban-pine/80 backdrop-blur-sm text-warm-ivory text-caption rounded-full">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-lootka-pine/80 backdrop-blur-sm text-warm-ivory text-caption rounded-full">
               <Check size={11} />
               {t('instant_confirm')}
             </span>

@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'booking' })
   return {
-    title: locale === 'fa' ? 'رزرو اقامتگاه | هیرابان' : 'Reserve | HIRABAN',
+    title: locale === 'fa' ? 'رزرو اقامتگاه | لوتکا' : 'Reserve | LOOTKA',
     robots: { index: false, follow: false }, // booking pages must not be indexed
   }
 }

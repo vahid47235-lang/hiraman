@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Phone, MessageCircle, Instagram } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
-import HirabanLogo from '@/components/ui/HirabanLogo'
+import LootkaLogo from '@/components/ui/LootkaLogo'
 
 type Props = { locale: string }
 
@@ -40,10 +40,10 @@ export default function Footer({ locale }: Props) {
     <footer role="contentinfo" className="bg-deep-forest text-warm-ivory">
       <div className="container-content">
         {/* Main footer */}
-        <div className={cn('grid grid-cols-2 md:grid-cols-4 gap-8 py-14 border-b border-hiraban-pine', isFa && 'text-end')}>
+        <div className={cn('grid grid-cols-2 md:grid-cols-4 gap-8 py-14 border-b border-lootka-pine', isFa && 'text-end')}>
           {/* Brand column */}
           <div className={cn('col-span-2 md:col-span-1', isFa && 'order-last')}>
-            <HirabanLogo locale={locale} variant="light" className="h-10 mb-4" />
+            <LootkaLogo locale={locale} variant="light" className="h-10 mb-4" />
             <p className="text-body-sm text-warm-ivory/60 mb-6 leading-relaxed">
               {t('tagline')}
             </p>
@@ -52,7 +52,7 @@ export default function Footer({ locale }: Props) {
               <a
                 href="#"
                 aria-label="Instagram"
-                className="w-9 h-9 border border-hiraban-pine rounded flex items-center justify-center text-warm-ivory/50 hover:text-aged-brass hover:border-aged-brass/40 transition-colors"
+                className="w-9 h-9 border border-lootka-pine rounded flex items-center justify-center text-warm-ivory/50 hover:text-aged-brass hover:border-aged-brass/40 transition-colors"
               >
                 <Instagram size={16} />
               </a>
@@ -128,7 +128,7 @@ export default function Footer({ locale }: Props) {
             <span className="num" dir="ltr">©</span>
             {' '}
             <span className="num" dir="ltr">2025</span>
-            {' '}HIRABAN هیرابان. {t('copyright')}.
+            {' '}LOOTKA لوتکا. {t('copyright')}.
           </p>
           <nav aria-label={isFa ? 'لینک‌های قانونی' : 'Legal links'}>
             <ul className={cn('flex flex-wrap gap-4', isFa && 'flex-row-reverse')}>

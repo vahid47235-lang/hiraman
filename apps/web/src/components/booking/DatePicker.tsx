@@ -142,9 +142,9 @@ export default function DatePicker({ locale, checkIn, checkOut, onChange, onClos
               className={cn(
                 'relative h-9 w-full text-sm rounded-lg transition-colors',
                 isPast && 'text-stone cursor-not-allowed',
-                !isPast && !isSelected && !isInRange && 'hover:bg-hiraban-pine/10 text-charcoal',
-                isSelected && 'bg-hiraban-pine text-warm-ivory font-medium',
-                isInRange && 'bg-hiraban-pine/10 text-hiraban-pine rounded-none',
+                !isPast && !isSelected && !isInRange && 'hover:bg-lootka-pine/10 text-charcoal',
+                isSelected && 'bg-lootka-pine text-warm-ivory font-medium',
+                isInRange && 'bg-lootka-pine/10 text-lootka-pine rounded-none',
                 isCheckIn && checkOut && 'rounded-e-none',
                 isCheckOut && checkIn && 'rounded-s-none',
               )}

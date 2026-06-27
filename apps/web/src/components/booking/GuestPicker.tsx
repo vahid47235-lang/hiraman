@@ -49,7 +49,7 @@ function Counter({
             'w-8 h-8 rounded-full border flex items-center justify-center transition-colors',
             value <= min
               ? 'border-stone text-stone cursor-not-allowed'
-              : 'border-hiraban-pine text-hiraban-pine hover:bg-hiraban-pine hover:text-warm-ivory',
+              : 'border-lootka-pine text-lootka-pine hover:bg-lootka-pine hover:text-warm-ivory',
           )}
           aria-label={`Decrease ${label}`}
         >
@@ -65,7 +65,7 @@ function Counter({
             'w-8 h-8 rounded-full border flex items-center justify-center transition-colors',
             value >= max
               ? 'border-stone text-stone cursor-not-allowed'
-              : 'border-hiraban-pine text-hiraban-pine hover:bg-hiraban-pine hover:text-warm-ivory',
+              : 'border-lootka-pine text-lootka-pine hover:bg-lootka-pine hover:text-warm-ivory',
           )}
           aria-label={`Increase ${label}`}
         >
@@ -156,7 +156,7 @@ export default function GuestPicker({ locale, adults, children, childrenAges, on
                 <select
                   value={childrenAges[i] ?? 5}
                   onChange={e => setChildAge(i, parseInt(e.target.value))}
-                  className="text-sm border border-stone rounded-lg px-2 py-1 bg-white text-charcoal focus:outline-none focus:border-hiraban-pine"
+                  className="text-sm border border-stone rounded-lg px-2 py-1 bg-white text-charcoal focus:outline-none focus:border-lootka-pine"
                   aria-label={isFa ? `سن کودک ${i + 1}` : `Age of child ${i + 1}`}
                 >
                   {ageOptions.map(age => (

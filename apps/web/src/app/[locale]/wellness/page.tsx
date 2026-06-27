@@ -6,7 +6,7 @@ type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params
-  return { title: locale === 'fa' ? 'سلامتی و اسپا — هیرابان' : 'Wellness & Spa — Hiraban' }
+  return { title: locale === 'fa' ? 'سلامتی و اسپا — لوتکا' : 'Wellness & Spa — Lootka' }
 }
 
 export default async function WellnessPage({ params }: Props) {
@@ -40,8 +40,8 @@ export default async function WellnessPage({ params }: Props) {
               </h2>
               <p className="text-body text-warm-gray mb-8 leading-relaxed">
                 {isFa
-                  ? 'مرکز سلامتی هیرابان با بهترین متخصصان ماساژ، یوگا و مدیتیشن، محیطی آرام برای بازیابی انرژی شما فراهم کرده است.'
-                  : 'Hiraban\'s wellness centre brings together expert massage therapists, yoga instructors and meditation guides in a serene forest setting.'}
+                  ? 'مرکز سلامتی لوتکا با بهترین متخصصان ماساژ، یوگا و مدیتیشن، محیطی آرام برای بازیابی انرژی شما فراهم کرده است.'
+                  : 'Lootka\'s wellness centre brings together expert massage therapists, yoga instructors and meditation guides in a serene forest setting.'}
               </p>
               <ul className="space-y-3 mb-8">
                 {services.map((s) => (
@@ -62,7 +62,7 @@ export default async function WellnessPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="section bg-hiraban-pine text-warm-ivory">
+      <section className="section bg-lootka-pine text-warm-ivory">
         <div className="container-content text-center">
           <h2 className={`text-headline mb-4 ${isFa ? 'font-persian-display' : 'font-display'}`}>
             {isFa ? 'یوگای جنگل — تجربه‌ای منحصربه‌فرد' : 'Forest Yoga — a unique experience'}

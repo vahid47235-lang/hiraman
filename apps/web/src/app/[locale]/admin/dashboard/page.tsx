@@ -115,7 +115,7 @@ export default function Dashboard() {
       {/* Top bar */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
         <div>
-          <div style={{ fontSize: 22, fontWeight: 700, color: '#1a2e1a' }}>HIRABAN Admin</div>
+          <div style={{ fontSize: 22, fontWeight: 700, color: '#1a2e1a' }}>LOOTKA Admin</div>
           <div style={{ fontSize: 13, color: '#888', marginTop: 2 }}>Site Content Editor</div>
         </div>
         <div style={{ display: 'flex', gap: 10 }}>
@@ -266,7 +266,7 @@ export default function Dashboard() {
       </Section>
 
       <div style={{ textAlign: 'center', padding: '32px 0 16px', color: '#bbb', fontSize: 12 }}>
-        HIRABAN Admin — changes are saved to <code>src/data/content.override.json</code>
+        LOOTKA Admin — changes are saved to <code>src/data/content.override.json</code>
       </div>
     </div>
   )

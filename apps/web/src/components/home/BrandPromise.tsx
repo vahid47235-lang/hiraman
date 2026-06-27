@@ -37,13 +37,13 @@ export default function BrandPromise({ locale }: Props) {
             <span className="divider-gold mb-6 block" style={{ marginInlineStart: isFa ? 'auto' : undefined }} />
             <p className="text-body-lg text-warm-gray leading-relaxed mb-6">
               {isFa
-                ? 'هیرابان صرفاً یک کلبه برای اجاره نیست. ما یک مقصد کامل جنگلی هستیم که در آن اقامت لوکس، استخر خصوصی، رستوران، کافه، سلامت و آرامش، تجربه‌های خانوادگی و ماجراجویی‌های طبیعی همه در یک سفر قابل برنامه‌ریزی و رزرو هستند.'
-                : "Hiraban is not simply a cabin to rent. We are a complete forest destination — a place where private accommodation, dining, wellness, family activities and soft adventure can all be planned and reserved in a single journey, in the heart of Iran's ancient Hyrcanian forests."}
+                ? 'لوتکا صرفاً یک کلبه برای اجاره نیست. ما یک مقصد کامل جنگلی هستیم که در آن اقامت لوکس، استخر خصوصی، رستوران، کافه، سلامت و آرامش، تجربه‌های خانوادگی و ماجراجویی‌های طبیعی همه در یک سفر قابل برنامه‌ریزی و رزرو هستند.'
+                : "Lootka is not simply a cabin to rent. We are a complete forest destination — a place where private accommodation, dining, wellness, family activities and soft adventure can all be planned and reserved in a single journey, in the heart of Iran's ancient Hyrcanian forests."}
             </p>
             <p className="text-body text-warm-gray leading-relaxed">
               {isFa
-                ? 'با ۱۷ واحد اقامتی منحصربه‌فرد در محوطه‌ای ۱۴ هزار متر مربعی، هر اقامت در هیرابان داستان خاص خود را دارد.'
-                : 'With 17 unique accommodation units across 14,000 m² of curated forest grounds, every stay at Hiraban tells its own story.'}
+                ? 'با ۱۷ واحد اقامتی منحصربه‌فرد در محوطه‌ای ۱۴ هزار متر مربعی، هر اقامت در لوتکا داستان خاص خود را دارد.'
+                : 'With 17 unique accommodation units across 14,000 m² of curated forest grounds, every stay at Lootka tells its own story.'}
             </p>
           </div>
 
@@ -54,7 +54,7 @@ export default function BrandPromise({ locale }: Props) {
                 key={stat.label}
                 className="bg-white p-8 flex flex-col items-center justify-center text-center"
               >
-                <div className="num text-4xl font-medium text-hiraban-pine mb-2 font-display" dir="ltr">
+                <div className="num text-4xl font-medium text-lootka-pine mb-2 font-display" dir="ltr">
                   {stat.value}
                 </div>
                 <div className="text-body-sm text-warm-gray">

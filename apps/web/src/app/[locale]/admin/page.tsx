@@ -32,7 +32,7 @@ export default function AdminLogin() {
     <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <div style={{ background: '#fff', borderRadius: 12, padding: 40, width: 360, boxShadow: '0 4px 24px #0001' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
-          <div style={{ fontSize: 28, fontWeight: 700, letterSpacing: 2, color: '#1a2e1a' }}>HIRABAN</div>
+          <div style={{ fontSize: 28, fontWeight: 700, letterSpacing: 2, color: '#1a2e1a' }}>LOOTKA</div>
           <div style={{ color: '#888', marginTop: 4, fontSize: 14 }}>Admin Panel</div>
         </div>
         <form onSubmit={handleSubmit}>
@@ -66,7 +66,7 @@ export default function AdminLogin() {
           </button>
         </form>
         <p style={{ textAlign: 'center', fontSize: 12, color: '#aaa', marginTop: 24 }}>
-          Default dev password: <code>hiraban2025</code>
+          Default dev password: <code>lootka2025</code>
         </p>
       </div>
     </div>

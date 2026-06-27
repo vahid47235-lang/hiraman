@@ -24,7 +24,7 @@ export function formatPrice(
 
 /**
  * Always format numbers as Western (0-9) regardless of locale.
- * This is a hard requirement for HIRABAN — no Eastern Arabic numerals.
+ * This is a hard requirement for LOOTKA — no Eastern Arabic numerals.
  */
 export function formatNumber(n: number): string {
   return new Intl.NumberFormat('en-US').format(n)

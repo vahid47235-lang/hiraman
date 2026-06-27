@@ -39,7 +39,7 @@ export default function HeroSection({ locale }: Props) {
   return (
     <section
       className="relative w-full h-screen min-h-[600px] max-h-[1080px] overflow-hidden bg-deep-forest"
-      aria-label={isFa ? 'هیرابان — دهکده طبیعت و ماجراجویی' : 'HIRABAN — Nature, Wellness & Adventure Resort'}
+      aria-label={isFa ? 'لوتکا — دهکده طبیعت و ماجراجویی' : 'LOOTKA — Nature, Wellness & Adventure Resort'}
     >
       {/* Video / Fallback poster */}
       {!prefersReducedMotion ? (
@@ -108,7 +108,7 @@ export default function HeroSection({ locale }: Props) {
         <div className="max-w-2xl">
           {/* Eyebrow */}
           <p className="eyebrow mb-5 animate-fade-up" style={{ animationDelay: '200ms' }}>
-            {isFa ? 'هیرابان — هیرکانی، ایران' : 'HIRABAN — Hyrcanian Forest, Iran'}
+            {isFa ? 'لوتکا — هیرکانی، ایران' : 'LOOTKA — Hyrcanian Forest, Iran'}
           </p>
 
           {/* Main headline */}
