@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>هیرابان — پیش‌نمایش طراحی</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --deep-forest: #0B1A13;
+    --hiraban-pine: #183B2B;
+    --forest-moss: #536B4A;
+    --aged-brass: #C5A66A;
+    --soft-gold: #D7BF88;
+    --warm-ivory: #F4F0E7;
+    --stone: #D8D1C3;
+    --warm-gray: #8A887F;
+    --charcoal: #1B1E1B;
+  }
+
+  body {
+    font-family: 'Vazirmatn', sans-serif;
+    background: var(--warm-ivory);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; inset-inline: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem; height: 68px;
+    background: rgba(11,26,19,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(197,166,106,0.15);
+  }
+  .logo {
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 1.5rem; font-weight: 600;
+    color: var(--warm-ivory); letter-spacing: 0.05em;
+    text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 2px;
+  }
+  .logo-line { display: block; width: 48px; height: 1px; background: var(--aged-brass); opacity: 0.7; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(244,240,231,0.7); text-decoration: none; font-size: 0.875rem;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--aged-brass); }
+  .lang-btn {
+    padding: 0.4rem 0.75rem; border: 1px solid rgba(244,240,231,0.2);
+    border-radius: 4px; color: rgba(244,240,231,0.7); background: none;
+    cursor: pointer; font-size: 0.875rem; font-family: inherit;
+    transition: all 0.2s;
+  }
+  .lang-btn:hover { border-color: var(--aged-brass); color: var(--aged-brass); }
+
+  /* HERO */
+  .hero {
+    position: relative; height: 100vh; min-height: 600px;
+    background: var(--deep-forest); display: flex; align-items: center;
+    overflow: hidden;
+  }
+  .hero-img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.55;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(11,26,19,0.7) 0%, rgba(11,26,19,0.3) 60%, transparent 100%);
+  }
+  .hero-overlay-bottom {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(11,26,19,0.6) 0%, transparent 40%);
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    padding: 0 clamp(1.5rem, 5vw, 5rem); padding-top: 68px;
+    max-width: 700px;
+  }
+  .eyebrow {
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--aged-brass); margin-bottom: 1.25rem;
+  }
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 600; line-height: 1.15;
+    color: var(--warm-ivory); margin-bottom: 1.5rem;
+  }
+  .hero p {
+    font-size: 1.1rem; color: rgba(244,240,231,0.75); margin-bottom: 2.5rem;
+    max-width: 480px; line-height: 1.7;
+  }
+  .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: flex-end; }
+  .btn-primary {
+    padding: 0.875rem 2rem; background: var(--aged-brass); color: var(--deep-forest);
+    border: none; border-radius: 4px; font-family: inherit; font-size: 0.9rem;
+    font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block;
+    transition: all 0.2s;
+  }
+  .btn-primary:hover { background: var(--soft-gold); }
+  .btn-secondary {
+    padding: 0.875rem 2rem; background: rgba(244,240,231,0.1); color: var(--warm-ivory);
+    border: 1px solid rgba(244,240,231,0.3); border-radius: 4px; font-family: inherit;
+    font-size: 0.9rem; font-weight: 500; cursor: pointer; text-decoration: none;
+    display: inline-block; backdrop-filter: blur(4px); transition: all 0.2s;
+  }
+  .btn-secondary:hover { background: rgba(244,240,231,0.2); }
+
+  /* STATS BAR */
+  .stats-bar {
+    position: absolute; bottom: 0; inset-inline: 0; z-index: 2;
+    background: rgba(11,26,19,0.7); backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(197,166,106,0.15);
+  }
+  .stats-inner {
+    display: flex; justify-content: flex-end; gap: 3rem;
+    padding: 1.25rem clamp(1.5rem, 5vw, 5rem);
+  }
+  .stat-num { font-size: 1.25rem; font-weight: 500; color: var(--aged-brass); }
+  .stat-label { font-size: 0.75rem; color: rgba(244,240,231,0.5); margin-top: 2px; }
+
+  /* SEARCH BAR */
+  .search-bar {
+    background: white; border-bottom: 1px solid var(--stone);
+    padding: 1rem clamp(1.5rem, 5vw, 5rem);
+    display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;
+    justify-content: flex-end;
+  }
+  .search-field {
+    flex: 1; min-width: 150px; padding: 0.75rem 1rem;
+    border: 1px solid var(--stone); border-radius: 8px; background: white;
+    font-family: inherit; font-size: 0.875rem; cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .search-field:hover { border-color: var(--hiraban-pine); }
+  .search-label { font-size: 0.7rem; color: var(--warm-gray); margin-bottom: 2px; }
+  .search-val { font-size: 0.875rem; font-weight: 500; color: var(--warm-gray); }
+
+  /* SECTION */
+  section { padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 5vw, 5rem); }
+  .section-label {
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--aged-brass); margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 600; line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .section-desc {
+    font-size: 1rem; color: var(--warm-gray); max-width: 540px;
+    margin-right: auto; line-height: 1.7; margin-bottom: 3rem;
+  }
+
+  /* CARDS GRID */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .card {
+    background: white; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07); transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+  .card-img { width: 100%; height: 220px; object-fit: cover; display: block; }
+  .card-body { padding: 1.25rem; }
+  .card-cat { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--aged-brass); margin-bottom: 0.5rem; }
+  .card-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+  .card-desc { font-size: 0.875rem; color: var(--warm-gray); line-height: 1.6; margin-bottom: 1rem; }
+  .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--stone); padding-top: 0.875rem; }
+  .card-price-label { font-size: 0.7rem; color: var(--warm-gray); }
+  .card-price { font-size: 0.9rem; font-weight: 600; color: var(--charcoal); }
+  .btn-sm {
+    padding: 0.45rem 1rem; border-radius: 4px; font-size: 0.8rem;
+    font-family: inherit; cursor: pointer; text-decoration: none; font-weight: 500;
+    border: 1px solid var(--charcoal); color: var(--charcoal); background: none;
+    transition: all 0.2s;
+  }
+  .btn-sm:hover { background: var(--charcoal); color: white; }
+  .btn-sm-primary {
+    padding: 0.45rem 1rem; border-radius: 4px; font-size: 0.8rem;
+    font-family: inherit; cursor: pointer; text-decoration: none; font-weight: 500;
+    background: var(--aged-brass); color: var(--deep-forest); border: none;
+    transition: all 0.2s;
+  }
+
+  /* SERVICES */
+  .services-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border: 1px solid var(--stone);
+  }
+  @media (max-width: 768px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  .service-item {
+    display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+    padding: 2rem 1.5rem; text-align: center;
+    border-bottom: 1px solid var(--stone); border-left: 1px solid var(--stone);
+    background: var(--warm-ivory); transition: background 0.2s;
+  }
+  .service-item:hover { background: white; }
+  .service-icon { color: var(--forest-moss); font-size: 1.75rem; }
+  .service-name { font-size: 0.8rem; font-weight: 500; color: var(--charcoal); }
+
+  /* WELLNESS */
+  .wellness { background: var(--deep-forest); color: var(--warm-ivory); }
+  .wellness-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  @media (max-width: 768px) { .wellness-inner { grid-template-columns: 1fr; } }
+  .wellness-img { width: 100%; height: 400px; object-fit: cover; border-radius: 8px; }
+  .wellness-services { list-style: none; margin-top: 1.5rem; }
+  .wellness-services li {
+    padding: 0.75rem 0; border-bottom: 1px solid rgba(244,240,231,0.1);
+    font-size: 0.9rem; color: rgba(244,240,231,0.8); display: flex; align-items: center; gap: 0.5rem;
+    flex-direction: row-reverse; text-align: right;
+  }
+  .wellness-services li::before { content: '✦'; color: var(--aged-brass); font-size: 0.6rem; }
+
+  /* REVIEWS */
+  .reviews { background: var(--hiraban-pine); color: var(--warm-ivory); }
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .review-card {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(197,166,106,0.2);
+    border-radius: 12px; padding: 1.75rem;
+  }
+  .stars { color: var(--aged-brass); font-size: 0.9rem; margin-bottom: 1rem; }
+  .review-text { font-size: 0.9rem; color: rgba(244,240,231,0.8); line-height: 1.7; margin-bottom: 1.25rem; }
+  .review-author { font-weight: 600; font-size: 0.9rem; }
+  .review-location { font-size: 0.8rem; color: rgba(244,240,231,0.5); margin-top: 2px; }
+
+  /* FAQ */
+  .faq { background: white; }
+  .faq-inner { max-width: 700px; margin-right: auto; }
+  .faq-item { border-bottom: 1px solid var(--stone); }
+  .faq-q {
+    width: 100%; display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 0; background: none; border: none; font-family: inherit;
+    font-size: 0.95rem; font-weight: 500; text-align: right; cursor: pointer;
+    color: var(--charcoal); gap: 1rem;
+  }
+  .faq-a { padding: 0 0 1.25rem; font-size: 0.875rem; color: var(--warm-gray); line-height: 1.7; }
+
+  /* NEWSLETTER */
+  .newsletter { background: var(--hiraban-pine); color: var(--warm-ivory); text-align: center; }
+  .newsletter-inner { max-width: 480px; margin: 0 auto; }
+  .newsletter-form { display: flex; gap: 0.5rem; margin-top: 1.5rem; }
+  .newsletter-input {
+    flex: 1; padding: 0.875rem 1rem;
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px; color: white; font-family: inherit; font-size: 0.9rem;
+  }
+  .newsletter-input::placeholder { color: rgba(255,255,255,0.4); }
+
+  /* FOOTER */
+  footer {
+    background: var(--deep-forest); color: rgba(244,240,231,0.6);
+    padding: 4rem clamp(1.5rem, 5vw, 5rem) 2rem;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+  @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  .footer-logo { font-size: 1.5rem; font-weight: 600; color: var(--warm-ivory); margin-bottom: 1rem; }
+  .footer-desc { font-size: 0.85rem; line-height: 1.7; }
+  .footer-heading { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--aged-brass); margin-bottom: 1.25rem; }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 0.6rem; }
+  .footer-links a { font-size: 0.85rem; color: rgba(244,240,231,0.6); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--aged-brass); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; font-size: 0.8rem; text-align: center; }
+
+  /* FLOATING BUTTONS */
+  .floating {
+    position: fixed; bottom: 1.5rem; left: 1rem; z-index: 90;
+    display: flex; flex-direction: column; gap: 0.5rem; align-items: center;
+  }
+  .float-btn {
+    width: 48px; height: 48px; border-radius: 50%; border: none;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 1.2rem; box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    text-decoration: none; transition: transform 0.2s;
+  }
+  .float-btn:hover { transform: scale(1.1); }
+  .float-wa { background: #25D366; color: white; }
+  .float-ph { background: var(--hiraban-pine); color: var(--warm-ivory); }
+
+  /* BRAND PROMISE */
+  .brand-promise { background: var(--warm-ivory); }
+  .promise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem; }
+  .promise-item { text-align: center; }
+  .promise-num { font-size: 2.5rem; font-weight: 600; color: var(--aged-brass); margin-bottom: 0.5rem; }
+  .promise-label { font-size: 0.85rem; color: var(--warm-gray); }
+
+  /* LABEL/BADGE */
+  .badge {
+    display: inline-block; padding: 0.25rem 0.75rem; border-radius: 999px;
+    font-size: 0.7rem; font-weight: 500;
+  }
+  .badge-pool { background: rgba(11,26,19,0.8); color: var(--aged-brass); border: 1px solid rgba(197,166,106,0.3); }
+  .badge-avail { background: rgba(83,107,74,0.12); color: var(--forest-moss); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <ul class="nav-links">
+    <li><a href="#">اقامتگاه‌ها</a></li>
+    <li><a href="#">تجربه‌ها</a></li>
+    <li><a href="#">سلامتی</a></li>
+    <li><a href="#">رزرو</a></li>
+  </ul>
+  <a href="#" class="logo">
+    هیرابان
+    <span class="logo-line"></span>
+  </a>
+  <button class="lang-btn">EN</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-img" src="https://picsum.photos/seed/forest-hero/1920/1080" alt="جنگل هیرکانی">
+  <div class="hero-overlay"></div>
+  <div class="hero-overlay-bottom"></div>
+  <div class="hero-content">
+    <p class="eyebrow">هیرابان — جنگل هیرکانی، ایران</p>
+    <h1>طبیعت بکر،<br>آرامش بی‌نظیر</h1>
+    <p>لوکس‌ترین اقامتگاه جنگلی شمال ایران. کلبه‌های اختصاصی با استخر خصوصی، میان درختان هزارساله هیرکانی.</p>
+    <div class="btn-group">
+      <a href="#" class="btn-secondary">تجربه‌ها</a>
+      <a href="#" class="btn-primary">رزرو اقامتگاه</a>
+    </div>
+  </div>
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div>
+        <div class="stat-num">۱۷</div>
+        <div class="stat-label">واحد اقامتی</div>
+      </div>
+      <div>
+        <div class="stat-num">۱۴,۰۰۰</div>
+        <div class="stat-label">متر مربع</div>
+      </div>
+      <div>
+        <div class="stat-num">۱۲+</div>
+        <div class="stat-label">تجربه منحصربه‌فرد</div>
+      </div>
+      <div>
+        <div class="stat-num">۸</div>
+        <div class="stat-label">اقامتی لوکس با استخر اختصاصی</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEARCH BAR -->
+<div class="search-bar">
+  <button class="btn-primary" style="border-radius:8px;">🔍 جستجو</button>
+  <div class="search-field">
+    <div class="search-label">مهمانان</div>
+    <div class="search-val">۲ نفر</div>
+  </div>
+  <div class="search-field">
+    <div class="search-label">تاریخ خروج</div>
+    <div class="search-val">انتخاب تاریخ</div>
+  </div>
+  <div class="search-field">
+    <div class="search-label">تاریخ ورود</div>
+    <div class="search-val">انتخاب تاریخ</div>
+  </div>
+</div>
+
+<!-- BRAND PROMISE -->
+<section class="brand-promise">
+  <div style="text-align:center;">
+    <p class="section-label">تعهد ما</p>
+    <h2>لوکس در دل طبیعت</h2>
+    <p class="section-desc" style="margin: 0 auto 0 auto;">هیرابان ترکیبی از معماری بومی، طبیعت بکر هیرکانی و خدمات درجه یک را در کنار هم آورده است.</p>
+  </div>
+  <div class="promise-grid">
+    <div class="promise-item">
+      <div class="promise-num">۱۷</div>
+      <div class="promise-label">واحد اقامتی لوکس</div>
+    </div>
+    <div class="promise-item">
+      <div class="promise-num">۱۴,۰۰۰</div>
+      <div class="promise-label">متر مربع فضای سبز</div>
+    </div>
+    <div class="promise-item">
+      <div class="promise-num">۱۲+</div>
+      <div class="promise-label">تجربه منحصربه‌فرد</div>
+    </div>
+    <div class="promise-item">
+      <div class="promise-num">۴.۹</div>
+      <div class="promise-label">امتیاز میهمانان</div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCOMMODATIONS -->
+<section style="background:white;">
+  <p class="section-label">اقامتگاه‌ها</p>
+  <h2>کلبه‌های ما</h2>
+  <p class="section-desc">از کلبه‌های دنج تا ویلاهای لوکس با استخر اختصاصی — هر فضایی برای یک تجربه به‌یادماندنی طراحی شده است.</p>
+  <div class="cards">
+    <div class="card">
+      <div style="position:relative;">
+        <img class="card-img" src="https://picsum.photos/seed/cabin-pool/600/400" alt="کلبه استخردار">
+        <div style="position:absolute;top:12px;right:12px;display:flex;flex-direction:column;gap:6px;">
+          <span class="badge badge-pool">🌊 استخر اختصاصی</span>
+        </div>
+        <div style="position:absolute;top:12px;left:12px;">
+          <span class="badge badge-avail">موجود</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-cat">ویلا لوکس</div>
+        <div class="card-title">ویلا جنگلی با استخر</div>
+        <div class="card-desc">ویلای دوطبقه با چشم‌انداز مستقیم به جنگل، استخر گرم اختصاصی و تراس بزرگ برای تماشای غروب.</div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price-label">شروع از</div>
+            <div class="card-price">۱۲,۵۰۰,۰۰۰ تومان</div>
+            <div class="card-price-label">هر شب</div>
+          </div>
+          <div style="display:flex;gap:6px;">
+            <a href="#" class="btn-sm">جزئیات</a>
+            <a href="#" class="btn-sm-primary">رزرو</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img class="card-img" src="https://picsum.photos/seed/forest-cabin/600/400" alt="کلبه جنگلی">
+      <div class="card-body">
+        <div class="card-cat">کلبه استاندارد</div>
+        <div class="card-title">کلبه‌ی جنگل</div>
+        <div class="card-desc">کلبه‌ای دنج در دل درختان، با دکور چوبی اصیل، جکوزی سرپوشیده و بالکن رو به جنگل.</div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price-label">شروع از</div>
+            <div class="card-price">۴,۵۰۰,۰۰۰ تومان</div>
+            <div class="card-price-label">هر شب</div>
+          </div>
+          <div style="display:flex;gap:6px;">
+            <a href="#" class="btn-sm">جزئیات</a>
+            <a href="#" class="btn-sm-primary">رزرو</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="position:relative;">
+        <img class="card-img" src="https://picsum.photos/seed/treehouse/600/400" alt="خانه درختی">
+        <div style="position:absolute;top:12px;right:12px;">
+          <span class="badge badge-pool">🌊 استخر اختصاصی</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-cat">خانه درختی</div>
+        <div class="card-title">خانه‌ی درختی</div>
+        <div class="card-desc">تجربه‌ای منحصربه‌فرد در ارتفاع ۸ متری، با دید پانورامیک ۳۶۰ درجه به جنگل و استخر خارجی.</div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price-label">شروع از</div>
+            <div class="card-price">۸,۸۰۰,۰۰۰ تومان</div>
+            <div class="card-price-label">هر شب</div>
+          </div>
+          <div style="display:flex;gap:6px;">
+            <a href="#" class="btn-sm">جزئیات</a>
+            <a href="#" class="btn-sm-primary">رزرو</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section style="background:var(--warm-ivory);padding-top:0;">
+  <p class="section-label" style="text-align:center;">خدمات</p>
+  <h2 style="text-align:center;">تجربه‌ای کامل از لوکس</h2>
+  <p style="text-align:center;color:var(--warm-gray);font-size:0.95rem;margin-bottom:2.5rem;">هیرابان هر آنچه برای یک اقامت بی‌نظیر نیاز دارید را فراهم کرده است.</p>
+  <div class="services-grid">
+    <div class="service-item"><div class="service-icon">🏊</div><div class="service-name">استخر اختصاصی</div></div>
+    <div class="service-item"><div class="service-icon">🧘</div><div class="service-name">سلامتی و اسپا</div></div>
+    <div class="service-item"><div class="service-icon">🌿</div><div class="service-name">طبیعت‌گردی</div></div>
+    <div class="service-item"><div class="service-icon">🏇</div><div class="service-name">اسب‌سواری</div></div>
+    <div class="service-item"><div class="service-icon">🍃</div><div class="service-name">یوگا و مدیتیشن</div></div>
+    <div class="service-item"><div class="service-icon">🏍️</div><div class="service-name">ماجراجویی با ATV</div></div>
+    <div class="service-item"><div class="service-icon">🍽️</div><div class="service-name">رستوران لوکس</div></div>
+    <div class="service-item"><div class="service-icon">🌺</div><div class="service-name">باغ کودکان</div></div>
+  </div>
+</section>
+
+<!-- WELLNESS -->
+<section class="wellness">
+  <div class="wellness-inner">
+    <div>
+      <p class="section-label">سلامتی و آرامش</p>
+      <h2>بازیابی انرژی در دل طبیعت</h2>
+      <p style="color:rgba(244,240,231,0.7);font-size:0.95rem;line-height:1.7;margin-bottom:1rem;">مرکز سلامتی هیرابان با بهترین متخصصان ماساژ، یوگا و مدیتیشن، محیطی آرام برای بازیابی انرژی شما فراهم کرده است.</p>
+      <ul class="wellness-services">
+        <li>ماساژ سنگ داغ</li>
+        <li>یوگای جنگل</li>
+        <li>مدیتیشن و ذهن‌آگاهی</li>
+        <li>حمام گیاهی</li>
+        <li>تنفس درمانی</li>
+      </ul>
+    </div>
+    <img class="wellness-img" src="https://picsum.photos/seed/wellness-spa/700/500" alt="مرکز سلامتی">
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <p class="section-label" style="text-align:center;">نظرات مهمانان</p>
+  <h2 style="text-align:center;margin-bottom:2.5rem;">آنچه مهمانان می‌گویند</h2>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">«بهترین تجربه اقامتم در ایران. استخر اختصاصی در دل جنگل، چیزی بود که انتظارش را نداشتم. قطعاً دوباره برمی‌گردم.»</p>
+      <div class="review-author">سارا محمدی</div>
+      <div class="review-location">تهران، ایران</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">«خانه درختی هیرابان یک شاهکار معماری است. صبح با صدای پرندگان بیدار شدم و شب زیر ستاره‌ها نشستم. بی‌نظیر بود.»</p>
+      <div class="review-author">علی رضایی</div>
+      <div class="review-location">اصفهان، ایران</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">«خدمات درجه یک، طبیعت بکر، غذای عالی. هیرابان ثابت کرد که می‌شود در ایران هم لوکس‌ترین اقامت دنیا را داشت.»</p>
+      <div class="review-author">نیلوفر احمدی</div>
+      <div class="review-location">مشهد، ایران</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <p class="section-label">پرسش‌های متداول</p>
+  <h2>پاسخ به سوالات رایج</h2>
+  <div class="faq-inner" style="margin-top:2rem;">
+    <div class="faq-item">
+      <button class="faq-q">هیرابان کجاست و مسیر دسترسی به آن چگونه است؟ <span>▾</span></button>
+      <div class="faq-a">هیرابان در شمال ایران، در منطقه جنگلی هیرکانی قرار دارد. پس از تأیید رزرو، آدرس دقیق و راهنمای دسترسی برای مهمان ارسال می‌شود.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">کدام کلبه‌ها استخر اختصاصی دارند؟ <span>▾</span></button>
+      <div class="faq-a">۸ واحد از ۱۷ واحد اقامتی هیرابان دارای استخر اختصاصی هستند. در صفحه اقامتگاه‌ها می‌توانید فیلتر «استخر اختصاصی» را انتخاب کنید.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">شرایط کنسلی چیست؟ <span>▾</span></button>
+      <div class="faq-a">شرایط کنسلی بر اساس نوع نرخ انتخابی متفاوت است. قبل از پرداخت، شرایط دقیق همان رزرو را می‌توانید مشاهده و تأیید کنید.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">آیا امکان رزرو ماساژ و تجربه‌های دیگر وجود دارد؟ <span>▾</span></button>
+      <div class="faq-a">بله. خدمات سلامتی، ماساژ، یوگا، ATV و اسب‌سواری همه به صورت آنلاین قابل رزرو هستند.</div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="newsletter-inner">
+    <p class="section-label">خبرنامه</p>
+    <h2 style="font-size:1.75rem;">با هیرابان در ارتباط باشید</h2>
+    <p style="color:rgba(244,240,231,0.7);font-size:0.9rem;margin-top:0.75rem;line-height:1.7;">از پیشنهادهای ویژه، فصل‌های جدید و تجربه‌های جدید اول مطلع شوید.</p>
+    <div class="newsletter-form">
+      <button class="btn-primary" style="white-space:nowrap;">عضویت</button>
+      <input class="newsletter-input" type="email" placeholder="ایمیل شما" dir="ltr">
+    </div>
+    <label style="display:flex;align-items:flex-start;gap:0.5rem;margin-top:1rem;font-size:0.8rem;color:rgba(244,240,231,0.6);cursor:pointer;">
+      <span>موافقت می‌کنم که هیرابان ایمیل‌های خبرنامه برای من ارسال کند.</span>
+      <input type="checkbox" style="margin-top:2px;flex-shrink:0;">
+    </label>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">هیرابان</div>
+      <p class="footer-desc">لوکس‌ترین اقامتگاه جنگلی ایران در دل جنگل‌های هزارساله هیرکانی.</p>
+    </div>
+    <div>
+      <div class="footer-heading">اقامت</div>
+      <ul class="footer-links">
+        <li><a href="#">کلبه‌ها</a></li>
+        <li><a href="#">ویلاها</a></li>
+        <li><a href="#">خانه درختی</a></li>
+        <li><a href="#">رزرو</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">تجربه‌ها</div>
+      <ul class="footer-links">
+        <li><a href="#">سلامتی و اسپا</a></li>
+        <li><a href="#">طبیعت‌گردی</a></li>
+        <li><a href="#">اسب‌سواری</a></li>
+        <li><a href="#">ATV</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">تماس</div>
+      <ul class="footer-links">
+        <li><a href="tel:+989125584407" dir="ltr">+98 912 558 4407</a></li>
+        <li><a href="#">info@hiraban.ir</a></li>
+        <li><a href="#">شمال ایران، جنگل هیرکانی</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© ۱۴۰۳ هیرابان — تمام حقوق محفوظ است</div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="floating">
+  <a href="https://wa.me/989125584407" class="float-btn float-wa" title="واتس‌اپ">💬</a>
+  <a href="tel:+989125584407" class="float-btn float-ph" title="تماس">📞</a>
+</div>
+
+</body>
+</html>
