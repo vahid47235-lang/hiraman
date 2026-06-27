@@ -41,4 +41,7 @@ Thumbs.db
 *.avif
 *.mp4
 *.webm
+# Allow public video assets
+!apps/web/public/videos/*.mp4
+!apps/web/public/videos/*.webm
 /Next.js Web*/
