@@ -13,13 +13,13 @@ const adventures = {
     { title: 'ATV و موتور چهارچرخ', desc: 'کشف مسیرهای جنگلی با موتور ATV در طبیعت بکر هیرکانی', img: 'photo-1441974231531-c6227db76b6e' },
     { title: 'اسب‌سواری', desc: 'سواری آرام یا هیجان‌انگیز در جنگل‌های انبوه شمال ایران', img: 'photo-1553284965-83fd3e82fa5a' },
     { title: 'کوه‌نوردی و پیاده‌روی', desc: 'مسیرهای طبیعت‌گردی با سطوح مختلف برای همه افراد', img: 'photo-1551632811-561732d1e306' },
-    { title: 'ماهیگیری', desc: 'ماهیگیری در رودخانه‌های صاف جنگلی با راهنمای متخصص', img: 'photo-1503614472-8c93d56e92ce' },
+    { title: 'ماهیگیری', desc: 'ماهیگیری در رودخانه‌های صاف جنگلی با راهنمای متخصص', img: 'PEXELS:1327485' },
   ],
   en: [
     { title: 'ATV & Quad Biking', desc: 'Discover forest trails on ATV bikes through pristine Hyrcanian nature', img: 'photo-1441974231531-c6227db76b6e' },
     { title: 'Horse Riding', desc: 'Gentle or thrilling rides through the dense forests of northern Iran', img: 'photo-1553284965-83fd3e82fa5a' },
     { title: 'Hiking & Trekking', desc: 'Nature trails at all difficulty levels for everyone', img: 'photo-1551632811-561732d1e306' },
-    { title: 'Fishing', desc: 'Fish in crystal-clear forest rivers with an expert guide', img: 'photo-1503614472-8c93d56e92ce' },
+    { title: 'Fishing', desc: 'Fish in crystal-clear forest rivers with an expert guide', img: 'PEXELS:1327485' },
   ],
 }
 
@@ -48,7 +48,7 @@ export default async function AdventurePage({ params }: Props) {
             {acts.map((act) => (
               <div key={act.title} className="card overflow-hidden group">
                 <div className="relative h-56 overflow-hidden">
-                  <Image src={`https://images.unsplash.com/${act.img}?w=700&h=400&q=80&auto=format&fit=crop`} alt={act.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <Image src={act.img.startsWith('PEXELS:') ? `https://images.pexels.com/photos/${act.img.slice(7)}/pexels-photo-${act.img.slice(7)}.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop` : `https://images.unsplash.com/${act.img}?w=700&h=400&q=80&auto=format&fit=crop`} alt={act.title} fill unoptimized={act.img.startsWith('PEXELS:')} className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 <div className="p-6">
                   <h3 className={`text-title font-medium text-white mb-2 ${isFa ? 'font-persian-display' : 'font-display'}`}>{act.title}</h3>
