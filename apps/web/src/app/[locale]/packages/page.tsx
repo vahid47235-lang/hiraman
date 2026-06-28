@@ -25,7 +25,7 @@ const packages = {
       price: '۲۴,۰۰۰,۰۰۰',
       desc: 'برای خانواده‌هایی که می‌خواهند بهترین تجربه طبیعت را در کنار هم داشته باشند.',
       includes: ['۳ شب اقامت در ویلای خانوادگی', 'صبحانه کامل روزانه', 'یک روز ماجراجویی ATV', 'بازدید از باغ حیوانات', 'ماساژ والدین'],
-      img: 'photo-1526045612212-70caf35c14df',
+      img: 'photo-1516627145497-ae6968895b74',
       badge: null,
     },
     {
@@ -54,7 +54,7 @@ const packages = {
       price: '24,000,000',
       desc: 'For families who want the best nature experience together.',
       includes: ['3 nights in family villa', 'Full breakfast daily', 'One ATV adventure day', 'Animal garden visit', 'Parents massage'],
-      img: 'photo-1526045612212-70caf35c14df',
+      img: 'photo-1516627145497-ae6968895b74',
       badge: null,
     },
     {

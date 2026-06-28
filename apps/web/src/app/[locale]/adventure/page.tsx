@@ -13,13 +13,13 @@ const adventures = {
     { title: 'ATV و موتور چهارچرخ', desc: 'کشف مسیرهای جنگلی با موتور ATV در طبیعت بکر هیرکانی', img: 'photo-1441974231531-c6227db76b6e' },
     { title: 'اسب‌سواری', desc: 'سواری آرام یا هیجان‌انگیز در جنگل‌های انبوه شمال ایران', img: 'photo-1553284965-83fd3e82fa5a' },
     { title: 'کوه‌نوردی و پیاده‌روی', desc: 'مسیرهای طبیعت‌گردی با سطوح مختلف برای همه افراد', img: 'photo-1551632811-561732d1e306' },
-    { title: 'ماهیگیری', desc: 'ماهیگیری در رودخانه‌های صاف جنگلی با راهنمای متخصص', img: 'photo-1494587351196-bbf5f29cff42' },
+    { title: 'ماهیگیری', desc: 'ماهیگیری در رودخانه‌های صاف جنگلی با راهنمای متخصص', img: 'photo-1503614472-8c93d56e92ce' },
   ],
   en: [
     { title: 'ATV & Quad Biking', desc: 'Discover forest trails on ATV bikes through pristine Hyrcanian nature', img: 'photo-1441974231531-c6227db76b6e' },
     { title: 'Horse Riding', desc: 'Gentle or thrilling rides through the dense forests of northern Iran', img: 'photo-1553284965-83fd3e82fa5a' },
     { title: 'Hiking & Trekking', desc: 'Nature trails at all difficulty levels for everyone', img: 'photo-1551632811-561732d1e306' },
-    { title: 'Fishing', desc: 'Fish in crystal-clear forest rivers with an expert guide', img: 'photo-1494587351196-bbf5f29cff42' },
+    { title: 'Fishing', desc: 'Fish in crystal-clear forest rivers with an expert guide', img: 'photo-1503614472-8c93d56e92ce' },
   ],
 }
 

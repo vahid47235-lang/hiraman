@@ -15,7 +15,7 @@ const posts = {
     { slug: '3', title: 'آشنایی با جنگل‌های هیرکانی', date: '۱۴۰۳/۰۳/۲۰', cat: 'طبیعت', img: 'photo-1448375240586-882707db888b', excerpt: 'جنگل‌های هیرکانی یکی از قدیمی‌ترین اکوسیستم‌های زمین هستند. با ما در سفری به عمق این طبیعت بی‌نظیر همراه باشید.' },
     { slug: '4', title: 'تجربه اسپا و سلامتی در لوتکا', date: '۱۴۰۳/۰۳/۱۰', cat: 'سلامتی', img: 'photo-1544161515-4ab6ce6db874', excerpt: 'مرکز سلامتی لوتکا با ترکیب سنت‌های ایرانی و روش‌های مدرن، تجربه‌ای بی‌نظیر از آرامش و سلامتی ارائه می‌دهد.' },
     { slug: '5', title: 'آشپزی با گیاهان جنگلی', date: '۱۴۰۳/۰۲/۲۵', cat: 'غذا', img: 'photo-1504674900247-0877df9cc836', excerpt: 'آشپز رستوران لوتکا رازهای پخت غذاهای سنتی شمالی با گیاهان تازه جنگل را با ما در میان گذاشته است.' },
-    { slug: '6', title: 'راهنمای عکاسی در جنگل', date: '۱۴۰۳/۰۲/۱۰', cat: 'هنر', img: 'photo-1542261777448-23d2a6804a6a', excerpt: 'بهترین نکات و مکان‌ها برای عکاسی از طبیعت در جنگل‌های هیرکانی، همراه با راهنمایی‌های حرفه‌ای.' },
+    { slug: '6', title: 'راهنمای عکاسی در جنگل', date: '۱۴۰۳/۰۲/۱۰', cat: 'هنر', img: 'photo-1516035069371-29a1b244cc32', excerpt: 'بهترین نکات و مکان‌ها برای عکاسی از طبیعت در جنگل‌های هیرکانی، همراه با راهنمایی‌های حرفه‌ای.' },
   ],
   en: [
     { slug: '1', title: 'Best season to visit Lootka', date: 'July 6, 2024', cat: 'Travel Guide', img: 'photo-1516912481808-3406841bd33c', excerpt: 'Each season at Lootka offers a different experience. From spring blossoms to winter snow, Hyrcanian nature is always breathtaking.' },
@@ -23,7 +23,7 @@ const posts = {
     { slug: '3', title: 'Getting to know the Hyrcanian forests', date: 'June 10, 2024', cat: 'Nature', img: 'photo-1448375240586-882707db888b', excerpt: 'The Hyrcanian forests are among the oldest ecosystems on Earth. Join us on a journey into this extraordinary nature.' },
     { slug: '4', title: 'Spa & wellness experience at Lootka', date: 'May 31, 2024', cat: 'Wellness', img: 'photo-1544161515-4ab6ce6db874', excerpt: "Lootka's wellness centre blends Iranian traditions with modern methods to offer an unparalleled relaxation experience." },
     { slug: '5', title: 'Cooking with forest plants', date: 'May 16, 2024', cat: 'Food', img: 'photo-1504674900247-0877df9cc836', excerpt: "Lootka's chef shares the secrets of cooking traditional northern dishes with fresh forest herbs." },
-    { slug: '6', title: 'Photography guide in the forest', date: 'May 1, 2024', cat: 'Art', img: 'photo-1542261777448-23d2a6804a6a', excerpt: 'Best tips and locations for nature photography in the Hyrcanian forests, with professional guidance.' },
+    { slug: '6', title: 'Photography guide in the forest', date: 'May 1, 2024', cat: 'Art', img: 'photo-1516035069371-29a1b244cc32', excerpt: 'Best tips and locations for nature photography in the Hyrcanian forests, with professional guidance.' },
   ],
 }
 
