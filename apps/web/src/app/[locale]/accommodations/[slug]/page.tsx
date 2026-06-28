@@ -44,23 +44,23 @@ export default async function AccommodationDetailPage({ params }: Props) {
         </div>
       </div>
 
-      <section className="section bg-warm-ivory">
+      <section className="section">
         <div className="container-content">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Main content */}
             <div className="lg:col-span-2">
-              <div className={`flex items-center gap-6 py-6 border-b border-stone mb-8 ${isFa ? 'flex-row-reverse' : ''}`}>
-                <div className={`flex items-center gap-2 text-body text-warm-gray ${isFa ? 'flex-row-reverse' : ''}`}>
+              <div className={`flex items-center gap-6 py-6 border-b border-white/10 mb-8 ${isFa ? 'flex-row-reverse' : ''}`}>
+                <div className={`flex items-center gap-2 text-body text-white/55 ${isFa ? 'flex-row-reverse' : ''}`}>
                   <BedDouble size={16} className="text-forest-moss" />
                   <span className="num" dir="ltr">{unit.bedrooms}</span>
                   <span>{isFa ? 'اتاق خواب' : 'bedrooms'}</span>
                 </div>
-                <div className={`flex items-center gap-2 text-body text-warm-gray ${isFa ? 'flex-row-reverse' : ''}`}>
+                <div className={`flex items-center gap-2 text-body text-white/55 ${isFa ? 'flex-row-reverse' : ''}`}>
                   <Users size={16} className="text-forest-moss" />
                   <span className="num" dir="ltr">{unit.maxGuests}</span>
                   <span>{isFa ? 'نفر' : 'guests'}</span>
                 </div>
-                <div className="text-body text-warm-gray">
+                <div className="text-body text-white/55">
                   <span className="num" dir="ltr">{unit.areaM2}</span> {isFa ? 'متر مربع' : 'm²'}
                 </div>
                 {unit.hasPrivatePool && (
@@ -71,17 +71,17 @@ export default async function AccommodationDetailPage({ params }: Props) {
                 )}
               </div>
 
-              <h2 className={`text-headline text-charcoal mb-4 ${isFa ? 'font-persian-display' : 'font-display'}`}>
+              <h2 className={`text-headline text-white mb-4 ${isFa ? 'font-persian-display' : 'font-display'}`}>
                 {isFa ? 'درباره این اقامتگاه' : 'About this accommodation'}
               </h2>
-              <p className="text-body text-warm-gray leading-relaxed mb-10">{desc}</p>
+              <p className="text-body text-white/55 leading-relaxed mb-10">{desc}</p>
 
-              <h3 className={`text-title font-medium text-charcoal mb-5 ${isFa ? 'font-persian-display' : 'font-display'}`}>
+              <h3 className={`text-title font-medium text-white mb-5 ${isFa ? 'font-persian-display' : 'font-display'}`}>
                 {isFa ? 'امکانات' : 'Amenities'}
               </h3>
               <div className="grid grid-cols-2 gap-3">
                 {amenities.map((amenity) => (
-                  <div key={amenity} className={`flex items-center gap-2 text-body text-charcoal ${isFa ? 'flex-row-reverse' : ''}`}>
+                  <div key={amenity} className={`flex items-center gap-2 text-body text-white ${isFa ? 'flex-row-reverse' : ''}`}>
                     <Check size={16} className="text-forest-moss flex-shrink-0" />
                     {amenity}
                   </div>
@@ -91,18 +91,18 @@ export default async function AccommodationDetailPage({ params }: Props) {
 
             {/* Booking sidebar */}
             <div className="lg:col-span-1">
-              <div className="bg-white rounded-2xl border border-stone p-6 sticky top-24">
-                <div className="text-caption text-warm-gray mb-1">{isFa ? 'شروع از' : 'Starting from'}</div>
-                <div className="text-headline font-semibold text-charcoal mb-1">
+              <div className="bg-white rounded-2xl border border-white/10 p-6 sticky top-24">
+                <div className="text-caption text-white/55 mb-1">{isFa ? 'شروع از' : 'Starting from'}</div>
+                <div className="text-headline font-semibold text-white mb-1">
                   <span className="num" dir="ltr">{formatPrice(unit.startingPriceIRR, 'IRR', locale)}</span>
                 </div>
-                <div className="text-caption text-warm-gray mb-6">{isFa ? 'هر شب' : 'per night'}</div>
+                <div className="text-caption text-white/55 mb-6">{isFa ? 'هر شب' : 'per night'}</div>
 
                 {unit.rating && (
-                  <div className={`flex items-center gap-2 mb-6 pb-6 border-b border-stone ${isFa ? 'flex-row-reverse' : ''}`}>
+                  <div className={`flex items-center gap-2 mb-6 pb-6 border-b border-white/10 ${isFa ? 'flex-row-reverse' : ''}`}>
                     <span className="text-aged-brass">★</span>
                     <span className="text-body font-medium num" dir="ltr">{unit.rating.toFixed(1)}</span>
-                    <span className="text-body-sm text-warm-gray">({unit.reviewCount} {isFa ? 'نظر' : 'reviews'})</span>
+                    <span className="text-body-sm text-white/55">({unit.reviewCount} {isFa ? 'نظر' : 'reviews'})</span>
                   </div>
                 )}
 

@@ -30,7 +30,7 @@ export default async function ExperiencesPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="section bg-warm-ivory">
+      <section className="section">
         <div className="container-content">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {content.experiences.map((exp) => (
@@ -39,10 +39,10 @@ export default async function ExperiencesPage({ params }: Props) {
                   <Image src={exp.image} alt={isFa ? exp.titleFa : exp.titleEn} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 <div className="p-6">
-                  <h2 className={`text-title font-medium text-charcoal mb-3 ${isFa ? 'font-persian-display' : 'font-display'}`}>
+                  <h2 className={`text-title font-medium text-white mb-3 ${isFa ? 'font-persian-display' : 'font-display'}`}>
                     {isFa ? exp.titleFa : exp.titleEn}
                   </h2>
-                  <p className="text-body text-warm-gray leading-relaxed">
+                  <p className="text-body text-white/55 leading-relaxed">
                     {isFa ? exp.descFa : exp.descEn}
                   </p>
                   <Link href={`/${locale}/reserve`} className="btn btn-primary btn-sm mt-5 inline-flex">

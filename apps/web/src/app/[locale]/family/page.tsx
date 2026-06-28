@@ -42,9 +42,9 @@ export default async function FamilyPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="section bg-warm-ivory">
+      <section className="section">
         <div className="container-content">
-          <p className="text-body text-warm-gray max-w-2xl mb-12 leading-relaxed">
+          <p className="text-body text-white/55 max-w-2xl mb-12 leading-relaxed">
             {isFa
               ? 'لوتکا مقصدی ایده‌آل برای خانواده‌هاست. فعالیت‌های متنوع برای کودکان، فضاهای امن و محیط طبیعی بی‌نظیر، اقامتی به‌یادماندنی برای همه اعضای خانواده فراهم می‌کند.'
               : 'Lootka is an ideal destination for families. Diverse activities for children, safe spaces and a stunning natural environment create an unforgettable stay for every family member.'}
@@ -56,8 +56,8 @@ export default async function FamilyPage({ params }: Props) {
                   <Image src={`https://picsum.photos/seed/${act.img}/700/400`} alt={act.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 <div className="p-6">
-                  <h3 className={`text-title font-medium text-charcoal mb-2 ${isFa ? 'font-persian-display' : 'font-display'}`}>{act.title}</h3>
-                  <p className="text-body text-warm-gray">{act.desc}</p>
+                  <h3 className={`text-title font-medium text-white mb-2 ${isFa ? 'font-persian-display' : 'font-display'}`}>{act.title}</h3>
+                  <p className="text-body text-white/55">{act.desc}</p>
                 </div>
               </div>
             ))}

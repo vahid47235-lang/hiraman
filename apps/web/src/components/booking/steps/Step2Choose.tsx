@@ -135,10 +135,10 @@ export default function Step2Choose({ locale }: Props) {
   return (
     <div>
       <div className="mb-6">
-        <h2 className={cn('text-headline text-charcoal mb-1', isFa ? 'font-persian-display' : 'font-display')}>
+        <h2 className={cn('text-headline text-white mb-1', isFa ? 'font-persian-display' : 'font-display')}>
           {isFa ? 'انتخاب واحد اقامتی' : 'Choose your accommodation'}
         </h2>
-        <p className="text-body text-warm-gray">
+        <p className="text-body text-white/55">
           {isFa
             ? `${nights} شب · ${adults + children} نفر${requirePool ? ' · استخر اختصاصی' : ''}`
             : `${nights} night${nights !== 1 ? 's' : ''} · ${adults + children} guest${adults + children !== 1 ? 's' : ''}${requirePool ? ' · Private pool' : ''}`}
@@ -155,7 +155,7 @@ export default function Step2Choose({ locale }: Props) {
 
       {!loading && units.length === 0 && (
         <div className={cn('py-12 text-center', isFa && 'text-center')}>
-          <p className="text-warm-gray mb-4">
+          <p className="text-white/55 mb-4">
             {isFa
               ? 'متأسفانه برای تاریخ‌های انتخابی واحدی موجود نیست.'
               : 'No units available for your selected dates.'}
@@ -184,7 +184,7 @@ export default function Step2Choose({ locale }: Props) {
                     'relative text-start rounded-xl border-2 overflow-hidden transition-all group',
                     isSelected
                       ? 'border-lootka-pine shadow-md'
-                      : 'border-stone hover:border-lootka-pine/50',
+                      : 'border-white/10 hover:border-lootka-pine/50',
                   )}
                   aria-pressed={isSelected}
                   aria-label={isFa ? unit.nameFa : unit.nameEn}
@@ -215,15 +215,15 @@ export default function Step2Choose({ locale }: Props) {
 
                   {/* Content */}
                   <div className="p-4">
-                    <h3 className={cn('font-semibold text-charcoal mb-1', isFa ? 'font-persian text-end' : '')}>
+                    <h3 className={cn('font-semibold text-white mb-1', isFa ? 'font-persian text-end' : '')}>
                       {isFa ? unit.nameFa : unit.nameEn}
                     </h3>
-                    <p className={cn('text-caption text-warm-gray mb-3 line-clamp-2', isFa && 'text-end')}>
+                    <p className={cn('text-caption text-white/55 mb-3 line-clamp-2', isFa && 'text-end')}>
                       {isFa ? unit.descFa : unit.descEn}
                     </p>
 
                     {/* Meta row */}
-                    <div className={cn('flex items-center gap-3 text-caption text-warm-gray mb-3', isFa && 'flex-row-reverse')}>
+                    <div className={cn('flex items-center gap-3 text-caption text-white/55 mb-3', isFa && 'flex-row-reverse')}>
                       <span className="flex items-center gap-1">
                         <Users size={12} />
                         <span className="num" dir="ltr">{isFa ? `تا ${unit.capacity} نفر` : `Up to ${unit.capacity}`}</span>
@@ -241,14 +241,14 @@ export default function Step2Choose({ locale }: Props) {
                     {/* Price */}
                     <div className={cn('flex items-end justify-between', isFa && 'flex-row-reverse')}>
                       <div className={isFa ? 'text-end' : ''}>
-                        <div className="text-caption text-warm-gray">
+                        <div className="text-caption text-white/55">
                           {isFa ? 'مجموع برای اقامت' : 'Total for stay'}
                         </div>
                         <div className="num text-base font-bold text-lootka-pine" dir="ltr">
                           {formatNumber(total)}{' '}
-                          <span className="text-sm font-normal text-warm-gray">{isFa ? 'تومان' : 'IRR'}</span>
+                          <span className="text-sm font-normal text-white/55">{isFa ? 'تومان' : 'IRR'}</span>
                         </div>
-                        <div className="num text-caption text-warm-gray" dir="ltr">
+                        <div className="num text-caption text-white/55" dir="ltr">
                           {formatNumber(unit.pricePerNight)}{' '}
                           {isFa ? 'تومان/شب' : 'IRR/night'}
                         </div>
@@ -276,7 +276,7 @@ export default function Step2Choose({ locale }: Props) {
             </button>
             <button
               onClick={() => setStep(1)}
-              className="btn btn-ghost text-sm text-warm-gray"
+              className="btn btn-ghost text-sm text-white/55"
             >
               {isFa ? 'تغییر تاریخ' : 'Change dates'}
             </button>

@@ -51,10 +51,10 @@ export default function Step1Search({ locale }: Props) {
 
   return (
     <div className="max-w-lg">
-      <h2 className={cn('text-headline text-charcoal mb-2', isFa ? 'font-persian-display' : 'font-display')}>
+      <h2 className={cn('text-headline text-white mb-2', isFa ? 'font-persian-display' : 'font-display')}>
         {isFa ? 'تاریخ و تعداد مهمانان' : 'When are you visiting?'}
       </h2>
-      <p className="text-body text-warm-gray mb-8">
+      <p className="text-body text-white/55 mb-8">
         {isFa
           ? 'تاریخ ورود، خروج و تعداد مهمانان را مشخص کنید تا واحدهای موجود را مشاهده کنید.'
           : 'Select your dates and guest count to see available accommodations.'}
@@ -63,14 +63,14 @@ export default function Step1Search({ locale }: Props) {
       <div className="space-y-4">
         {/* Date range */}
         <div>
-          <label className={cn('block text-sm font-medium text-charcoal mb-2', isFa && 'text-end')}>
+          <label className={cn('block text-sm font-medium text-white mb-2', isFa && 'text-end')}>
             {isFa ? 'تاریخ اقامت' : 'Dates'}
           </label>
           <button
             onClick={() => { setShowDatePicker(true); setShowGuestPicker(false) }}
             className={cn(
-              'w-full flex items-center gap-3 px-4 py-4 bg-white border rounded-xl transition-colors text-start',
-              showDatePicker ? 'border-lootka-pine ring-1 ring-lootka-pine/20' : 'border-stone hover:border-lootka-pine/50',
+              'w-full flex items-center gap-3 px-4 py-4 bg-[#111111] border rounded-xl transition-colors text-start',
+              showDatePicker ? 'border-lootka-pine ring-1 ring-lootka-pine/20' : 'border-white/10 hover:border-lootka-pine/50',
               isFa && 'flex-row-reverse',
             )}
             aria-expanded={showDatePicker}
@@ -79,18 +79,18 @@ export default function Step1Search({ locale }: Props) {
             <Calendar size={18} className="text-forest-moss flex-shrink-0" />
             <div className={cn('flex-1 min-w-0', isFa && 'text-end')}>
               {checkIn && checkOut ? (
-                <div className={cn('flex items-center gap-2 text-charcoal font-medium', isFa && 'flex-row-reverse justify-end')}>
+                <div className={cn('flex items-center gap-2 text-white font-medium', isFa && 'flex-row-reverse justify-end')}>
                   <span className="num" dir="ltr">{checkIn}</span>
-                  <span className="text-warm-gray">→</span>
+                  <span className="text-white/55">→</span>
                   <span className="num" dir="ltr">{checkOut}</span>
                   {nightsSummary && (
-                    <span className="text-caption text-warm-gray bg-warm-ivory px-2 py-0.5 rounded-full">
+                    <span className="text-caption text-white/55 bg-[#0A0A0A] px-2 py-0.5 rounded-full">
                       {nightsSummary}
                     </span>
                   )}
                 </div>
               ) : (
-                <span className="text-warm-gray">
+                <span className="text-white/55">
                   {isFa ? 'انتخاب تاریخ ورود و خروج' : 'Select check-in & check-out'}
                 </span>
               )}
@@ -115,26 +115,26 @@ export default function Step1Search({ locale }: Props) {
 
         {/* Guests */}
         <div>
-          <label className={cn('block text-sm font-medium text-charcoal mb-2', isFa && 'text-end')}>
+          <label className={cn('block text-sm font-medium text-white mb-2', isFa && 'text-end')}>
             {isFa ? 'مهمانان' : 'Guests'}
           </label>
           <button
             onClick={() => { setShowGuestPicker(!showGuestPicker); setShowDatePicker(false) }}
             className={cn(
-              'w-full flex items-center gap-3 px-4 py-4 bg-white border rounded-xl transition-colors text-start',
-              showGuestPicker ? 'border-lootka-pine ring-1 ring-lootka-pine/20' : 'border-stone hover:border-lootka-pine/50',
+              'w-full flex items-center gap-3 px-4 py-4 bg-[#111111] border rounded-xl transition-colors text-start',
+              showGuestPicker ? 'border-lootka-pine ring-1 ring-lootka-pine/20' : 'border-white/10 hover:border-lootka-pine/50',
               isFa && 'flex-row-reverse',
             )}
             aria-expanded={showGuestPicker}
           >
             <Users size={18} className="text-forest-moss flex-shrink-0" />
-            <span className={cn('text-charcoal font-medium', isFa && 'flex-1 text-end')}>
+            <span className={cn('text-white font-medium', isFa && 'flex-1 text-end')}>
               {guestSummary}
             </span>
           </button>
 
           {showGuestPicker && (
-            <div className="mt-2 bg-white border border-stone rounded-xl overflow-hidden">
+            <div className="mt-2 bg-[#111111] border border-white/10 rounded-xl overflow-hidden">
               <GuestPicker
                 locale={locale}
                 adults={adults}
@@ -156,7 +156,7 @@ export default function Step1Search({ locale }: Props) {
             'w-full flex items-center gap-3 px-4 py-3.5 rounded-xl border transition-all text-start',
             requirePool
               ? 'bg-lootka-pine text-warm-ivory border-lootka-pine'
-              : 'bg-white text-charcoal border-stone hover:border-lootka-pine/50',
+              : 'bg-[#111111] text-white border-white/10 hover:border-white/20',
             isFa && 'flex-row-reverse',
           )}
           aria-pressed={requirePool}
@@ -175,7 +175,7 @@ export default function Step1Search({ locale }: Props) {
           <div
             className={cn(
               'w-5 h-5 rounded-full border-2 flex-shrink-0 flex items-center justify-center',
-              requirePool ? 'bg-aged-brass border-aged-brass' : 'border-stone',
+              requirePool ? 'bg-aged-brass border-aged-brass' : 'border-white/10',
             )}
           >
             {requirePool && <div className="w-2 h-2 rounded-full bg-deep-forest" />}

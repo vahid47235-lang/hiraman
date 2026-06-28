@@ -38,8 +38,8 @@ function Counter({
   return (
     <div className={cn('flex items-center justify-between py-3', isFa && 'flex-row-reverse')}>
       <div className={isFa ? 'text-end' : ''}>
-        <div className="text-sm font-medium text-charcoal">{label}</div>
-        {sub && <div className="text-caption text-warm-gray">{sub}</div>}
+        <div className="text-sm font-medium text-white">{label}</div>
+        {sub && <div className="text-caption text-white/55">{sub}</div>}
       </div>
       <div className="flex items-center gap-3">
         <button
@@ -48,14 +48,14 @@ function Counter({
           className={cn(
             'w-8 h-8 rounded-full border flex items-center justify-center transition-colors',
             value <= min
-              ? 'border-stone text-stone cursor-not-allowed'
+              ? 'border-white/10 text-stone cursor-not-allowed'
               : 'border-lootka-pine text-lootka-pine hover:bg-lootka-pine hover:text-warm-ivory',
           )}
           aria-label={`Decrease ${label}`}
         >
           <Minus size={14} />
         </button>
-        <span className="num w-6 text-center text-sm font-semibold text-charcoal" dir="ltr">
+        <span className="num w-6 text-center text-sm font-semibold text-white" dir="ltr">
           {value}
         </span>
         <button
@@ -64,7 +64,7 @@ function Counter({
           className={cn(
             'w-8 h-8 rounded-full border flex items-center justify-center transition-colors',
             value >= max
-              ? 'border-stone text-stone cursor-not-allowed'
+              ? 'border-white/10 text-stone cursor-not-allowed'
               : 'border-lootka-pine text-lootka-pine hover:bg-lootka-pine hover:text-warm-ivory',
           )}
           aria-label={`Increase ${label}`}
@@ -108,12 +108,12 @@ export default function GuestPicker({ locale, adults, children, childrenAges, on
     <div className="p-4">
       {/* Header */}
       <div className={cn('flex items-center justify-between mb-3', isFa && 'flex-row-reverse')}>
-        <h3 className="text-sm font-semibold text-charcoal">
+        <h3 className="text-sm font-semibold text-white">
           {isFa ? 'تعداد مهمانان' : 'Guests'}
         </h3>
         {onClose && (
-          <button onClick={onClose} className="p-1 hover:bg-warm-ivory rounded-lg transition-colors" aria-label={isFa ? 'بستن' : 'Close'}>
-            <X size={14} className="text-warm-gray" />
+          <button onClick={onClose} className="p-1 hover:bg-[#0A0A0A] rounded-lg transition-colors" aria-label={isFa ? 'بستن' : 'Close'}>
+            <X size={14} className="text-white/55" />
           </button>
         )}
       </div>
@@ -143,20 +143,20 @@ export default function GuestPicker({ locale, adults, children, childrenAges, on
 
       {/* Children's ages */}
       {children > 0 && (
-        <div className="mt-3 pt-3 border-t border-stone/50">
-          <p className={cn('text-caption text-warm-gray mb-2', isFa && 'text-end')}>
+        <div className="mt-3 pt-3 border-t border-white/10/50">
+          <p className={cn('text-caption text-white/55 mb-2', isFa && 'text-end')}>
             {isFa ? 'سن کودکان را مشخص کنید:' : 'Ages of children:'}
           </p>
           <div className={cn('flex flex-wrap gap-2', isFa && 'flex-row-reverse')}>
             {Array.from({ length: children }, (_, i) => (
               <div key={i} className={cn('flex items-center gap-1', isFa && 'flex-row-reverse')}>
-                <span className="text-caption text-warm-gray">
+                <span className="text-caption text-white/55">
                   {isFa ? `کودک ${i + 1}` : `Child ${i + 1}`}
                 </span>
                 <select
                   value={childrenAges[i] ?? 5}
                   onChange={e => setChildAge(i, parseInt(e.target.value))}
-                  className="text-sm border border-stone rounded-lg px-2 py-1 bg-white text-charcoal focus:outline-none focus:border-lootka-pine"
+                  className="text-sm border border-white/10 rounded-lg px-2 py-1 bg-[#111111] text-white focus:outline-none focus:border-lootka-pine"
                   aria-label={isFa ? `سن کودک ${i + 1}` : `Age of child ${i + 1}`}
                 >
                   {ageOptions.map(age => (

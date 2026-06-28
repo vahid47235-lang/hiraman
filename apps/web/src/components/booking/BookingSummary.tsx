@@ -33,39 +33,39 @@ export default function BookingSummary({ locale, className }: Props) {
   return (
     <aside
       className={cn(
-        'bg-white rounded-2xl border border-stone overflow-hidden',
+        'bg-[#111111] rounded-2xl border border-white/10 overflow-hidden',
         className,
       )}
       aria-label={isFa ? 'خلاصه رزرو' : 'Booking summary'}
     >
       {/* Mobile toggle header */}
       <button
-        className="lg:hidden w-full flex items-center justify-between p-4 border-b border-stone"
+        className="lg:hidden w-full flex items-center justify-between p-4 border-b border-white/10"
         onClick={() => setExpanded(!expanded)}
         aria-expanded={expanded}
       >
-        <span className="text-sm font-medium text-charcoal">
+        <span className="text-sm font-medium text-white">
           {isFa ? 'خلاصه رزرو' : 'Booking summary'}
         </span>
         <div className={cn('flex items-center gap-3', isFa && 'flex-row-reverse')}>
           <span className="num text-sm font-semibold text-lootka-pine" dir="ltr">
             {formatPrice(grandTotal, 'IRR', locale)}
           </span>
-          <ChevronDown size={16} className={cn('text-warm-gray transition-transform', expanded && 'rotate-180')} />
+          <ChevronDown size={16} className={cn('text-white/55 transition-transform', expanded && 'rotate-180')} />
         </div>
       </button>
 
       {/* Body */}
       <div className={cn('p-5', !expanded && 'hidden lg:block')}>
         {/* Unit */}
-        <div className="mb-5 pb-5 border-b border-stone">
-          <h3 className={cn('text-title font-medium text-charcoal mb-3', isFa ? 'font-persian-display' : 'font-display')}>
+        <div className="mb-5 pb-5 border-b border-white/10">
+          <h3 className={cn('text-title font-medium text-white mb-3', isFa ? 'font-persian-display' : 'font-display')}>
             {unitName}
           </h3>
 
           {/* Date row */}
           {checkIn && checkOut && (
-            <div className={cn('flex items-center gap-2 text-body-sm text-warm-gray mb-2', isFa && 'flex-row-reverse')}>
+            <div className={cn('flex items-center gap-2 text-body-sm text-white/55 mb-2', isFa && 'flex-row-reverse')}>
               <Calendar size={13} className="text-forest-moss flex-shrink-0" />
               <span className="num" dir="ltr">
                 {formatDate(checkIn, locale, { month: 'short', day: 'numeric' })}
@@ -74,7 +74,7 @@ export default function BookingSummary({ locale, className }: Props) {
               <span className="num" dir="ltr">
                 {formatDate(checkOut, locale, { month: 'short', day: 'numeric' })}
               </span>
-              <span className="text-warm-gray/60">
+              <span className="text-white/55/60">
                 · <span className="num" dir="ltr">{nights}</span>{' '}
                 {isFa ? 'شب' : nights === 1 ? 'night' : 'nights'}
               </span>
@@ -82,7 +82,7 @@ export default function BookingSummary({ locale, className }: Props) {
           )}
 
           {/* Guests */}
-          <div className={cn('flex items-center gap-2 text-body-sm text-warm-gray', isFa && 'flex-row-reverse')}>
+          <div className={cn('flex items-center gap-2 text-body-sm text-white/55', isFa && 'flex-row-reverse')}>
             <Users size={13} className="text-forest-moss flex-shrink-0" />
             <span>
               <span className="num" dir="ltr">{adults}</span>
@@ -147,8 +147,8 @@ export default function BookingSummary({ locale, className }: Props) {
         </div>
 
         {/* Grand total */}
-        <div className={cn('flex items-center justify-between pt-4 border-t border-stone', isFa && 'flex-row-reverse')}>
-          <span className="text-sm font-semibold text-charcoal">
+        <div className={cn('flex items-center justify-between pt-4 border-t border-white/10', isFa && 'flex-row-reverse')}>
+          <span className="text-sm font-semibold text-white">
             {isFa ? 'مبلغ قابل پرداخت' : 'Total payable'}
           </span>
           <span className="num text-title font-semibold text-lootka-pine" dir="ltr">
@@ -157,7 +157,7 @@ export default function BookingSummary({ locale, className }: Props) {
         </div>
 
         {/* Cancellation policy */}
-        <p className="text-caption text-warm-gray mt-4 leading-relaxed">
+        <p className="text-caption text-white/55 mt-4 leading-relaxed">
           {isFa
             ? 'لغو تا ۷ روز قبل از ورود: استرداد کامل.'
             : 'Cancel up to 7 days before check-in for a full refund.'}
@@ -174,7 +174,7 @@ function PriceLine({ label, value, locale, isFa }: {
   isFa: boolean
 }) {
   return (
-    <div className={cn('flex justify-between items-center text-warm-gray', isFa && 'flex-row-reverse')}>
+    <div className={cn('flex justify-between items-center text-white/55', isFa && 'flex-row-reverse')}>
       <span>{label}</span>
       <span className="num" dir="ltr">{formatPrice(value, 'IRR', locale)}</span>
     </div>

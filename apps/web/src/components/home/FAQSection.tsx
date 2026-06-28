@@ -75,11 +75,11 @@ export default function FAQSection({ locale }: Props) {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <section className="section bg-white">
+    <section className="section">
       <div className="container-content">
         <div className={cn('max-w-3xl', isFa ? 'me-auto text-end' : 'mx-auto')}>
           <p className="eyebrow mb-4">{isFa ? 'سوالات متداول' : 'FAQ'}</p>
-          <h2 className={cn('text-headline text-charcoal mb-8', isFa ? 'font-persian-display' : 'font-display')}>
+          <h2 className={cn('text-headline text-white mb-8', isFa ? 'font-persian-display' : 'font-display')}>
             {isFa ? 'پاسخ به سوالات رایج' : 'Common questions answered'}
           </h2>
 
@@ -95,7 +95,7 @@ export default function FAQSection({ locale }: Props) {
                   aria-expanded={open === i}
                   aria-controls={`faq-answer-${i}`}
                 >
-                  <span className="text-body font-medium text-charcoal">{item.q}</span>
+                  <span className="text-body font-medium text-white">{item.q}</span>
                   <ChevronDown
                     size={18}
                     className={cn(
@@ -113,7 +113,7 @@ export default function FAQSection({ locale }: Props) {
                     open === i ? 'max-h-96 pb-5' : 'max-h-0',
                   )}
                 >
-                  <p className="text-body text-warm-gray leading-relaxed">{item.a}</p>
+                  <p className="text-body text-white/55 leading-relaxed">{item.a}</p>
                 </div>
               </div>
             ))}

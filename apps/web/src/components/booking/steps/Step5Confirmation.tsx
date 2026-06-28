@@ -56,10 +56,10 @@ export default function Step5Confirmation({ locale }: Props) {
       <div className={cn('flex items-start gap-4 mb-8', isFa && 'flex-row-reverse')}>
         <CheckCircle size={48} className="text-lootka-pine flex-shrink-0 mt-1" strokeWidth={1.5} />
         <div>
-          <h2 className={cn('text-headline text-charcoal mb-1', isFa ? 'font-persian-display' : 'font-display')}>
+          <h2 className={cn('text-headline text-white mb-1', isFa ? 'font-persian-display' : 'font-display')}>
             {isFa ? 'رزرو شما تأیید شد!' : 'Your reservation is confirmed!'}
           </h2>
-          <p className="text-body text-warm-gray">
+          <p className="text-body text-white/55">
             {isFa
               ? 'ایمیل تأییدیه به زودی ارسال می‌شود.'
               : 'A confirmation email will be sent shortly.'}
@@ -81,15 +81,15 @@ export default function Step5Confirmation({ locale }: Props) {
       </div>
 
       {/* Stay details */}
-      <div className="bg-white border border-stone rounded-xl divide-y divide-stone mb-6">
+      <div className="bg-[#111111] border border-white/10 rounded-xl divide-y divide-stone mb-6">
         {unit && (
           <div className={cn('flex items-start gap-3 p-4', isFa && 'flex-row-reverse')}>
             <MapPin size={16} className="text-forest-moss mt-0.5 flex-shrink-0" />
             <div>
-              <div className="text-sm font-semibold text-charcoal">
+              <div className="text-sm font-semibold text-white">
                 {isFa ? unit.nameFa : unit.nameEn}
               </div>
-              <div className="text-caption text-warm-gray">{isFa ? 'لوتکا، البرز، ایران' : 'LOOTKA, Alborz, Iran'}</div>
+              <div className="text-caption text-white/55">{isFa ? 'لوتکا، البرز، ایران' : 'LOOTKA, Alborz, Iran'}</div>
             </div>
           </div>
         )}
@@ -98,12 +98,12 @@ export default function Step5Confirmation({ locale }: Props) {
           <div className={cn('flex items-start gap-3 p-4', isFa && 'flex-row-reverse')}>
             <Calendar size={16} className="text-forest-moss mt-0.5 flex-shrink-0" />
             <div>
-              <div className={cn('flex items-center gap-2 text-sm font-semibold text-charcoal', isFa && 'flex-row-reverse')}>
+              <div className={cn('flex items-center gap-2 text-sm font-semibold text-white', isFa && 'flex-row-reverse')}>
                 <span className="num" dir="ltr">{checkIn}</span>
-                <span className="text-warm-gray">→</span>
+                <span className="text-white/55">→</span>
                 <span className="num" dir="ltr">{checkOut}</span>
               </div>
-              <div className="num text-caption text-warm-gray" dir="ltr">
+              <div className="num text-caption text-white/55" dir="ltr">
                 {nights} {isFa ? 'شب' : `night${nights !== 1 ? 's' : ''}`}
               </div>
             </div>
@@ -112,7 +112,7 @@ export default function Step5Confirmation({ locale }: Props) {
 
         <div className={cn('flex items-start gap-3 p-4', isFa && 'flex-row-reverse')}>
           <Users size={16} className="text-forest-moss mt-0.5 flex-shrink-0" />
-          <div className="text-sm text-charcoal">
+          <div className="text-sm text-white">
             <span className="num" dir="ltr">{adults}</span>{' '}
             {isFa ? 'بزرگسال' : `adult${adults !== 1 ? 's' : ''}`}
             {children > 0 && (
@@ -128,15 +128,15 @@ export default function Step5Confirmation({ locale }: Props) {
 
       {/* Add-ons */}
       {addOns.length > 0 && (
-        <div className="bg-white border border-stone rounded-xl p-4 mb-6">
-          <h3 className={cn('text-sm font-semibold text-charcoal mb-3', isFa && 'text-end')}>
+        <div className="bg-[#111111] border border-white/10 rounded-xl p-4 mb-6">
+          <h3 className={cn('text-sm font-semibold text-white mb-3', isFa && 'text-end')}>
             {isFa ? 'خدمات افزوده' : 'Included add-ons'}
           </h3>
           <ul className="space-y-1">
             {addOns.map(a => (
               <li key={a.id} className={cn('flex items-center justify-between text-sm', isFa && 'flex-row-reverse')}>
-                <span className="text-charcoal">{isFa ? a.nameFa : a.nameEn}</span>
-                <span className="num text-warm-gray" dir="ltr">
+                <span className="text-white">{isFa ? a.nameFa : a.nameEn}</span>
+                <span className="num text-white/55" dir="ltr">
                   {formatNumber(a.pricePerUnit * a.quantity)}{' '}
                   {isFa ? 'تومان' : 'IRR'}
                 </span>
@@ -147,11 +147,11 @@ export default function Step5Confirmation({ locale }: Props) {
       )}
 
       {/* Total */}
-      <div className={cn('flex items-center justify-between p-4 bg-warm-ivory rounded-xl mb-6', isFa && 'flex-row-reverse')}>
-        <span className="text-sm font-semibold text-charcoal">{isFa ? 'مبلغ پرداخت شده' : 'Total paid'}</span>
+      <div className={cn('flex items-center justify-between p-4 bg-[#0A0A0A] rounded-xl mb-6', isFa && 'flex-row-reverse')}>
+        <span className="text-sm font-semibold text-white">{isFa ? 'مبلغ پرداخت شده' : 'Total paid'}</span>
         <span className="num text-base font-bold text-lootka-pine" dir="ltr">
           {formatNumber(grandTotal)}{' '}
-          <span className="text-warm-gray font-normal text-sm">{isFa ? 'تومان' : 'IRR'}</span>
+          <span className="text-white/55 font-normal text-sm">{isFa ? 'تومان' : 'IRR'}</span>
         </span>
       </div>
 
@@ -193,8 +193,8 @@ export default function Step5Confirmation({ locale }: Props) {
       </div>
 
       {/* Contact */}
-      <div className="bg-white border border-stone rounded-xl p-4">
-        <h4 className={cn('text-sm font-semibold text-charcoal mb-3', isFa && 'text-end')}>
+      <div className="bg-[#111111] border border-white/10 rounded-xl p-4">
+        <h4 className={cn('text-sm font-semibold text-white mb-3', isFa && 'text-end')}>
           {isFa ? 'نیاز به کمک دارید؟' : 'Need assistance?'}
         </h4>
         <div className={cn('flex flex-wrap gap-3', isFa && 'flex-row-reverse')}>
@@ -220,7 +220,7 @@ export default function Step5Confirmation({ locale }: Props) {
       {/* New reservation */}
       <button
         onClick={() => reset()}
-        className="btn btn-ghost text-sm text-warm-gray mt-6"
+        className="btn btn-ghost text-sm text-white/55 mt-6"
       >
         {isFa ? 'رزرو جدید' : 'Make another reservation'}
       </button>

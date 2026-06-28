@@ -8,8 +8,9 @@ const config: Config = {
     extend: {
       colors: {
         // Primary — Forest palette
-        'deep-forest': '#0B1A13',
-        'hiraban-pine': '#183B2B',
+        'deep-forest': '#0A0A0A',
+        'hiraban-pine': '#111111',
+        'lootka-pine': '#1a1a1a',
         'forest-moss': '#536B4A',
 
         // Luxury accent

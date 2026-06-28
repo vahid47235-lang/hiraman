@@ -23,9 +23,9 @@ export default async function AccommodationsPage({ params }: Props) {
       <AccommodationsHero locale={locale} />
 
       {/* Content */}
-      <section className="section bg-warm-ivory">
+      <section className="section">
         <div className="container-content">
-          <p className="text-body text-warm-gray mb-10 max-w-2xl">
+          <p className="text-body text-white/55 mb-10 max-w-2xl">
             {isFa
               ? 'هر واحد اقامتی لوتکا با دقت طراحی شده تا بهترین تجربه اقامتی در دل طبیعت را برای شما فراهم کند.'
               : 'Each Lootka unit is carefully designed to give you the finest nature retreat experience.'}

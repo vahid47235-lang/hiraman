@@ -30,22 +30,22 @@ export default async function WellnessPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="section bg-warm-ivory">
+      <section className="section">
         <div className="container-content">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="eyebrow mb-4">{isFa ? 'خدمات سلامتی' : 'Our Services'}</p>
-              <h2 className={`text-headline text-charcoal mb-6 ${isFa ? 'font-persian-display' : 'font-display'}`}>
+              <h2 className={`text-headline text-white mb-6 ${isFa ? 'font-persian-display' : 'font-display'}`}>
                 {isFa ? 'آرامش واقعی برای روح و جسم' : 'True peace for body and soul'}
               </h2>
-              <p className="text-body text-warm-gray mb-8 leading-relaxed">
+              <p className="text-body text-white/55 mb-8 leading-relaxed">
                 {isFa
                   ? 'مرکز سلامتی لوتکا با بهترین متخصصان ماساژ، یوگا و مدیتیشن، محیطی آرام برای بازیابی انرژی شما فراهم کرده است.'
                   : 'Lootka\'s wellness centre brings together expert massage therapists, yoga instructors and meditation guides in a serene forest setting.'}
               </p>
               <ul className="space-y-3 mb-8">
                 {services.map((s) => (
-                  <li key={s} className={`flex items-center gap-3 text-body text-charcoal ${isFa ? 'flex-row-reverse' : ''}`}>
+                  <li key={s} className={`flex items-center gap-3 text-body text-white ${isFa ? 'flex-row-reverse' : ''}`}>
                     <span className="w-1.5 h-1.5 rounded-full bg-aged-brass flex-shrink-0" />
                     {s}
                   </li>
@@ -62,7 +62,7 @@ export default async function WellnessPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="section bg-lootka-pine text-warm-ivory">
+      <section className="section">
         <div className="container-content text-center">
           <h2 className={`text-headline mb-4 ${isFa ? 'font-persian-display' : 'font-display'}`}>
             {isFa ? 'یوگای جنگل — تجربه‌ای منحصربه‌فرد' : 'Forest Yoga — a unique experience'}

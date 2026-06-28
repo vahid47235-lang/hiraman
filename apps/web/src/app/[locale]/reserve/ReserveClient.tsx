@@ -51,7 +51,7 @@ export default function ReserveClient({ locale }: Props) {
   const showSummary = step >= 2 && step < 5
 
   return (
-    <div className="min-h-screen bg-warm-ivory pt-[var(--nav-height)]">
+    <div className="min-h-screen bg-[#0A0A0A] pt-[var(--nav-height)]">
       {/* Page header */}
       <div className="bg-deep-forest text-warm-ivory py-8">
         <div className="container-content">
@@ -125,13 +125,13 @@ function MobileStickyBar({ locale, step }: { locale: string; step: number }) {
   }[locale as 'fa' | 'en'][step as 2 | 3]
 
   return (
-    <div className="lg:hidden fixed bottom-0 inset-x-0 z-50 bg-white border-t border-stone p-4">
+    <div className="lg:hidden fixed bottom-0 inset-x-0 z-50 bg-[#111111] border-t border-white/10 p-4">
       <div className={cn('flex items-center justify-between gap-4', isFa && 'flex-row-reverse')}>
         <div className={isFa ? 'text-end' : ''}>
-          <div className="text-caption text-warm-gray">{isFa ? 'مبلغ کل' : 'Total'}</div>
-          <div className="num text-base font-semibold text-charcoal" dir="ltr">
+          <div className="text-caption text-white/55">{isFa ? 'مبلغ کل' : 'Total'}</div>
+          <div className="num text-base font-semibold text-white" dir="ltr">
             {new Intl.NumberFormat('en-US').format(grandTotal)}{' '}
-            <span className="text-warm-gray font-normal text-sm">{isFa ? 'تومان' : 'IRR'}</span>
+            <span className="text-white/55 font-normal text-sm">{isFa ? 'تومان' : 'IRR'}</span>
           </div>
         </div>
         <button

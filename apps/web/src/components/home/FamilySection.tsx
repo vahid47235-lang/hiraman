@@ -20,27 +20,27 @@ export default function FamilySection({ locale }: Props) {
       ]
 
   return (
-    <section className="section bg-warm-ivory">
+    <section className="section">
       <div className="container-content">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className={isFa ? 'text-end lg:order-2' : ''}>
             <p className="eyebrow mb-5">{isFa ? 'لوتکا برای خانواده' : 'Lootka for families'}</p>
-            <h2 className={cn('text-headline text-charcoal mb-6', isFa ? 'font-persian-display' : 'font-display')}>
+            <h2 className={cn('text-headline text-white mb-6', isFa ? 'font-persian-display' : 'font-display')}>
               {isFa ? 'خاطرات خانوادگی که ماندگار می‌شوند' : 'Family memories that last'}
             </h2>
             <span className="divider-gold mb-6 block" style={{ marginInlineStart: isFa ? 'auto' : undefined }} />
-            <p className="text-body-lg text-warm-gray mb-8 leading-relaxed">
+            <p className="text-body-lg text-white/55 mb-8 leading-relaxed">
               {isFa
                 ? 'لوتکا برای خانواده‌های با کودک طراحی شده است. از باغچه حیوانات و گلخانه تا فضای بازی ایمن و تجربه‌های آموزشی — هر لحظه‌ای که کودکان شما در لوتکا می‌گذرانند، لحظه‌ای آموزنده و به‌یادماندنی خواهد بود.'
                 : "Lootka is thoughtfully designed for families with children. From the animal garden and greenhouse to the safe playground and hands-on nature activities — every moment your children spend at Lootka will be both educational and unforgettable."}
             </p>
             <div className="grid grid-cols-1 gap-4 mb-8">
               {highlights.map((h) => (
-                <div key={h.title} className={cn('flex items-start gap-4 p-4 bg-white rounded-xl border border-stone', isFa && 'flex-row-reverse text-end')}>
+                <div key={h.title} className={cn('flex items-start gap-4 p-4 bg-[#111111] rounded-xl border border-white/10', isFa && 'flex-row-reverse text-end')}>
                   <span className="text-2xl">{h.icon}</span>
                   <div>
-                    <div className="font-medium text-charcoal mb-1">{h.title}</div>
-                    <div className="text-body-sm text-warm-gray">{h.desc}</div>
+                    <div className="font-medium text-white mb-1">{h.title}</div>
+                    <div className="text-body-sm text-white/55">{h.desc}</div>
                   </div>
                 </div>
               ))}

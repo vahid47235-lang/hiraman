@@ -21,7 +21,7 @@ export default function BrandPromise({ locale }: Props) {
   const isFa = locale === 'fa'
 
   return (
-    <section className="section bg-white">
+    <section className="section">
       <div className="container-content">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Text */}
@@ -29,18 +29,18 @@ export default function BrandPromise({ locale }: Props) {
             <p className="eyebrow mb-5">
               {isFa ? 'فراتر از یک اقامتگاه' : 'More than a place to stay'}
             </p>
-            <h2 className={cn('text-headline text-charcoal mb-6', isFa ? 'font-persian-display' : 'font-display')}>
+            <h2 className={cn('text-headline text-white mb-6', isFa ? 'font-persian-display' : 'font-display')}>
               {isFa
                 ? 'یک مقصد کامل در دل جنگل'
                 : 'A complete forest destination'}
             </h2>
             <span className="divider-gold mb-6 block" style={{ marginInlineStart: isFa ? 'auto' : undefined }} />
-            <p className="text-body-lg text-warm-gray leading-relaxed mb-6">
+            <p className="text-body-lg text-white/55 leading-relaxed mb-6">
               {isFa
                 ? 'لوتکا صرفاً یک کلبه برای اجاره نیست. ما یک مقصد کامل جنگلی هستیم که در آن اقامت لوکس، استخر خصوصی، رستوران، کافه، سلامت و آرامش، تجربه‌های خانوادگی و ماجراجویی‌های طبیعی همه در یک سفر قابل برنامه‌ریزی و رزرو هستند.'
                 : "Lootka is not simply a cabin to rent. We are a complete forest destination — a place where private accommodation, dining, wellness, family activities and soft adventure can all be planned and reserved in a single journey, in the heart of Iran's ancient Hyrcanian forests."}
             </p>
-            <p className="text-body text-warm-gray leading-relaxed">
+            <p className="text-body text-white/55 leading-relaxed">
               {isFa
                 ? 'با ۱۷ واحد اقامتی منحصربه‌فرد در محوطه‌ای ۱۴ هزار متر مربعی، هر اقامت در لوتکا داستان خاص خود را دارد.'
                 : 'With 17 unique accommodation units across 14,000 m² of curated forest grounds, every stay at Lootka tells its own story.'}
@@ -57,7 +57,7 @@ export default function BrandPromise({ locale }: Props) {
                 <div className="num text-4xl font-medium text-lootka-pine mb-2 font-display" dir="ltr">
                   {stat.value}
                 </div>
-                <div className="text-body-sm text-warm-gray">
+                <div className="text-body-sm text-white/55">
                   {stat.label}
                 </div>
               </div>

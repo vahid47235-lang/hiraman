@@ -156,24 +156,24 @@ export default function DatePicker({ locale, checkIn, checkOut, onChange, onClos
   }
 
   return (
-    <div className="bg-white border border-stone rounded-xl shadow-lg p-4 w-full max-w-sm">
+    <div className="bg-[#111111] border border-white/10 rounded-xl shadow-2xl p-4 w-full max-w-sm">
       {/* Header */}
       <div className={cn('flex items-center justify-between mb-4', isFa && 'flex-row-reverse')}>
         {/* In RTL: right arrow = go to previous month */}
         <button
           onClick={isFa ? nextMonth : prevMonth}
-          className="p-1.5 hover:bg-warm-ivory rounded-lg transition-colors"
+          className="p-1.5 hover:bg-white/10 rounded-lg transition-colors"
           aria-label={isFa ? 'ماه قبل' : 'Previous month'}
         >
           <ChevronRight size={16} />
         </button>
 
-        <span className="text-sm font-semibold text-charcoal">{headerText}</span>
+        <span className="text-sm font-semibold text-white">{headerText}</span>
 
         <div className="flex items-center gap-1">
           <button
             onClick={isFa ? prevMonth : nextMonth}
-            className="p-1.5 hover:bg-warm-ivory rounded-lg transition-colors"
+            className="p-1.5 hover:bg-white/10 rounded-lg transition-colors"
             aria-label={isFa ? 'ماه بعد' : 'Next month'}
           >
             <ChevronLeft size={16} />
@@ -181,17 +181,17 @@ export default function DatePicker({ locale, checkIn, checkOut, onChange, onClos
           {onClose && (
             <button
               onClick={onClose}
-              className="p-1.5 hover:bg-warm-ivory rounded-lg transition-colors ms-2"
+              className="p-1.5 hover:bg-white/10 rounded-lg transition-colors ms-2"
               aria-label={isFa ? 'بستن' : 'Close'}
             >
-              <X size={14} className="text-warm-gray" />
+              <X size={14} className="text-white/40" />
             </button>
           )}
         </div>
       </div>
 
       {/* Prompt */}
-      <p className={cn('text-caption text-warm-gray mb-3', isFa && 'text-end')}>
+      <p className={cn('text-caption text-white/40 mb-3', isFa && 'text-end')}>
         {selecting === 'in'
           ? (isFa ? 'تاریخ ورود را انتخاب کنید' : 'Select check-in date')
           : (isFa ? 'تاریخ خروج را انتخاب کنید' : 'Select check-out date')}
@@ -200,7 +200,7 @@ export default function DatePicker({ locale, checkIn, checkOut, onChange, onClos
       {/* Day-of-week headers */}
       <div className="grid grid-cols-7 mb-1">
         {dowLabels.map(d => (
-          <div key={d} className="text-center text-caption text-warm-gray py-1">{d}</div>
+          <div key={d} className="text-center text-caption text-white/40 py-1">{d}</div>
         ))}
       </div>
 
@@ -223,9 +223,9 @@ export default function DatePicker({ locale, checkIn, checkOut, onChange, onClos
               className={cn(
                 'h-9 w-full text-sm rounded-lg transition-colors',
                 isPast && 'text-stone cursor-not-allowed',
-                !isPast && !isSelected && !isInRange && 'hover:bg-lootka-pine/10 text-charcoal',
-                isSelected && 'bg-lootka-pine text-warm-ivory font-medium',
-                isInRange && 'bg-lootka-pine/10 text-lootka-pine rounded-none',
+                !isPast && !isSelected && !isInRange && 'hover:bg-white/10 text-white',
+                isSelected && "bg-white text-black font-medium",
+                isInRange && "bg-white/10 text-white rounded-none",
                 isCheckIn && checkOut && 'rounded-e-none',
                 isCheckOut && checkIn && 'rounded-s-none',
               )}
@@ -240,17 +240,17 @@ export default function DatePicker({ locale, checkIn, checkOut, onChange, onClos
 
       {/* Selected range summary */}
       {checkIn && (
-        <div className={cn('mt-4 pt-4 border-t border-stone flex gap-4', isFa && 'flex-row-reverse')}>
+        <div className={cn('mt-4 pt-4 border-t border-white/10 flex gap-4', isFa && 'flex-row-reverse')}>
           <div className={isFa ? 'text-end' : ''}>
-            <div className="text-caption text-warm-gray">{isFa ? 'ورود' : 'Check-in'}</div>
-            <div className="text-sm font-medium text-charcoal">{formatDisplay(checkIn)}</div>
+            <div className="text-caption text-white/40">{isFa ? 'ورود' : 'Check-in'}</div>
+            <div className="text-sm font-medium text-white">{formatDisplay(checkIn)}</div>
           </div>
           {checkOut && (
             <>
               <div className="text-stone self-center">{isFa ? '←' : '→'}</div>
               <div className={isFa ? 'text-end' : ''}>
-                <div className="text-caption text-warm-gray">{isFa ? 'خروج' : 'Check-out'}</div>
-                <div className="text-sm font-medium text-charcoal">{formatDisplay(checkOut)}</div>
+                <div className="text-caption text-white/40">{isFa ? 'خروج' : 'Check-out'}</div>
+                <div className="text-sm font-medium text-white">{formatDisplay(checkOut)}</div>
               </div>
             </>
           )}

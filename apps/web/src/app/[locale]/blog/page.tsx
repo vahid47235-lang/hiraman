@@ -46,7 +46,7 @@ export default async function BlogPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="section bg-warm-ivory">
+      <section className="section">
         <div className="container-content">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
@@ -58,12 +58,12 @@ export default async function BlogPage({ params }: Props) {
                   <div className={`flex items-center gap-3 mb-3 ${isFa ? 'flex-row-reverse' : ''}`}>
                     <span className="eyebrow">{post.cat}</span>
                     <span className="text-stone">·</span>
-                    <span className="text-caption text-warm-gray num" dir="ltr">{post.date}</span>
+                    <span className="text-caption text-white/55 num" dir="ltr">{post.date}</span>
                   </div>
-                  <h2 className={`text-title font-medium text-charcoal mb-3 leading-snug ${isFa ? 'font-persian-display' : 'font-display'}`}>
+                  <h2 className={`text-title font-medium text-white mb-3 leading-snug ${isFa ? 'font-persian-display' : 'font-display'}`}>
                     {post.title}
                   </h2>
-                  <p className="text-body-sm text-warm-gray leading-relaxed mb-4">{post.excerpt}</p>
+                  <p className="text-body-sm text-white/55 leading-relaxed mb-4">{post.excerpt}</p>
                   <span className="text-body-sm font-medium text-forest-moss hover:text-lootka-pine transition-colors cursor-pointer">
                     {isFa ? 'ادامه مطلب ←' : 'Read more →'}
                   </span>

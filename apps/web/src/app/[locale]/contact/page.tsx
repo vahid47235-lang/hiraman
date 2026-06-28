@@ -27,104 +27,104 @@ export default async function ContactPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="section bg-warm-ivory">
+      <section className="section">
         <div className="container-content">
           <div className="grid md:grid-cols-2 gap-16">
             {/* Contact Info */}
             <div>
               <p className="eyebrow mb-4">{isFa ? 'اطلاعات تماس' : 'Contact information'}</p>
-              <h2 className={`text-headline text-charcoal mb-8 ${isFa ? 'font-persian-display' : 'font-display'}`}>
+              <h2 className={`text-headline text-white mb-8 ${isFa ? 'font-persian-display' : 'font-display'}`}>
                 {isFa ? 'چطور به ما برسید' : 'How to reach us'}
               </h2>
 
               <div className="space-y-6">
                 <div className={`flex items-start gap-4 ${isFa ? 'flex-row-reverse' : ''}`}>
-                  <div className="w-10 h-10 rounded-full bg-lootka-pine/10 flex items-center justify-center flex-shrink-0 text-forest-moss">📞</div>
+                  <div className="w-10 h-10 rounded-full bg-white/8 flex items-center justify-center flex-shrink-0 text-forest-moss">📞</div>
                   <div>
-                    <div className="text-body-sm font-semibold text-charcoal mb-1">{isFa ? 'تلفن' : 'Phone'}</div>
-                    <a href={`tel:${content.contact.phone}`} className="text-body text-warm-gray hover:text-lootka-pine transition-colors num" dir="ltr">
+                    <div className="text-body-sm font-semibold text-white mb-1">{isFa ? 'تلفن' : 'Phone'}</div>
+                    <a href={`tel:${content.contact.phone}`} className="text-body text-white/55 hover:text-lootka-pine transition-colors num" dir="ltr">
                       {content.contact.phone}
                     </a>
                   </div>
                 </div>
 
                 <div className={`flex items-start gap-4 ${isFa ? 'flex-row-reverse' : ''}`}>
-                  <div className="w-10 h-10 rounded-full bg-lootka-pine/10 flex items-center justify-center flex-shrink-0 text-forest-moss">💬</div>
+                  <div className="w-10 h-10 rounded-full bg-white/8 flex items-center justify-center flex-shrink-0 text-forest-moss">💬</div>
                   <div>
-                    <div className="text-body-sm font-semibold text-charcoal mb-1">WhatsApp</div>
-                    <a href={`https://wa.me/${content.contact.phone.replace(/[^0-9]/g, '')}`} className="text-body text-warm-gray hover:text-lootka-pine transition-colors num" dir="ltr">
+                    <div className="text-body-sm font-semibold text-white mb-1">WhatsApp</div>
+                    <a href={`https://wa.me/${content.contact.phone.replace(/[^0-9]/g, '')}`} className="text-body text-white/55 hover:text-lootka-pine transition-colors num" dir="ltr">
                       {content.contact.phone}
                     </a>
                   </div>
                 </div>
 
                 <div className={`flex items-start gap-4 ${isFa ? 'flex-row-reverse' : ''}`}>
-                  <div className="w-10 h-10 rounded-full bg-lootka-pine/10 flex items-center justify-center flex-shrink-0 text-forest-moss">✉️</div>
+                  <div className="w-10 h-10 rounded-full bg-white/8 flex items-center justify-center flex-shrink-0 text-forest-moss">✉️</div>
                   <div>
-                    <div className="text-body-sm font-semibold text-charcoal mb-1">{isFa ? 'ایمیل' : 'Email'}</div>
-                    <a href={`mailto:${content.contact.email}`} className="text-body text-warm-gray hover:text-lootka-pine transition-colors">
+                    <div className="text-body-sm font-semibold text-white mb-1">{isFa ? 'ایمیل' : 'Email'}</div>
+                    <a href={`mailto:${content.contact.email}`} className="text-body text-white/55 hover:text-lootka-pine transition-colors">
                       {content.contact.email}
                     </a>
                   </div>
                 </div>
 
                 <div className={`flex items-start gap-4 ${isFa ? 'flex-row-reverse' : ''}`}>
-                  <div className="w-10 h-10 rounded-full bg-lootka-pine/10 flex items-center justify-center flex-shrink-0 text-forest-moss">📍</div>
+                  <div className="w-10 h-10 rounded-full bg-white/8 flex items-center justify-center flex-shrink-0 text-forest-moss">📍</div>
                   <div>
-                    <div className="text-body-sm font-semibold text-charcoal mb-1">{isFa ? 'آدرس' : 'Address'}</div>
-                    <p className="text-body text-warm-gray leading-relaxed">
+                    <div className="text-body-sm font-semibold text-white mb-1">{isFa ? 'آدرس' : 'Address'}</div>
+                    <p className="text-body text-white/55 leading-relaxed">
                       {isFa ? content.contact.addressFa : content.contact.addressEn}
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-10 p-5 bg-white rounded-xl border border-stone">
-                <div className="text-body-sm font-semibold text-charcoal mb-2">{isFa ? 'ساعات پاسخگویی' : 'Response hours'}</div>
-                <p className="text-body text-warm-gray">
+              <div className="mt-10 p-5 bg-[#111111] rounded-xl border border-white/10">
+                <div className="text-body-sm font-semibold text-white mb-2">{isFa ? 'ساعات پاسخگویی' : 'Response hours'}</div>
+                <p className="text-body text-white/55">
                   {isFa ? 'شنبه تا پنجشنبه، ساعت ۸ صبح تا ۱۰ شب' : 'Saturday to Thursday, 8am – 10pm'}
                 </p>
-                <p className="text-body text-warm-gray mt-1">
+                <p className="text-body text-white/55 mt-1">
                   {isFa ? 'جمعه، ساعت ۱۰ صبح تا ۶ عصر' : 'Friday, 10am – 6pm'}
                 </p>
               </div>
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white rounded-2xl p-8 border border-stone">
-              <h3 className={`text-title font-medium text-charcoal mb-6 ${isFa ? 'font-persian-display' : 'font-display'}`}>
+            <div className="bg-white rounded-2xl p-8 border border-white/10">
+              <h3 className={`text-title font-medium text-white mb-6 ${isFa ? 'font-persian-display' : 'font-display'}`}>
                 {isFa ? 'پیام بفرستید' : 'Send a message'}
               </h3>
               <form className="space-y-4">
                 <div>
-                  <label className="text-body-sm font-medium text-charcoal block mb-1.5">
+                  <label className="text-body-sm font-medium text-white block mb-1.5">
                     {isFa ? 'نام و نام خانوادگی' : 'Full name'}
                   </label>
-                  <input type="text" className="w-full px-4 py-3 border border-stone rounded-lg text-body focus:outline-none focus:border-lootka-pine transition-colors" />
+                  <input type="text" className="w-full px-4 py-3 border border-white/10 rounded-lg text-body focus:outline-none focus:border-lootka-pine transition-colors" />
                 </div>
                 <div>
-                  <label className="text-body-sm font-medium text-charcoal block mb-1.5">
+                  <label className="text-body-sm font-medium text-white block mb-1.5">
                     {isFa ? 'شماره تماس' : 'Phone number'}
                   </label>
-                  <input type="tel" dir="ltr" className="w-full px-4 py-3 border border-stone rounded-lg text-body focus:outline-none focus:border-lootka-pine transition-colors" />
+                  <input type="tel" dir="ltr" className="w-full px-4 py-3 border border-white/10 rounded-lg text-body focus:outline-none focus:border-lootka-pine transition-colors" />
                 </div>
                 <div>
-                  <label className="text-body-sm font-medium text-charcoal block mb-1.5">
+                  <label className="text-body-sm font-medium text-white block mb-1.5">
                     {isFa ? 'ایمیل' : 'Email'}
                   </label>
-                  <input type="email" dir="ltr" className="w-full px-4 py-3 border border-stone rounded-lg text-body focus:outline-none focus:border-lootka-pine transition-colors" />
+                  <input type="email" dir="ltr" className="w-full px-4 py-3 border border-white/10 rounded-lg text-body focus:outline-none focus:border-lootka-pine transition-colors" />
                 </div>
                 <div>
-                  <label className="text-body-sm font-medium text-charcoal block mb-1.5">
+                  <label className="text-body-sm font-medium text-white block mb-1.5">
                     {isFa ? 'موضوع' : 'Subject'}
                   </label>
-                  <input type="text" className="w-full px-4 py-3 border border-stone rounded-lg text-body focus:outline-none focus:border-lootka-pine transition-colors" />
+                  <input type="text" className="w-full px-4 py-3 border border-white/10 rounded-lg text-body focus:outline-none focus:border-lootka-pine transition-colors" />
                 </div>
                 <div>
-                  <label className="text-body-sm font-medium text-charcoal block mb-1.5">
+                  <label className="text-body-sm font-medium text-white block mb-1.5">
                     {isFa ? 'پیام' : 'Message'}
                   </label>
-                  <textarea rows={4} className="w-full px-4 py-3 border border-stone rounded-lg text-body focus:outline-none focus:border-lootka-pine transition-colors resize-none" />
+                  <textarea rows={4} className="w-full px-4 py-3 border border-white/10 rounded-lg text-body focus:outline-none focus:border-lootka-pine transition-colors resize-none" />
                 </div>
                 <button type="submit" className="btn btn-primary w-full">
                   {isFa ? 'ارسال پیام' : 'Send message'}

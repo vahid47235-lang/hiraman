@@ -17,7 +17,7 @@ export default function ExperiencesSection({ locale }: Props) {
   }))
 
   return (
-    <section className="section bg-deep-forest text-warm-ivory">
+    <section className="section">
       <div className="container-content">
         {/* Header */}
         <div className={cn('mb-12', isFa ? 'text-end' : '')}>

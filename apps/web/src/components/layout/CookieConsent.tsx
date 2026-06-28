@@ -38,7 +38,7 @@ export default function CookieConsent({ locale }: Props) {
       )}
     >
       <div className="glass-light rounded-xl shadow-xl p-5">
-        <p className={cn('text-body-sm text-charcoal mb-4', isFa && 'text-end')}>
+        <p className={cn('text-body-sm text-white mb-4', isFa && 'text-end')}>
           {isFa
             ? 'لوتکا از کوکی‌ها برای بهبود تجربه شما و تحلیل ترافیک استفاده می‌کند.'
             : 'Lootka uses cookies to improve your experience and analyse traffic.'}

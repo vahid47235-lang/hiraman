@@ -95,14 +95,14 @@ export default function ServicesSection({ locale }: Props) {
   const isFa = locale === 'fa'
 
   return (
-    <section className="section bg-warm-ivory">
+    <section className="section">
       <div className="container-content">
         <div className={cn('text-center mb-12', isFa && 'font-persian-display')}>
           <p className="eyebrow mb-4">{isFa ? 'خدمات' : 'Services'}</p>
-          <h2 className={cn('text-headline text-charcoal', isFa ? 'font-persian-display' : 'font-display')}>
+          <h2 className={cn('text-headline text-white', isFa ? 'font-persian-display' : 'font-display')}>
             {isFa ? 'تجربه‌ای کامل از لوکس' : 'A complete luxury experience'}
           </h2>
-          <p className="text-body text-warm-gray mt-4 max-w-2xl mx-auto">
+          <p className="text-body text-white/55 mt-4 max-w-2xl mx-auto">
             {isFa
               ? 'لوتکا هر آنچه برای یک اقامت بی‌نظیر نیاز دارید را فراهم کرده است.'
               : 'Lootka offers everything you need for an unforgettable luxury retreat in nature.'}
@@ -114,7 +114,7 @@ export default function ServicesSection({ locale }: Props) {
             <div
               key={service.titleEn}
               className={cn(
-                'flex flex-col items-center gap-3 p-8 bg-warm-ivory hover:bg-white transition-colors duration-200 group',
+                'flex flex-col items-center gap-3 p-8 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-colors duration-200 group',
                 isFa && 'text-center',
               )}
             >
@@ -122,7 +122,7 @@ export default function ServicesSection({ locale }: Props) {
                 {service.icon}
               </div>
               <span className={cn(
-                'text-body-sm font-medium text-charcoal text-center',
+                'text-body-sm font-medium text-white text-center',
                 isFa ? 'font-persian-sans' : '',
               )}>
                 {isFa ? service.titleFa : service.titleEn}

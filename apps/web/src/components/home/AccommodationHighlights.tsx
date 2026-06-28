@@ -11,14 +11,14 @@ export default function AccommodationHighlights({ locale }: Props) {
   const isFa = locale === 'fa'
 
   return (
-    <section className="section bg-warm-ivory">
+    <section className="section">
       <div className="container-content">
         {/* Header */}
         <div className={cn('mb-12', isFa ? 'text-end' : '')}>
           <p className="eyebrow mb-4">{isFa ? 'اقامتگاه‌های لوتکا' : 'Where you\'ll stay'}</p>
           <div className={cn('flex items-end justify-between gap-8', isFa && 'flex-row-reverse')}>
             <div>
-              <h2 className={cn('text-headline text-charcoal', isFa ? 'font-persian-display' : 'font-display')}>
+              <h2 className={cn('text-headline text-white', isFa ? 'font-persian-display' : 'font-display')}>
                 {isFa ? '17 واحد اقامتی در دل جنگل' : '17 unique forest dwellings'}
               </h2>
               <span className="divider-gold mt-4 block" />
@@ -46,7 +46,7 @@ export default function AccommodationHighlights({ locale }: Props) {
                 'px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all',
                 tab.filter === 'all'
                   ? 'bg-lootka-pine text-warm-ivory'
-                  : 'bg-white text-warm-gray border border-stone hover:border-lootka-pine hover:text-charcoal',
+                  : 'bg-white text-white/55 border border-white/10 hover:border-lootka-pine hover:text-white',
               )}
             >
               {tab.label}

@@ -21,16 +21,16 @@
   --color-charcoal: #1B1E1B;
   --color-natural-clay: #A66B4C;
 
-  /* Semantic tokens */
-  --color-bg: var(--color-warm-ivory);
-  --color-bg-dark: var(--color-deep-forest);
-  --color-surface: #FFFFFF;
-  --color-surface-muted: #FAF8F3;
-  --color-border: var(--color-stone);
-  --color-border-muted: rgba(216, 209, 195, 0.4);
-  --color-text-primary: var(--color-charcoal);
-  --color-text-secondary: var(--color-warm-gray);
-  --color-text-inverse: var(--color-warm-ivory);
+  /* Semantic tokens — dark theme */
+  --color-bg: #0A0A0A;
+  --color-bg-dark: #000000;
+  --color-surface: #111111;
+  --color-surface-muted: #161616;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-muted: rgba(255, 255, 255, 0.06);
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: rgba(255, 255, 255, 0.55);
+  --color-text-inverse: #0A0A0A;
   --color-accent: var(--color-aged-brass);
   --color-accent-light: var(--color-soft-gold);
 
@@ -254,13 +254,12 @@
   }
 
   .btn-primary {
-    background: var(--color-aged-brass);
-    color: var(--color-deep-forest);
+    background: #FFFFFF;
+    color: #0A0A0A;
   }
 
   .btn-primary:hover {
-    background: var(--color-soft-gold);
-    box-shadow: var(--shadow-gold);
+    background: rgba(255, 255, 255, 0.88);
     transform: translateY(-1px);
   }
 
@@ -270,35 +269,46 @@
 
   .btn-secondary {
     background: transparent;
-    color: var(--color-warm-ivory);
-    border: 1px solid rgba(244, 240, 231, 0.4);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.35);
   }
 
   .btn-secondary:hover {
-    border-color: var(--color-aged-brass);
-    color: var(--color-aged-brass);
+    border-color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .btn-gold {
+    background: var(--color-aged-brass);
+    color: #0A0A0A;
+  }
+
+  .btn-gold:hover {
+    background: var(--color-soft-gold);
+    box-shadow: var(--shadow-gold);
+    transform: translateY(-1px);
   }
 
   .btn-outline-dark {
     background: transparent;
-    color: var(--color-charcoal);
-    border: 1px solid var(--color-stone);
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
 
   .btn-outline-dark:hover {
-    border-color: var(--color-charcoal);
-    background: var(--color-charcoal);
-    color: var(--color-warm-ivory);
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.06);
+    color: #FFFFFF;
   }
 
   .btn-ghost {
     background: transparent;
-    color: var(--color-charcoal);
+    color: rgba(255, 255, 255, 0.7);
     padding-inline: 0.5rem;
   }
 
   .btn-ghost:hover {
-    color: var(--color-hiraban-pine);
+    color: #FFFFFF;
   }
 
   .btn-lg {
@@ -318,12 +328,12 @@
     background: var(--color-surface);
     border-radius: var(--radius-xl);
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    transition: box-shadow var(--transition-base), transform var(--transition-base);
+    border: 1px solid var(--color-border);
+    transition: border-color var(--transition-base), transform var(--transition-base);
   }
 
   .card:hover {
-    box-shadow: var(--shadow-lg);
+    border-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
   }
 
@@ -408,17 +418,17 @@
 
   /* Background blur glass */
   .glass {
-    background: rgba(11, 26, 19, 0.4);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(197, 166, 106, 0.15);
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .glass-light {
-    background: rgba(244, 240, 231, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(216, 209, 195, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   /* Reduced motion */

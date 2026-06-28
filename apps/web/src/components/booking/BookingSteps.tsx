@@ -46,8 +46,8 @@ export default function BookingSteps({ current, locale }: Props) {
                   done
                     ? 'bg-aged-brass border-aged-brass text-deep-forest'
                     : active
-                      ? 'bg-white border-aged-brass text-aged-brass'
-                      : 'bg-white border-stone text-warm-gray',
+                      ? 'bg-[#111111] border-aged-brass text-aged-brass'
+                      : 'bg-[#111111] border-white/10 text-white/55',
                 )}
                 aria-current={active ? 'step' : undefined}
               >
@@ -58,7 +58,7 @@ export default function BookingSteps({ current, locale }: Props) {
               <span
                 className={cn(
                   'hidden sm:block text-caption whitespace-nowrap transition-colors duration-200',
-                  active ? 'text-charcoal font-medium' : done ? 'text-forest-moss' : 'text-warm-gray',
+                  active ? 'text-white font-medium' : done ? 'text-forest-moss' : 'text-white/55',
                 )}
               >
                 {label}

@@ -64,7 +64,7 @@ export default function AvailabilitySearch({ locale, className, compact = false 
     <section
       id="availability-search"
       className={cn(
-        'py-6 bg-warm-ivory border-b border-stone',
+        'py-6 bg-[#0A0A0A] border-b border-white/10',
         compact && 'py-4',
         className,
       )}
@@ -78,15 +78,15 @@ export default function AvailabilitySearch({ locale, className, compact = false 
         >
           {/* Check-in */}
           <button
-            className="flex-1 min-w-0 flex items-center gap-3 px-4 py-3 bg-white border border-stone rounded-lg hover:border-lootka-pine transition-colors text-start"
+            className="flex-1 min-w-0 flex items-center gap-3 px-4 py-3 bg-[#111111] border border-white/10 rounded-lg hover:border-lootka-pine transition-colors text-start"
             onClick={() => { setShowCheckin(!showCheckin); setShowCheckout(false); setShowGuestPicker(false) }}
             aria-label={t('checkin')}
             aria-expanded={showCheckin}
           >
             <Calendar size={18} className="text-forest-moss flex-shrink-0" />
             <div>
-              <div className="text-caption text-warm-gray">{t('checkin')}</div>
-              <div className={cn('text-body font-medium mt-0.5', state.checkIn ? 'text-charcoal' : 'text-warm-gray')}>
+              <div className="text-caption text-white/55">{t('checkin')}</div>
+              <div className={cn('text-body font-medium mt-0.5', state.checkIn ? 'text-white' : 'text-white/55')}>
                 <span className="bidi-isolate" dir="ltr">
                   {state.checkIn ? formatDate(state.checkIn, locale) : t('checkin_placeholder')}
                 </span>
@@ -99,22 +99,22 @@ export default function AvailabilitySearch({ locale, className, compact = false 
             <div className="hidden md:flex items-center justify-center w-16 text-center">
               <div>
                 <div className="num text-aged-brass font-medium" dir="ltr">{nights}</div>
-                <div className="text-caption text-warm-gray">{nights === 1 ? t('night') : t('nights')}</div>
+                <div className="text-caption text-white/55">{nights === 1 ? t('night') : t('nights')}</div>
               </div>
             </div>
           )}
 
           {/* Check-out */}
           <button
-            className="flex-1 min-w-0 flex items-center gap-3 px-4 py-3 bg-white border border-stone rounded-lg hover:border-lootka-pine transition-colors text-start"
+            className="flex-1 min-w-0 flex items-center gap-3 px-4 py-3 bg-[#111111] border border-white/10 rounded-lg hover:border-lootka-pine transition-colors text-start"
             onClick={() => { setShowCheckout(!showCheckout); setShowCheckin(false); setShowGuestPicker(false) }}
             aria-label={t('checkout')}
             aria-expanded={showCheckout}
           >
             <Calendar size={18} className="text-forest-moss flex-shrink-0" />
             <div>
-              <div className="text-caption text-warm-gray">{t('checkout')}</div>
-              <div className={cn('text-body font-medium mt-0.5', state.checkOut ? 'text-charcoal' : 'text-warm-gray')}>
+              <div className="text-caption text-white/55">{t('checkout')}</div>
+              <div className={cn('text-body font-medium mt-0.5', state.checkOut ? 'text-white' : 'text-white/55')}>
                 <span className="bidi-isolate" dir="ltr">
                   {state.checkOut ? formatDate(state.checkOut, locale) : t('checkout_placeholder')}
                 </span>
@@ -124,15 +124,15 @@ export default function AvailabilitySearch({ locale, className, compact = false 
 
           {/* Guests */}
           <button
-            className="flex-1 min-w-0 flex items-center gap-3 px-4 py-3 bg-white border border-stone rounded-lg hover:border-lootka-pine transition-colors text-start"
+            className="flex-1 min-w-0 flex items-center gap-3 px-4 py-3 bg-[#111111] border border-white/10 rounded-lg hover:border-lootka-pine transition-colors text-start"
             onClick={() => { setShowGuestPicker(!showGuestPicker); setShowCheckin(false); setShowCheckout(false) }}
             aria-label={t('guests')}
             aria-expanded={showGuestPicker}
           >
             <Users size={18} className="text-forest-moss flex-shrink-0" />
             <div>
-              <div className="text-caption text-warm-gray">{t('guests')}</div>
-              <div className="text-body font-medium mt-0.5 text-charcoal">
+              <div className="text-caption text-white/55">{t('guests')}</div>
+              <div className="text-body font-medium mt-0.5 text-white">
                 <span className="bidi-isolate" dir="ltr">{guestLabel}</span>
               </div>
             </div>
@@ -144,7 +144,7 @@ export default function AvailabilitySearch({ locale, className, compact = false 
               'flex items-center gap-2 px-4 py-3 rounded-lg border transition-all text-sm font-medium',
               state.privatePool
                 ? 'bg-lootka-pine text-warm-ivory border-lootka-pine'
-                : 'bg-white text-charcoal border-stone hover:border-lootka-pine',
+                : 'bg-white text-white border-white/10 hover:border-lootka-pine',
             )}
             onClick={() => setState(s => ({ ...s, privatePool: !s.privatePool }))}
             aria-pressed={state.privatePool}
@@ -168,7 +168,7 @@ export default function AvailabilitySearch({ locale, className, compact = false 
         {showGuestPicker && (
           <div
             className={cn(
-              'absolute z-50 mt-2 p-5 bg-white rounded-xl shadow-xl border border-stone w-72',
+              'absolute z-50 mt-2 p-5 bg-[#111111] rounded-xl shadow-xl border border-white/10 w-72',
               isFa ? 'end-0' : 'start-0',
             )}
           >
@@ -212,14 +212,14 @@ function GuestCounter({
   onChange: (v: number) => void
 }) {
   return (
-    <div className="flex items-center justify-between py-3 border-b border-stone last:border-0">
+    <div className="flex items-center justify-between py-3 border-b border-white/10 last:border-0">
       <div>
-        <div className="text-sm font-medium text-charcoal">{label}</div>
-        <div className="text-caption text-warm-gray mt-0.5">{sublabel}</div>
+        <div className="text-sm font-medium text-white">{label}</div>
+        <div className="text-caption text-white/55 mt-0.5">{sublabel}</div>
       </div>
       <div className="flex items-center gap-3">
         <button
-          className="w-8 h-8 rounded-full border border-stone flex items-center justify-center text-charcoal hover:border-lootka-pine hover:text-lootka-pine transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+          className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-white hover:border-lootka-pine hover:text-lootka-pine transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
           onClick={() => onChange(Math.max(min, value - 1))}
           disabled={value <= min}
           aria-label={`Decrease ${label}`}
@@ -228,7 +228,7 @@ function GuestCounter({
         </button>
         <span className="num w-4 text-center font-medium" dir="ltr">{value}</span>
         <button
-          className="w-8 h-8 rounded-full border border-stone flex items-center justify-center text-charcoal hover:border-lootka-pine hover:text-lootka-pine transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+          className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-white hover:border-lootka-pine hover:text-lootka-pine transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
           onClick={() => onChange(Math.min(max, value + 1))}
           disabled={value >= max}
           aria-label={`Increase ${label}`}

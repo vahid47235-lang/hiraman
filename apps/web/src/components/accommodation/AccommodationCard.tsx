@@ -38,7 +38,7 @@ type Props = {
 const availabilityColors = {
   available: 'text-forest-moss bg-forest-moss/10',
   limited: 'text-natural-clay bg-natural-clay/10',
-  unavailable: 'text-warm-gray bg-warm-gray/10',
+  unavailable: 'text-white/55 bg-warm-gray/10',
 }
 
 export default function AccommodationCard({ unit, locale, className }: Props) {
@@ -95,11 +95,11 @@ export default function AccommodationCard({ unit, locale, className }: Props) {
           {unit.rating && (
             <div className={cn('flex items-center gap-1', isFa && 'flex-row-reverse')}>
               <Star size={13} className="text-aged-brass fill-aged-brass" />
-              <span className="num text-body-sm font-medium text-charcoal" dir="ltr">
+              <span className="num text-body-sm font-medium text-white" dir="ltr">
                 {unit.rating.toFixed(1)}
               </span>
               {unit.reviewCount && (
-                <span className="text-body-sm text-warm-gray">
+                <span className="text-body-sm text-white/55">
                   (<span className="num" dir="ltr">{formatNumber(unit.reviewCount)}</span>)
                 </span>
               )}
@@ -108,12 +108,12 @@ export default function AccommodationCard({ unit, locale, className }: Props) {
         </div>
 
         {/* Name */}
-        <h3 className={cn('text-title font-medium text-charcoal mb-3', isFa && 'font-persian-display')}>
+        <h3 className={cn('text-title font-medium text-white mb-3', isFa && 'font-persian-display')}>
           {name}
         </h3>
 
         {/* Stats row */}
-        <div className={cn('flex items-center gap-4 text-body-sm text-warm-gray mb-4', isFa && 'flex-row-reverse')}>
+        <div className={cn('flex items-center gap-4 text-body-sm text-white/55 mb-4', isFa && 'flex-row-reverse')}>
           <span className={cn('flex items-center gap-1', isFa && 'flex-row-reverse')}>
             <BedDouble size={14} className="text-forest-moss" />
             <span className="num" dir="ltr">{unit.bedrooms}</span>
@@ -137,28 +137,28 @@ export default function AccommodationCard({ unit, locale, className }: Props) {
           {(isFa ? unit.amenitiesFa : unit.amenitiesEn).slice(0, 3).map((amenity) => (
             <span
               key={amenity}
-              className="px-2 py-0.5 bg-warm-ivory text-warm-gray text-caption rounded"
+              className="px-2 py-0.5 bg-[#0A0A0A] text-white/55 text-caption rounded"
             >
               {amenity}
             </span>
           ))}
           {unit.amenitiesEn.length > 3 && (
-            <span className="px-2 py-0.5 text-warm-gray text-caption">
+            <span className="px-2 py-0.5 text-white/55 text-caption">
               +<span className="num" dir="ltr">{unit.amenitiesEn.length - 3}</span>
             </span>
           )}
         </div>
 
         {/* Price + CTA */}
-        <div className={cn('flex items-center justify-between pt-4 border-t border-stone', isFa && 'flex-row-reverse')}>
+        <div className={cn('flex items-center justify-between pt-4 border-t border-white/10', isFa && 'flex-row-reverse')}>
           <div className={isFa ? 'text-end' : 'text-start'}>
-            <div className="text-caption text-warm-gray">{t('starting_from')}</div>
-            <div className="text-body-sm font-medium text-charcoal">
+            <div className="text-caption text-white/55">{t('starting_from')}</div>
+            <div className="text-body-sm font-medium text-white">
               <span className="num" dir="ltr">
                 {formatPrice(unit.startingPriceIRR, 'IRR', locale)}
               </span>
             </div>
-            <div className="text-caption text-warm-gray">{t('per_night')}</div>
+            <div className="text-caption text-white/55">{t('per_night')}</div>
           </div>
 
           <div className={cn('flex gap-2', isFa && 'flex-row-reverse')}>

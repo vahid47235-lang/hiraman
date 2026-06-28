@@ -27,22 +27,22 @@ export default function NewsletterSection({ locale }: Props) {
   }
 
   return (
-    <section className="py-16 bg-lootka-pine text-warm-ivory">
+    <section className="section">
       <div className="container-content">
         <div className="max-w-xl mx-auto text-center">
           <p className="eyebrow mb-4">{isFa ? 'خبرنامه' : 'Newsletter'}</p>
           <h2 className={cn('text-headline mb-4', isFa ? 'font-persian-display' : 'font-display')}>
             {isFa ? 'با لوتکا در ارتباط باشید' : 'Stay connected with Lootka'}
           </h2>
-          <p className="text-body text-warm-ivory/70 mb-8">
+          <p className="text-body text-white/55 mb-8">
             {isFa
               ? 'از پیشنهادهای ویژه، فصل‌های جدید و تجربه‌های جدید اول مطلع شوید.'
               : 'Be first to hear about special offers, seasonal highlights and new experiences.'}
           </p>
 
           {status === 'success' ? (
-            <div className="p-6 bg-forest-moss/30 rounded-xl border border-aged-brass/20">
-              <p className="text-warm-ivory font-medium">
+            <div className="p-6 bg-white/5 rounded-xl border border-white/10">
+              <p className="text-white font-medium">
                 {isFa ? '✓ عضویت شما با موفقیت ثبت شد.' : '✓ You\'ve subscribed successfully.'}
               </p>
             </div>
@@ -55,7 +55,7 @@ export default function NewsletterSection({ locale }: Props) {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder={isFa ? 'ایمیل شما' : 'Your email address'}
                   required
-                  className="flex-1 px-4 py-3 bg-white/10 border border-warm-ivory/20 rounded-lg text-warm-ivory placeholder-warm-ivory/40 focus:outline-none focus:border-aged-brass focus:bg-white/15 transition-all num"
+                  className="flex-1 px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-aged-brass focus:bg-white/15 transition-all num"
                   dir="ltr"
                   aria-label={isFa ? 'آدرس ایمیل' : 'Email address'}
                 />

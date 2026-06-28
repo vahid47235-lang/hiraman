@@ -22,9 +22,9 @@ export default function PlatformLogos({ locale }: Props) {
   if (enabled.length === 0) return null
 
   return (
-    <section className="py-10 bg-white border-y border-stone">
+    <section className="py-10 bg-[#111111] border-y border-white/10">
       <div className="container-content">
-        <p className={cn('text-caption text-warm-gray mb-6', isFa ? 'text-end' : '')}>
+        <p className={cn('text-caption text-white/55 mb-6', isFa ? 'text-end' : '')}>
           {isFa
             ? 'لوتکا را در پلتفرم‌های گردشگری پیدا کنید'
             : 'Find Lootka on leading travel platforms'}
@@ -37,7 +37,7 @@ export default function PlatformLogos({ locale }: Props) {
                 href={platform.href}
                 target="_blank"
                 rel="noopener noreferrer nofollow"
-                className="text-body-sm font-medium text-warm-gray hover:text-charcoal transition-colors grayscale hover:grayscale-0"
+                className="text-body-sm font-medium text-white/55 hover:text-white transition-colors grayscale hover:grayscale-0"
                 aria-label={`${isFa ? 'مشاهده لوتکا در' : 'View Lootka on'} ${platform.label}`}
               >
                 {platform.label}

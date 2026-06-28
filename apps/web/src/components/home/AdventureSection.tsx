@@ -18,7 +18,7 @@ export default function AdventureSection({ locale }: Props) {
       ]
 
   return (
-    <section className="section bg-deep-forest text-warm-ivory">
+    <section className="section">
       <div className="container-content">
         <div className={cn('mb-12', isFa ? 'text-end' : '')}>
           <p className="eyebrow mb-4">{isFa ? 'ماجراجویی' : 'Adventure'}</p>

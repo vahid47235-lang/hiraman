@@ -94,28 +94,45 @@ export default function HeroSection({ locale }: Props) {
       </div>
 
       {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-overlay-strong" aria-hidden="true" />
       <div
         className="absolute inset-0"
-        style={{
-          background: 'linear-gradient(to top, rgba(11,26,19,0.6) 0%, transparent 40%)',
-        }}
+        style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.5) 100%)' }}
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0"
+        style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%)' }}
         aria-hidden="true"
       />
 
+      {/* Slide counter — left edge */}
+      <div className={cn(
+        'absolute z-10 top-1/2 -translate-y-1/2 flex flex-col items-center gap-3 hidden lg:flex',
+        isFa ? 'right-8' : 'left-8',
+      )}>
+        <span className="text-white/40 text-xs font-light tracking-widest" dir="ltr">01</span>
+        <div className="w-px h-20 bg-white/20" />
+        <span className="text-white/20 text-xs font-light tracking-widest" dir="ltr">04</span>
+      </div>
+
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-center items-start h-full container-content pt-[var(--nav-height)]">
-        <div className="max-w-2xl">
+      <div className={cn(
+        'relative z-10 flex flex-col justify-center h-full container-content pt-[var(--nav-height)]',
+        isFa ? 'items-end text-right' : 'items-start text-left',
+      )}>
+        <div className="max-w-3xl">
           {/* Eyebrow */}
-          <p className="eyebrow mb-5 animate-fade-up" style={{ animationDelay: '200ms' }}>
-            {isFa ? 'لوتکا — هیرکانی، ایران' : 'LOOTKA — Hyrcanian Forest, Iran'}
+          <p className="eyebrow mb-6 animate-fade-up" style={{ animationDelay: '200ms' }}>
+            {isFa ? 'لوتکا — جنگل هیرکانی، ایران' : 'LOOTKA — Hyrcanian Forest, Iran'}
           </p>
 
-          {/* Main headline */}
+          {/* Main headline — cinematic large */}
           <h1
             className={cn(
-              'text-display text-warm-ivory mb-6 animate-fade-up',
-              isFa ? 'font-persian-display' : 'font-display',
+              'text-white mb-8 animate-fade-up leading-none',
+              isFa
+                ? 'font-persian-display text-[clamp(3.5rem,9vw,8rem)]'
+                : 'font-display text-[clamp(3.5rem,9vw,8rem)] font-light tracking-tight',
             )}
             style={{ animationDelay: '350ms' }}
           >
@@ -124,7 +141,7 @@ export default function HeroSection({ locale }: Props) {
 
           {/* Description */}
           <p
-            className="text-body-lg text-warm-ivory/75 mb-10 max-w-lg leading-relaxed animate-fade-up"
+            className="text-white/60 text-body-lg mb-12 max-w-lg leading-relaxed animate-fade-up"
             style={{ animationDelay: '500ms' }}
           >
             {t('description')}
@@ -183,36 +200,21 @@ export default function HeroSection({ locale }: Props) {
         <div className="container-content">
           <div
             className={cn(
-              'glass rounded-t-xl px-6 py-4 flex gap-8',
+              'border-t border-white/10 bg-black/50 backdrop-blur-md px-6 py-5 flex gap-10',
               isFa ? 'flex-row-reverse' : 'flex-row',
             )}
           >
             {[
-              {
-                label: isFa ? 'واحد اقامتی' : 'Accommodations',
-                value: '17',
-              },
-              {
-                label: isFa ? 'متر مربع' : 'm² Resort',
-                value: '14,000',
-              },
-              {
-                label: isFa ? 'تجربه منحصربه‌فرد' : 'Experiences',
-                value: '12+',
-              },
-              {
-                label: isFa ? 'اقامتی لوکس با استخر اختصاصی' : 'Luxury stays with private pool',
-                value: isFa ? '۸' : '8',
-              },
+              { label: isFa ? 'واحد اقامتی' : 'Accommodations', value: '17' },
+              { label: isFa ? 'متر مربع' : 'm² Resort', value: '14,000' },
+              { label: isFa ? 'تجربه منحصربه‌فرد' : 'Experiences', value: '12+' },
+              { label: isFa ? 'اقامتی لوکس با استخر اختصاصی' : 'Luxury with private pool', value: isFa ? '۸' : '8' },
             ].map((stat) => (
               <div key={stat.label} className="hidden sm:block">
-                <div
-                  className="num text-aged-brass font-display text-xl font-medium"
-                  dir="ltr"
-                >
+                <div className="num text-white font-display text-2xl font-light" dir="ltr">
                   {stat.value}
                 </div>
-                <div className="text-warm-ivory/50 text-caption mt-0.5">
+                <div className="text-white/40 text-caption mt-1 tracking-wider uppercase">
                   {stat.label}
                 </div>
               </div>

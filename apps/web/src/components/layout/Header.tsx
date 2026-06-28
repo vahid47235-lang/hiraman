@@ -71,8 +71,8 @@ export default function Header({ locale }: HeaderProps) {
         className={cn(
           'fixed top-0 inset-x-0 z-nav transition-all duration-400',
           scrolled
-            ? 'bg-deep-forest/95 backdrop-blur-md shadow-lg'
-            : 'bg-gradient-to-b from-deep-forest/60 to-transparent',
+            ? 'bg-black/90 backdrop-blur-md border-b border-white/8'
+            : 'bg-transparent',
         )}
         style={{ height: 'var(--nav-height)' }}
       >
@@ -129,14 +129,14 @@ export default function Header({ locale }: HeaderProps) {
                 {/* Dropdown */}
                 {item.children && activeDropdown === item.key && (
                   <div
-                    className="absolute top-full mt-1 py-2 w-48 bg-deep-forest border border-aged-brass/20 rounded-lg shadow-xl"
+                    className="absolute top-full mt-1 py-2 w-48 bg-black/95 border border-white/10 rounded-lg shadow-xl"
                     style={{ insetInlineStart: 0 }}
                   >
                     {item.children.map((child) => (
                       <Link
                         key={child.key}
                         href={localePath(child.href)}
-                        className="block px-4 py-2.5 text-sm text-warm-ivory/80 hover:text-aged-brass hover:bg-lootka-pine/50 transition-colors duration-150"
+                        className="block px-4 py-2.5 text-sm text-warm-ivory/80 hover:text-aged-brass hover:bg-white/8 transition-colors duration-150"
                         onClick={() => setActiveDropdown(null)}
                       >
                         {t(child.key)}
@@ -180,7 +180,7 @@ export default function Header({ locale }: HeaderProps) {
       {/* Mobile menu overlay */}
       {mobileOpen && (
         <div
-          className="fixed inset-0 z-[99] bg-deep-forest flex flex-col"
+          className="fixed inset-0 z-[99] bg-black flex flex-col"
           role="dialog"
           aria-modal="true"
           aria-label={locale === 'fa' ? 'منوی موبایل' : 'Mobile menu'}
@@ -205,7 +205,7 @@ export default function Header({ locale }: HeaderProps) {
               <div key={item.key}>
                 {item.children ? (
                   <>
-                    <div className="py-3 text-sm font-semibold text-warm-gray uppercase tracking-widest">
+                    <div className="py-3 text-sm font-semibold text-white/55 uppercase tracking-widest">
                       {t(item.key)}
                     </div>
                     {item.children.map((child) => (
@@ -213,7 +213,7 @@ export default function Header({ locale }: HeaderProps) {
                         key={child.key}
                         href={localePath(child.href)}
                         className={cn(
-                          'block py-3 ps-4 text-base text-warm-ivory/80 hover:text-aged-brass transition-colors border-b border-lootka-pine/30',
+                          'block py-3 ps-4 text-base text-warm-ivory/80 hover:text-aged-brass transition-colors border-b border-white/8',
                           pathname.startsWith(localePath(child.href)) && 'text-aged-brass',
                         )}
                       >
@@ -225,7 +225,7 @@ export default function Header({ locale }: HeaderProps) {
                   <Link
                     href={localePath(item.href)}
                     className={cn(
-                      'block py-3 text-base text-warm-ivory/80 hover:text-aged-brass transition-colors border-b border-lootka-pine/30',
+                      'block py-3 text-base text-warm-ivory/80 hover:text-aged-brass transition-colors border-b border-white/8',
                       pathname.startsWith(localePath(item.href)) && 'text-aged-brass',
                     )}
                   >
@@ -237,7 +237,7 @@ export default function Header({ locale }: HeaderProps) {
           </nav>
 
           {/* Bottom actions */}
-          <div className="px-5 py-6 space-y-3 border-t border-lootka-pine">
+          <div className="px-5 py-6 space-y-3 border-t border-white/10">
             <Link
               href={localePath('/reserve')}
               className="btn btn-primary w-full"

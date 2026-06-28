@@ -84,7 +84,7 @@ export default function Step4GuestDetails({ locale }: Props) {
     isNum = false,
   ) => (
     <div>
-      <label htmlFor={id} className={cn('block text-sm font-medium text-charcoal mb-1.5', isFa && 'text-end')}>
+      <label htmlFor={id} className={cn('block text-sm font-medium text-white mb-1.5', isFa && 'text-end')}>
         {label}
       </label>
       <input
@@ -96,10 +96,10 @@ export default function Step4GuestDetails({ locale }: Props) {
         value={(guest as Record<string, string>)?.[id] ?? ''}
         onChange={e => setGuestInfo({ ...guest, [id]: e.target.value } as NonNullable<typeof guest>)}
         className={cn(
-          'w-full px-4 py-3 border rounded-xl text-sm bg-white text-charcoal placeholder:text-stone transition-colors focus:outline-none focus:ring-1',
+          'w-full px-4 py-3 border rounded-xl text-sm bg-[#111111] text-white placeholder:text-stone transition-colors focus:outline-none focus:ring-1',
           errors[id as string]
             ? 'border-natural-clay focus:border-natural-clay focus:ring-natural-clay/20'
-            : 'border-stone focus:border-lootka-pine focus:ring-lootka-pine/20',
+            : 'border-white/10 focus:border-lootka-pine focus:ring-lootka-pine/20',
           isFa && !isNum && 'text-end',
         )}
         aria-invalid={!!errors[id as string]}
@@ -117,10 +117,10 @@ export default function Step4GuestDetails({ locale }: Props) {
   return (
     <div>
       <div className="mb-6">
-        <h2 className={cn('text-headline text-charcoal mb-1', isFa ? 'font-persian-display' : 'font-display')}>
+        <h2 className={cn('text-headline text-white mb-1', isFa ? 'font-persian-display' : 'font-display')}>
           {isFa ? 'اطلاعات مهمان' : 'Guest details'}
         </h2>
-        <p className={cn('text-body text-warm-gray', isFa && 'text-end')}>
+        <p className={cn('text-body text-white/55', isFa && 'text-end')}>
           {isFa
             ? 'اطلاعات تماس برای تأیید رزرو لازم است.'
             : 'Contact details are required to confirm your reservation.'}
@@ -129,8 +129,8 @@ export default function Step4GuestDetails({ locale }: Props) {
 
       <div className="space-y-6">
         {/* Personal info */}
-        <div className="bg-white border border-stone rounded-xl p-5 space-y-4">
-          <h3 className={cn('text-sm font-semibold text-charcoal', isFa && 'text-end')}>
+        <div className="bg-[#111111] border border-white/10 rounded-xl p-5 space-y-4">
+          <h3 className={cn('text-sm font-semibold text-white', isFa && 'text-end')}>
             {isFa ? 'مشخصات فردی' : 'Personal information'}
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -140,9 +140,9 @@ export default function Step4GuestDetails({ locale }: Props) {
           {field('phone', isFa ? 'شماره موبایل' : 'Phone number', 'tel', '+98 912 345 6789', true)}
           {field('email', isFa ? 'ایمیل' : 'Email address', 'email', 'you@example.com', true)}
           <div>
-            <label htmlFor="specialRequests" className={cn('block text-sm font-medium text-charcoal mb-1.5', isFa && 'text-end')}>
+            <label htmlFor="specialRequests" className={cn('block text-sm font-medium text-white mb-1.5', isFa && 'text-end')}>
               {isFa ? 'درخواست‌های خاص' : 'Special requests'}
-              <span className="text-warm-gray font-normal ms-1">({isFa ? 'اختیاری' : 'optional'})</span>
+              <span className="text-white/55 font-normal ms-1">({isFa ? 'اختیاری' : 'optional'})</span>
             </label>
             <textarea
               id="specialRequests"
@@ -151,7 +151,7 @@ export default function Step4GuestDetails({ locale }: Props) {
               value={guest?.specialRequests ?? ''}
               onChange={e => setGuestInfo({ ...guest, specialRequests: e.target.value } as NonNullable<typeof guest>)}
               className={cn(
-                'w-full px-4 py-3 border border-stone rounded-xl text-sm bg-white text-charcoal placeholder:text-stone transition-colors focus:outline-none focus:border-lootka-pine focus:ring-1 focus:ring-lootka-pine/20 resize-none',
+                'w-full px-4 py-3 border border-white/10 rounded-xl text-sm bg-[#111111] text-white placeholder:text-stone transition-colors focus:outline-none focus:border-lootka-pine focus:ring-1 focus:ring-lootka-pine/20 resize-none',
                 isFa && 'text-end',
               )}
             />
@@ -159,8 +159,8 @@ export default function Step4GuestDetails({ locale }: Props) {
         </div>
 
         {/* Coupon */}
-        <div className="bg-white border border-stone rounded-xl p-5">
-          <h3 className={cn('text-sm font-semibold text-charcoal mb-3', isFa && 'text-end')}>
+        <div className="bg-[#111111] border border-white/10 rounded-xl p-5">
+          <h3 className={cn('text-sm font-semibold text-white mb-3', isFa && 'text-end')}>
             {isFa ? 'کد تخفیف' : 'Coupon code'}
           </h3>
           {couponCode ? (
@@ -172,7 +172,7 @@ export default function Step4GuestDetails({ locale }: Props) {
                   — {isFa ? `${couponDiscount}٪ تخفیف` : `${couponDiscount}% off`}
                 </span>
               </div>
-              <button onClick={handleRemoveCoupon} className="p-1.5 text-warm-gray hover:text-natural-clay transition-colors">
+              <button onClick={handleRemoveCoupon} className="p-1.5 text-white/55 hover:text-natural-clay transition-colors">
                 <X size={16} />
               </button>
             </div>
@@ -185,7 +185,7 @@ export default function Step4GuestDetails({ locale }: Props) {
                 value={couponInput}
                 onChange={e => { setCouponInput(e.target.value.toUpperCase()); setCouponError(null) }}
                 onKeyDown={e => e.key === 'Enter' && handleApplyCoupon()}
-                className="flex-1 px-4 py-2.5 border border-stone rounded-xl text-sm bg-white text-charcoal focus:outline-none focus:border-lootka-pine focus:ring-1 focus:ring-lootka-pine/20"
+                className="flex-1 px-4 py-2.5 border border-white/10 rounded-xl text-sm bg-[#111111] text-white focus:outline-none focus:border-lootka-pine focus:ring-1 focus:ring-lootka-pine/20"
               />
               <button
                 onClick={handleApplyCoupon}
@@ -205,7 +205,7 @@ export default function Step4GuestDetails({ locale }: Props) {
         </div>
 
         {/* Terms */}
-        <div className="bg-white border border-stone rounded-xl p-5">
+        <div className="bg-[#111111] border border-white/10 rounded-xl p-5">
           <label className={cn('flex items-start gap-3 cursor-pointer', isFa && 'flex-row-reverse')}>
             <input
               type="checkbox"
@@ -214,7 +214,7 @@ export default function Step4GuestDetails({ locale }: Props) {
               className="mt-0.5 w-4 h-4 accent-lootka-pine flex-shrink-0"
               aria-describedby="terms-error"
             />
-            <span className={cn('text-sm text-charcoal leading-relaxed', isFa && 'text-end')}>
+            <span className={cn('text-sm text-white leading-relaxed', isFa && 'text-end')}>
               {isFa ? (
                 <>
                   قوانین و شرایط لوتکا از جمله{' '}
@@ -279,7 +279,7 @@ export default function Step4GuestDetails({ locale }: Props) {
         {/* Back */}
         <button
           onClick={() => setStep(3)}
-          className="btn btn-ghost text-sm text-warm-gray"
+          className="btn btn-ghost text-sm text-white/55"
         >
           {isFa ? 'بازگشت' : 'Back'}
         </button>

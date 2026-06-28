@@ -88,7 +88,7 @@ export default async function PackagesPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="section bg-warm-ivory">
+      <section className="section">
         <div className="container-content">
           <div className="grid md:grid-cols-3 gap-8">
             {pkgs.map((pkg) => (
@@ -103,18 +103,18 @@ export default async function PackagesPage({ params }: Props) {
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                   <div className="text-caption text-aged-brass mb-1">{pkg.duration}</div>
-                  <h3 className={`text-title font-medium text-charcoal mb-3 ${isFa ? 'font-persian-display' : 'font-display'}`}>{pkg.name}</h3>
-                  <p className="text-body text-warm-gray mb-4 leading-relaxed">{pkg.desc}</p>
+                  <h3 className={`text-title font-medium text-white mb-3 ${isFa ? 'font-persian-display' : 'font-display'}`}>{pkg.name}</h3>
+                  <p className="text-body text-white/55 mb-4 leading-relaxed">{pkg.desc}</p>
                   <ul className="space-y-1.5 mb-6 flex-1">
                     {pkg.includes.map((item) => (
-                      <li key={item} className={`text-body-sm text-charcoal flex items-center gap-2 ${isFa ? 'flex-row-reverse' : ''}`}>
+                      <li key={item} className={`text-body-sm text-white flex items-center gap-2 ${isFa ? 'flex-row-reverse' : ''}`}>
                         <span className="text-forest-moss flex-shrink-0">✓</span>{item}
                       </li>
                     ))}
                   </ul>
-                  <div className="border-t border-stone pt-4">
-                    <div className="text-caption text-warm-gray mb-1">{isFa ? 'شروع از' : 'Starting from'}</div>
-                    <div className="text-title font-semibold text-charcoal mb-4 num" dir="ltr">
+                  <div className="border-t border-white/10 pt-4">
+                    <div className="text-caption text-white/55 mb-1">{isFa ? 'شروع از' : 'Starting from'}</div>
+                    <div className="text-title font-semibold text-white mb-4 num" dir="ltr">
                       {pkg.price} {isFa ? 'تومان' : 'IRT'}
                     </div>
                     <Link href={`/${locale}/reserve`} className="btn btn-primary w-full text-center">

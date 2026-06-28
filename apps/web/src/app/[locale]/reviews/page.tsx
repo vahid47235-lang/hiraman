@@ -14,7 +14,7 @@ export default async function ReviewsPage({ params }: Props) {
 
   return (
     <div className={isFa ? 'text-right' : 'text-left'}>
-      <section className="py-20 bg-lootka-pine text-warm-ivory pt-32">
+      <section className="py-20 pt-32">
         <div className="container-content text-center">
           <p className="eyebrow mb-4">{isFa ? 'نظرات مهمانان' : 'Guest Reviews'}</p>
           <h1 className={`text-display text-warm-ivory mb-4 ${isFa ? 'font-persian-display' : 'font-display'}`}>
@@ -28,13 +28,13 @@ export default async function ReviewsPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="section bg-warm-ivory">
+      <section className="section">
         <div className="container-content">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {content.reviews.map((review) => (
               <div key={review.id} className="card p-6">
                 <div className="flex gap-1 mb-4 text-aged-brass">{'★'.repeat(review.rating)}</div>
-                <p className="text-body text-warm-gray leading-relaxed mb-6 italic">
+                <p className="text-body text-white/55 leading-relaxed mb-6 italic">
                   "{isFa ? review.textFa : review.textEn}"
                 </p>
                 <div className={`flex items-center gap-3 ${isFa ? 'flex-row-reverse' : ''}`}>
@@ -42,8 +42,8 @@ export default async function ReviewsPage({ params }: Props) {
                     {(isFa ? review.authorFa : review.authorEn).charAt(0)}
                   </div>
                   <div>
-                    <div className="text-body-sm font-semibold text-charcoal">{isFa ? review.authorFa : review.authorEn}</div>
-                    <div className="text-caption text-warm-gray">{isFa ? review.locationFa : review.locationEn}</div>
+                    <div className="text-body-sm font-semibold text-white">{isFa ? review.authorFa : review.authorEn}</div>
+                    <div className="text-caption text-white/55">{isFa ? review.locationFa : review.locationEn}</div>
                   </div>
                 </div>
               </div>

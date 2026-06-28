@@ -178,10 +178,10 @@ export default function Step3AddOns({ locale }: Props) {
   return (
     <div>
       <div className="mb-6">
-        <h2 className={cn('text-headline text-charcoal mb-1', isFa ? 'font-persian-display' : 'font-display')}>
+        <h2 className={cn('text-headline text-white mb-1', isFa ? 'font-persian-display' : 'font-display')}>
           {isFa ? 'تجربه‌های اضافی' : 'Add experiences'}
         </h2>
-        <p className={cn('text-body text-warm-gray', isFa && 'text-end')}>
+        <p className={cn('text-body text-white/55', isFa && 'text-end')}>
           {isFa
             ? 'اقامت خود را با خدمات ویژه لوتکا کامل‌تر کنید. همه موارد اختیاری هستند.'
             : 'Enhance your stay with curated LOOTKA experiences. All optional.'}
@@ -200,12 +200,12 @@ export default function Step3AddOns({ locale }: Props) {
                 onClick={() => setCollapsed(prev => ({ ...prev, [cat]: !prev[cat] }))}
                 className={cn('w-full flex items-center justify-between mb-3 group', isFa && 'flex-row-reverse')}
               >
-                <h3 className="text-sm font-semibold text-charcoal uppercase tracking-wider">
+                <h3 className="text-sm font-semibold text-white uppercase tracking-wider">
                   {isFa ? label.fa : label.en}
                 </h3>
                 {isOpen
-                  ? <ChevronUp size={16} className="text-warm-gray" />
-                  : <ChevronDown size={16} className="text-warm-gray" />}
+                  ? <ChevronUp size={16} className="text-white/55" />
+                  : <ChevronDown size={16} className="text-white/55" />}
               </button>
 
               {isOpen && (
@@ -222,7 +222,7 @@ export default function Step3AddOns({ locale }: Props) {
                           'w-full text-start flex items-start gap-3 p-4 rounded-xl border-2 transition-all',
                           isSelected
                             ? 'border-lootka-pine bg-lootka-pine/5'
-                            : 'border-stone hover:border-lootka-pine/40 bg-white',
+                            : 'border-white/10 hover:border-white/20 bg-[#111111]',
                           isFa && 'flex-row-reverse',
                         )}
                         aria-pressed={isSelected}
@@ -230,15 +230,15 @@ export default function Step3AddOns({ locale }: Props) {
                         <span className="text-2xl flex-shrink-0 leading-none mt-0.5">{def.icon}</span>
                         <div className={cn('flex-1 min-w-0', isFa && 'text-end')}>
                           <div className={cn('flex items-center gap-2 mb-0.5', isFa && 'flex-row-reverse justify-end')}>
-                            <span className="text-sm font-semibold text-charcoal">
+                            <span className="text-sm font-semibold text-white">
                               {isFa ? def.nameFa : def.nameEn}
                             </span>
                           </div>
-                          <p className="text-caption text-warm-gray line-clamp-2 mb-2">
+                          <p className="text-caption text-white/55 line-clamp-2 mb-2">
                             {isFa ? def.descFa : def.descEn}
                           </p>
                           <div className={cn('flex items-center justify-between', isFa && 'flex-row-reverse')}>
-                            <span className="num text-caption text-warm-gray" dir="ltr">
+                            <span className="num text-caption text-white/55" dir="ltr">
                               {unitLabel(def)}
                             </span>
                             {isSelected && (
@@ -252,7 +252,7 @@ export default function Step3AddOns({ locale }: Props) {
                         <div
                           className={cn(
                             'w-5 h-5 rounded border-2 flex-shrink-0 flex items-center justify-center mt-0.5',
-                            isSelected ? 'bg-lootka-pine border-lootka-pine' : 'border-stone',
+                            isSelected ? 'bg-lootka-pine border-lootka-pine' : 'border-white/10',
                           )}
                         >
                           {isSelected && <Check size={12} className="text-warm-ivory" />}
@@ -278,13 +278,13 @@ export default function Step3AddOns({ locale }: Props) {
         </button>
         <button
           onClick={() => setStep(4)}
-          className="btn btn-ghost text-sm text-warm-gray"
+          className="btn btn-ghost text-sm text-white/55"
         >
           {isFa ? 'رد کردن' : 'Skip'}
         </button>
         <button
           onClick={() => setStep(2)}
-          className="btn btn-ghost text-sm text-warm-gray"
+          className="btn btn-ghost text-sm text-white/55"
         >
           {isFa ? 'بازگشت' : 'Back'}
         </button>

@@ -42,7 +42,7 @@ export default async function AdventurePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="section bg-warm-ivory">
+      <section className="section">
         <div className="container-content">
           <div className="grid md:grid-cols-2 gap-8">
             {acts.map((act) => (
@@ -51,8 +51,8 @@ export default async function AdventurePage({ params }: Props) {
                   <Image src={`https://picsum.photos/seed/${act.img}/700/400`} alt={act.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 <div className="p-6">
-                  <h3 className={`text-title font-medium text-charcoal mb-2 ${isFa ? 'font-persian-display' : 'font-display'}`}>{act.title}</h3>
-                  <p className="text-body text-warm-gray mb-4">{act.desc}</p>
+                  <h3 className={`text-title font-medium text-white mb-2 ${isFa ? 'font-persian-display' : 'font-display'}`}>{act.title}</h3>
+                  <p className="text-body text-white/55 mb-4">{act.desc}</p>
                   <Link href={`/${locale}/reserve`} className="btn btn-outline-dark btn-sm">
                     {isFa ? 'رزرو' : 'Book'}
                   </Link>

@@ -36,15 +36,15 @@ export default async function RestaurantPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="section bg-warm-ivory">
+      <section className="section">
         <div className="container-content">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
               <p className="eyebrow mb-4">{isFa ? 'منوی ما' : 'Our Menu'}</p>
-              <h2 className={`text-headline text-charcoal mb-6 ${isFa ? 'font-persian-display' : 'font-display'}`}>
+              <h2 className={`text-headline text-white mb-6 ${isFa ? 'font-persian-display' : 'font-display'}`}>
                 {isFa ? 'غذاهای محلی با مواد ارگانیک' : 'Local dishes with organic ingredients'}
               </h2>
-              <p className="text-body text-warm-gray mb-8 leading-relaxed">
+              <p className="text-body text-white/55 mb-8 leading-relaxed">
                 {isFa
                   ? 'رستوران لوتکا از مواد اولیه تازه و ارگانیک که مستقیم از باغ‌ها و مزارع محلی تهیه می‌شود، بهره می‌گیرد.'
                   : 'Lootka restaurant uses fresh organic ingredients sourced directly from local gardens and farms.'}
@@ -54,7 +54,7 @@ export default async function RestaurantPage({ params }: Props) {
                   <h3 className="text-body font-semibold text-aged-brass mb-2">{section.cat}</h3>
                   <ul className="space-y-1">
                     {section.items.map((item) => (
-                      <li key={item} className={`text-body text-warm-gray flex items-center gap-2 ${isFa ? 'flex-row-reverse' : ''}`}>
+                      <li key={item} className={`text-body text-white/55 flex items-center gap-2 ${isFa ? 'flex-row-reverse' : ''}`}>
                         <span className="w-1 h-1 rounded-full bg-stone flex-shrink-0" />{item}
                       </li>
                     ))}
