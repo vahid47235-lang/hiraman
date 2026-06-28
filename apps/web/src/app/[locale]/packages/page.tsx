@@ -94,7 +94,7 @@ export default async function PackagesPage({ params }: Props) {
             {pkgs.map((pkg) => (
               <div key={pkg.name} className="card overflow-hidden flex flex-col">
                 <div className="relative h-48 overflow-hidden">
-                  <Image src={`https://images.unsplash.com/${pkgImgMap[pkg.img] ?? 'photo-1520250497591-112f2f40a3f4'}?w=600&h=400&q=80&auto=format&fit=crop`} alt={pkg.name} fill className="object-cover" />
+                  <Image src={`https://images.unsplash.com/${pkg.img}?w=600&h=400&q=80&auto=format&fit=crop`} alt={pkg.name} fill className="object-cover" />
                   {pkg.badge && (
                     <span className="absolute top-3 start-3 px-3 py-1 bg-aged-brass text-deep-forest text-caption font-semibold rounded-full">
                       {pkg.badge}
