@@ -10,20 +10,20 @@ export async function generateMetadata({ params }: Props) {
 
 const posts = {
   fa: [
-    { slug: '1', title: 'بهترین فصل برای سفر به لوتکا', date: '۱۴۰۳/۰۴/۱۵', cat: 'راهنمای سفر', img: 'blog-seasons', excerpt: 'هر فصل در لوتکا تجربه‌ای متفاوت ارائه می‌دهد. از شکوفه‌های بهاری تا برف‌های زمستانی، طبیعت هیرکانی همیشه شگفت‌انگیز است.' },
-    { slug: '2', title: 'راهنمای کامل مسیرهای طبیعت‌گردی', date: '۱۴۰۳/۰۴/۰۲', cat: 'ماجراجویی', img: 'blog-hiking', excerpt: 'پنج مسیر پیاده‌روی منحصربه‌فرد در اطراف لوتکا که هر کدام با طبیعت و چشم‌اندازهای خیره‌کننده‌ای همراه هستند.' },
-    { slug: '3', title: 'آشنایی با جنگل‌های هیرکانی', date: '۱۴۰۳/۰۳/۲۰', cat: 'طبیعت', img: 'blog-forest', excerpt: 'جنگل‌های هیرکانی یکی از قدیمی‌ترین اکوسیستم‌های زمین هستند. با ما در سفری به عمق این طبیعت بی‌نظیر همراه باشید.' },
-    { slug: '4', title: 'تجربه اسپا و سلامتی در لوتکا', date: '۱۴۰۳/۰۳/۱۰', cat: 'سلامتی', img: 'blog-spa', excerpt: 'مرکز سلامتی لوتکا با ترکیب سنت‌های ایرانی و روش‌های مدرن، تجربه‌ای بی‌نظیر از آرامش و سلامتی ارائه می‌دهد.' },
-    { slug: '5', title: 'آشپزی با گیاهان جنگلی', date: '۱۴۰۳/۰۲/۲۵', cat: 'غذا', img: 'blog-cooking', excerpt: 'آشپز رستوران لوتکا رازهای پخت غذاهای سنتی شمالی با گیاهان تازه جنگل را با ما در میان گذاشته است.' },
-    { slug: '6', title: 'راهنمای عکاسی در جنگل', date: '۱۴۰۳/۰۲/۱۰', cat: 'هنر', img: 'blog-photo', excerpt: 'بهترین نکات و مکان‌ها برای عکاسی از طبیعت در جنگل‌های هیرکانی، همراه با راهنمایی‌های حرفه‌ای.' },
+    { slug: '1', title: 'بهترین فصل برای سفر به لوتکا', date: '۱۴۰۳/۰۴/۱۵', cat: 'راهنمای سفر', img: 'photo-1516912481808-3406841bd33c', excerpt: 'هر فصل در لوتکا تجربه‌ای متفاوت ارائه می‌دهد. از شکوفه‌های بهاری تا برف‌های زمستانی، طبیعت هیرکانی همیشه شگفت‌انگیز است.' },
+    { slug: '2', title: 'راهنمای کامل مسیرهای طبیعت‌گردی', date: '۱۴۰۳/۰۴/۰۲', cat: 'ماجراجویی', img: 'photo-1533130061792-64b345e4a833', excerpt: 'پنج مسیر پیاده‌روی منحصربه‌فرد در اطراف لوتکا که هر کدام با طبیعت و چشم‌اندازهای خیره‌کننده‌ای همراه هستند.' },
+    { slug: '3', title: 'آشنایی با جنگل‌های هیرکانی', date: '۱۴۰۳/۰۳/۲۰', cat: 'طبیعت', img: 'photo-1448375240586-882707db888b', excerpt: 'جنگل‌های هیرکانی یکی از قدیمی‌ترین اکوسیستم‌های زمین هستند. با ما در سفری به عمق این طبیعت بی‌نظیر همراه باشید.' },
+    { slug: '4', title: 'تجربه اسپا و سلامتی در لوتکا', date: '۱۴۰۳/۰۳/۱۰', cat: 'سلامتی', img: 'photo-1544161515-4ab6ce6db874', excerpt: 'مرکز سلامتی لوتکا با ترکیب سنت‌های ایرانی و روش‌های مدرن، تجربه‌ای بی‌نظیر از آرامش و سلامتی ارائه می‌دهد.' },
+    { slug: '5', title: 'آشپزی با گیاهان جنگلی', date: '۱۴۰۳/۰۲/۲۵', cat: 'غذا', img: 'photo-1504674900247-0877df9cc836', excerpt: 'آشپز رستوران لوتکا رازهای پخت غذاهای سنتی شمالی با گیاهان تازه جنگل را با ما در میان گذاشته است.' },
+    { slug: '6', title: 'راهنمای عکاسی در جنگل', date: '۱۴۰۳/۰۲/۱۰', cat: 'هنر', img: 'photo-1542261777448-23d2a6804a6a', excerpt: 'بهترین نکات و مکان‌ها برای عکاسی از طبیعت در جنگل‌های هیرکانی، همراه با راهنمایی‌های حرفه‌ای.' },
   ],
   en: [
-    { slug: '1', title: 'Best season to visit Lootka', date: 'July 6, 2024', cat: 'Travel Guide', img: 'blog-seasons', excerpt: 'Each season at Lootka offers a different experience. From spring blossoms to winter snow, Hyrcanian nature is always breathtaking.' },
-    { slug: '2', title: 'Complete guide to hiking trails', date: 'June 23, 2024', cat: 'Adventure', img: 'blog-hiking', excerpt: 'Five unique walking routes around Lootka, each offering stunning nature and breathtaking views.' },
-    { slug: '3', title: 'Getting to know the Hyrcanian forests', date: 'June 10, 2024', cat: 'Nature', img: 'blog-forest', excerpt: 'The Hyrcanian forests are among the oldest ecosystems on Earth. Join us on a journey into this extraordinary nature.' },
-    { slug: '4', title: 'Spa & wellness experience at Lootka', date: 'May 31, 2024', cat: 'Wellness', img: 'blog-spa', excerpt: "Lootka's wellness centre blends Iranian traditions with modern methods to offer an unparalleled relaxation experience." },
-    { slug: '5', title: 'Cooking with forest plants', date: 'May 16, 2024', cat: 'Food', img: 'blog-cooking', excerpt: "Lootka's chef shares the secrets of cooking traditional northern dishes with fresh forest herbs." },
-    { slug: '6', title: 'Photography guide in the forest', date: 'May 1, 2024', cat: 'Art', img: 'blog-photo', excerpt: 'Best tips and locations for nature photography in the Hyrcanian forests, with professional guidance.' },
+    { slug: '1', title: 'Best season to visit Lootka', date: 'July 6, 2024', cat: 'Travel Guide', img: 'photo-1516912481808-3406841bd33c', excerpt: 'Each season at Lootka offers a different experience. From spring blossoms to winter snow, Hyrcanian nature is always breathtaking.' },
+    { slug: '2', title: 'Complete guide to hiking trails', date: 'June 23, 2024', cat: 'Adventure', img: 'photo-1533130061792-64b345e4a833', excerpt: 'Five unique walking routes around Lootka, each offering stunning nature and breathtaking views.' },
+    { slug: '3', title: 'Getting to know the Hyrcanian forests', date: 'June 10, 2024', cat: 'Nature', img: 'photo-1448375240586-882707db888b', excerpt: 'The Hyrcanian forests are among the oldest ecosystems on Earth. Join us on a journey into this extraordinary nature.' },
+    { slug: '4', title: 'Spa & wellness experience at Lootka', date: 'May 31, 2024', cat: 'Wellness', img: 'photo-1544161515-4ab6ce6db874', excerpt: "Lootka's wellness centre blends Iranian traditions with modern methods to offer an unparalleled relaxation experience." },
+    { slug: '5', title: 'Cooking with forest plants', date: 'May 16, 2024', cat: 'Food', img: 'photo-1504674900247-0877df9cc836', excerpt: "Lootka's chef shares the secrets of cooking traditional northern dishes with fresh forest herbs." },
+    { slug: '6', title: 'Photography guide in the forest', date: 'May 1, 2024', cat: 'Art', img: 'photo-1542261777448-23d2a6804a6a', excerpt: 'Best tips and locations for nature photography in the Hyrcanian forests, with professional guidance.' },
   ],
 }
 
@@ -35,7 +35,7 @@ export default async function BlogPage({ params }: Props) {
   return (
     <div className={isFa ? 'text-right' : 'text-left'}>
       <section className="relative h-64 md:h-80 bg-deep-forest overflow-hidden">
-        <Image src="https://picsum.photos/seed/blog-hero/1920/600" alt="" fill className="object-cover opacity-50" />
+        <Image src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&h=600&q=80&auto=format&fit=crop" alt="" fill className="object-cover opacity-50" />
         <div className="absolute inset-0 flex items-center container-content pt-16">
           <div>
             <p className="eyebrow mb-3">{isFa ? 'وبلاگ' : 'Blog'}</p>
@@ -52,7 +52,7 @@ export default async function BlogPage({ params }: Props) {
             {blogPosts.map((post) => (
               <article key={post.slug} className="card overflow-hidden group">
                 <div className="relative h-48 overflow-hidden">
-                  <Image src={`https://picsum.photos/seed/${post.img}/600/350`} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <Image src={`https://images.unsplash.com/${post.img}?w=600&h=350&q=80&auto=format&fit=crop`} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 <div className="p-5">
                   <div className={`flex items-center gap-3 mb-3 ${isFa ? 'flex-row-reverse' : ''}`}>

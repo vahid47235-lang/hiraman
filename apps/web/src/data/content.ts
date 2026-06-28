@@ -1,16 +1,16 @@
 // Central site content — edited via admin panel at /admin
-// Images use picsum.photos for dev (consistent, seed-based). Replace with CDN URLs in production.
+// Images from Unsplash (free, curated by content type)
 
-function img(seed: string, w = 1200, h = 800) {
-  return `https://picsum.photos/seed/${seed}/${w}/${h}`
+function img(id: string, w = 1200, h = 800) {
+  return `https://images.unsplash.com/${id}?w=${w}&h=${h}&q=80&auto=format&fit=crop`
 }
 
 export type SiteContent = typeof defaultContent
 
 const defaultContent = {
   hero: {
-    backgroundImage: img('forest-hero', 1920, 1080),
-    posterImage: img('forest-hero', 800, 450),
+    backgroundImage: img('photo-1448375240586-882707db888b', 1920, 1080),
+    posterImage: img('photo-1448375240586-882707db888b', 800, 450),
     videoUrl: '', // leave empty to show image fallback
   },
 
@@ -29,7 +29,7 @@ const defaultContent = {
       bedrooms: 1,
       hasPrivatePool: false,
       startingPriceIRR: 4500000,
-      imageUrl: img('cabin-forest-63', 800, 600),
+      imageUrl: img('photo-1449158743715-0a90ebb6d2d8', 800, 600),
       imageAlt: 'Cozy forest cabin surrounded by ancient trees',
       rating: 4.8,
       reviewCount: 34,
@@ -54,8 +54,8 @@ const defaultContent = {
       poolTypeEn: 'Heated private pool',
       poolTypeFa: 'استخر گرم اختصاصی',
       startingPriceIRR: 7200000,
-      imageUrl: img('cabin-pool-75', 800, 600),
-      imageAlt: 'Forest cabin with private infinity pool',
+      imageUrl: img('photo-1571896349842-33c89424de2d', 800, 600),
+      imageAlt: 'Forest cabin with private pool in nature',
       rating: 4.9,
       reviewCount: 28,
       availability: 'limited' as const,
@@ -79,7 +79,7 @@ const defaultContent = {
       poolTypeEn: 'Heated private pool',
       poolTypeFa: 'استخر گرم اختصاصی',
       startingPriceIRR: 14000000,
-      imageUrl: img('forest-villa-128', 800, 600),
+      imageUrl: img('photo-1520250497591-112f2f40a3f4', 800, 600),
       imageAlt: 'Luxury forest villa with private pool and terrace',
       rating: 4.9,
       reviewCount: 19,
@@ -98,8 +98,8 @@ const defaultContent = {
       descEn: 'Immersive spa treatments using local forest botanicals, stone therapy and cold-spring hydrotherapy in the heart of the Hyrcanian wilderness.',
       descFa: 'درمان‌های اسپا با گیاهان محلی جنگل، سنگ درمانی و آب‌درمانی با چشمه طبیعی در دل جنگل هیرکانی.',
       href: '/wellness',
-      image: img('spa-stone', 800, 1000),
-      imageAlt: 'Stone hot tub surrounded by forest',
+      image: img('photo-1544161515-4ab6ce6db874', 800, 1000),
+      imageAlt: 'Hot stone massage in forest spa',
     },
     {
       key: 'adventure',
@@ -108,8 +108,8 @@ const defaultContent = {
       descEn: 'Guided ATV tours through ancient forest trails, zip-lining above the canopy and multi-day trekking with local mountain guides.',
       descFa: 'تور ATV هدایت‌شده در مسیرهای جنگلی کهن، زیپ‌لاین بالای سقف جنگل و ترکینگ چندروزه با راهنماهای بومی.',
       href: '/adventure',
-      image: img('atv-trail', 800, 500),
-      imageAlt: 'ATV trail through mountain forest',
+      image: img('photo-1441974231531-c6227db76b6e', 800, 500),
+      imageAlt: 'ATV riding on forest trail',
     },
     {
       key: 'family',
@@ -118,8 +118,8 @@ const defaultContent = {
       descEn: "Animal garden, greenhouse activities and a safe children's playground supervised by trained nature educators.",
       descFa: 'باغ حیوانات، فعالیت‌های گلخانه‌ای و زمین بازی ایمن کودکان زیر نظر مربیان آموزش دیده طبیعت.',
       href: '/family',
-      image: img('family-forest', 800, 500),
-      imageAlt: 'Family exploring nature at Lootka',
+      image: img('photo-1516627145497-ae6968895b74', 800, 500),
+      imageAlt: 'Family enjoying outdoor nature activities',
     },
     {
       key: 'dining',
@@ -128,33 +128,33 @@ const defaultContent = {
       descEn: 'Seasonal menus rooted in northern Iranian cuisine — fresh herbs from our garden, local trout from mountain streams and wood-fired flatbreads.',
       descFa: 'منوهای فصلی الهام گرفته از آشپزی شمال ایران — گیاهان تازه از باغ ما، قزل‌آلای محلی از رودخانه‌های کوهستانی.',
       href: '/restaurant',
-      image: img('restaurant-table', 800, 500),
-      imageAlt: 'Lootka forest restaurant with open kitchen',
+      image: img('photo-1414235077428-338989a2e8c0', 800, 500),
+      imageAlt: 'Elegant restaurant with warm lighting and forest view',
     },
   ],
 
   wellness: {
-    image: img('outdoor-spa', 800, 1000),
-    imageAlt: 'Outdoor forest spa terrace at Lootka',
+    image: img('photo-1600334089648-b0d9d3028eb2', 800, 1000),
+    imageAlt: 'Outdoor forest spa pool surrounded by trees',
     servicesEn: ['Forest Aroma Massage', 'Hot Stone Therapy', 'Cold Spring Immersion', 'Sunrise Yoga', 'Sound Bath', 'Herbal Steam Room'],
     servicesFa: ['ماساژ آروما جنگلی', 'سنگ درمانی گرم', 'غوطه‌وری آب سرد', 'یوگای طلوع آفتاب', 'حمام صوتی', 'اتاق بخار گیاهی'],
   },
 
   family: {
     collageImages: [
-      { src: img('family-forest', 600, 900), alt: 'Children exploring the forest' },
-      { src: img('kids-garden', 600, 500), alt: 'Family activities at Lootka' },
-      { src: img('greenhouse-nature', 600, 500), alt: 'Nature play area for children' },
+      { src: img('photo-1596422846543-75c6fc197f07', 600, 900), alt: 'Children exploring the forest' },
+      { src: img('photo-1476514525535-07fb3b4ae5f1', 600, 500), alt: 'Family outdoor adventure activity' },
+      { src: img('photo-1416879595882-3373a0480b5b', 600, 500), alt: 'Greenhouse and nature activities for children' },
     ],
     highlightsEn: ['Animal garden with 20+ local species', 'Guided forest walks for all ages', 'Organic greenhouse and cooking class', 'Pottery and craft workshop', 'Star-gazing nights with telescope'],
     highlightsFa: ['باغ حیوانات با بیش از ۲۰ گونه بومی', 'گشت‌های جنگلی هدایت‌شده برای همه سنین', 'گلخانه ارگانیک و کلاس آشپزی', 'کارگاه سفالگری و صنایع دستی', 'شب‌های ستاره‌بینی با تلسکوپ'],
   },
 
   adventure: {
-    atvImage: img('atv-trail', 900, 600),
-    atvAlt: 'ATV riding through Lootka forest trails',
-    horseImage: img('horse-riding', 900, 600),
-    horseAlt: 'Horse riding through the Hyrcanian forest',
+    atvImage: img('photo-1441974231531-c6227db76b6e', 900, 600),
+    atvAlt: 'ATV riding through forest trails',
+    horseImage: img('photo-1553284965-83fd3e82fa5a', 900, 600),
+    horseAlt: 'Horse riding through forest paths',
   },
 
   reviews: [
@@ -169,7 +169,7 @@ const defaultContent = {
       locationFa: 'تهران',
       stayType: 'cabin-75-pool',
       date: '2024-10',
-      avatarUrl: img('avatar-1', 80, 80),
+      avatarUrl: img('photo-1494790108377-be9c29b29330', 80, 80),
     },
     {
       id: 'r2',
@@ -182,7 +182,7 @@ const defaultContent = {
       locationFa: 'اصفهان',
       stayType: 'villa-128-a',
       date: '2024-09',
-      avatarUrl: img('avatar-2', 80, 80),
+      avatarUrl: img('photo-1507003211169-0a1dd7228f2d', 80, 80),
     },
     {
       id: 'r3',
@@ -195,7 +195,7 @@ const defaultContent = {
       locationFa: 'مشهد',
       stayType: 'cabin-63-a',
       date: '2024-08',
-      avatarUrl: img('avatar-3', 80, 80),
+      avatarUrl: img('photo-1438761681033-6461ffad8d80', 80, 80),
     },
   ],
 

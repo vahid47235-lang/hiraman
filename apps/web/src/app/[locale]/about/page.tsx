@@ -15,7 +15,7 @@ export default async function AboutPage({ params }: Props) {
   return (
     <div className={isFa ? 'text-right' : 'text-left'}>
       <section className="relative h-64 md:h-96 bg-deep-forest overflow-hidden">
-        <Image src="https://picsum.photos/seed/about-hero/1920/700" alt="" fill className="object-cover opacity-50" />
+        <Image src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&h=700&q=80&auto=format&fit=crop" alt="" fill className="object-cover opacity-50" />
         <div className="absolute inset-0 flex items-end container-content pb-16 pt-16">
           <div>
             <p className="eyebrow mb-3">{isFa ? 'درباره ما' : 'About Us'}</p>
@@ -51,7 +51,7 @@ export default async function AboutPage({ params }: Props) {
               </p>
             </div>
             <div className="relative aspect-square rounded-2xl overflow-hidden">
-              <Image src="https://picsum.photos/seed/about-story/700/700" alt="" fill className="object-cover" />
+              <Image src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=700&q=80&auto=format&fit=crop" alt="" fill className="object-cover" />
             </div>
           </div>
 
@@ -70,7 +70,7 @@ export default async function AboutPage({ params }: Props) {
 
           <div className="grid md:grid-cols-2 gap-16 items-center mt-20">
             <div className="relative aspect-video rounded-2xl overflow-hidden">
-              <Image src="https://picsum.photos/seed/about-forest/800/500" alt="" fill className="object-cover" />
+              <Image src="https://images.unsplash.com/photo-1542261777448-23d2a6804a6a?w=800&h=500&q=80&auto=format&fit=crop" alt="" fill className="object-cover" />
             </div>
             <div>
               <p className="eyebrow mb-4">{isFa ? 'طبیعت هیرکانی' : 'Hyrcanian Nature'}</p>

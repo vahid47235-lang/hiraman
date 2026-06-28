@@ -16,7 +16,7 @@ export default async function ContactPage({ params }: Props) {
   return (
     <div className={isFa ? 'text-right' : 'text-left'}>
       <section className="relative h-64 md:h-80 bg-deep-forest overflow-hidden">
-        <Image src="https://picsum.photos/seed/contact-hero/1920/600" alt="" fill className="object-cover opacity-40" />
+        <Image src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&h=600&q=80&auto=format&fit=crop" alt="" fill className="object-cover opacity-40" />
         <div className="absolute inset-0 flex items-center container-content pt-16">
           <div>
             <p className="eyebrow mb-3">{isFa ? 'تماس با ما' : 'Contact Us'}</p>
@@ -135,7 +135,7 @@ export default async function ContactPage({ params }: Props) {
 
           {/* Map placeholder */}
           <div className="mt-16 rounded-2xl overflow-hidden h-72 relative">
-            <Image src="https://picsum.photos/seed/map-north-iran/1400/400" alt="" fill className="object-cover" />
+            <Image src="https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=1400&h=400&q=80&auto=format&fit=crop" alt="" fill className="object-cover" />
             <div className="absolute inset-0 flex items-center justify-center bg-deep-forest/40">
               <div className="text-center text-warm-ivory">
                 <div className="text-3xl mb-2">📍</div>

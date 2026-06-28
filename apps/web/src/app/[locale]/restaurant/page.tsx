@@ -25,7 +25,7 @@ export default async function RestaurantPage({ params }: Props) {
   return (
     <div className={isFa ? 'text-right' : 'text-left'}>
       <section className="relative h-64 md:h-80 bg-deep-forest overflow-hidden">
-        <Image src="https://picsum.photos/seed/restaurant-hero/1920/600" alt="" fill className="object-cover opacity-60" />
+        <Image src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&h=600&q=80&auto=format&fit=crop" alt="" fill className="object-cover opacity-60" />
         <div className="absolute inset-0 flex items-center container-content pt-16">
           <div>
             <p className="eyebrow mb-3">{isFa ? 'رستوران' : 'Restaurant'}</p>
@@ -67,10 +67,10 @@ export default async function RestaurantPage({ params }: Props) {
             </div>
             <div className="space-y-4">
               <div className="relative aspect-video rounded-xl overflow-hidden">
-                <Image src="https://picsum.photos/seed/restaurant-food/800/500" alt="" fill className="object-cover" />
+                <Image src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=500&q=80&auto=format&fit=crop" alt="" fill className="object-cover" />
               </div>
               <div className="relative aspect-square rounded-xl overflow-hidden">
-                <Image src="https://picsum.photos/seed/restaurant-interior/600/600" alt="" fill className="object-cover" />
+                <Image src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=600&q=80&auto=format&fit=crop" alt="" fill className="object-cover" />
               </div>
             </div>
           </div>

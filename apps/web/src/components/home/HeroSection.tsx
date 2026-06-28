@@ -83,7 +83,7 @@ export default function HeroSection({ locale }: Props) {
         )}
       >
         <Image
-          src="https://picsum.photos/seed/forest-hero/1920/1080"
+          src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&h=1080&q=80&auto=format&fit=crop"
           alt={t('video_alt')}
           fill
           priority

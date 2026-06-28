@@ -9,12 +9,12 @@ export default function AdventureSection({ locale }: Props) {
 
   const adventures = isFa
     ? [
-        { title: 'ATV جنگلی', desc: 'رانندگی در مسیرهای کنترل‌شده جنگلی با تجهیزات ایمنی کامل', duration: '1-2 ساعت', minAge: '14 سال', href: '/adventure#atv', image: 'https://picsum.photos/seed/atv-trail/900/600', imageAlt: 'ATV در جنگل' },
-        { title: 'اسب‌سواری', desc: 'اسب‌سواری در مسیرهای جنگلی با راهنمای حرفه‌ای', duration: '1-3 ساعت', minAge: '8 سال', href: '/adventure#horse', image: 'https://picsum.photos/seed/horse-riding/900/600', imageAlt: 'اسب‌سواری در جنگل' },
+        { title: 'ATV جنگلی', desc: 'رانندگی در مسیرهای کنترل‌شده جنگلی با تجهیزات ایمنی کامل', duration: '1-2 ساعت', minAge: '14 سال', href: '/adventure#atv', image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=900&h=600&q=80&auto=format&fit=crop', imageAlt: 'ATV در جنگل' },
+        { title: 'اسب‌سواری', desc: 'اسب‌سواری در مسیرهای جنگلی با راهنمای حرفه‌ای', duration: '1-3 ساعت', minAge: '8 سال', href: '/adventure#horse', image: 'https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=900&h=600&q=80&auto=format&fit=crop', imageAlt: 'اسب‌سواری در جنگل' },
       ]
     : [
-        { title: 'Forest ATV', desc: 'Guided rides on approved forest trails with full safety equipment', duration: '1-2 hours', minAge: 'Age 14+', href: '/adventure#atv', image: 'https://picsum.photos/seed/atv-trail/900/600', imageAlt: 'ATV on forest trail' },
-        { title: 'Horse Riding', desc: 'Supervised trail rides through the Hyrcanian forest with professional guides', duration: '1-3 hours', minAge: 'Age 8+', href: '/adventure#horse', image: 'https://picsum.photos/seed/horse-riding/900/600', imageAlt: 'Horse riding through forest' },
+        { title: 'Forest ATV', desc: 'Guided rides on approved forest trails with full safety equipment', duration: '1-2 hours', minAge: 'Age 14+', href: '/adventure#atv', image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=900&h=600&q=80&auto=format&fit=crop', imageAlt: 'ATV on forest trail' },
+        { title: 'Horse Riding', desc: 'Supervised trail rides through the Hyrcanian forest with professional guides', duration: '1-3 hours', minAge: 'Age 8+', href: '/adventure#horse', image: 'https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=900&h=600&q=80&auto=format&fit=crop', imageAlt: 'Horse riding through forest' },
       ]
 
   return (

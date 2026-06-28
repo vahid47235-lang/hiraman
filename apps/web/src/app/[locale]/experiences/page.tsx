@@ -19,7 +19,7 @@ export default async function ExperiencesPage({ params }: Props) {
   return (
     <div className={isFa ? 'text-right' : 'text-left'}>
       <section className="relative h-64 md:h-80 bg-deep-forest overflow-hidden">
-        <Image src="https://picsum.photos/seed/experiences-hero/1920/600" alt="" fill className="object-cover opacity-50" />
+        <Image src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&h=600&q=80&auto=format&fit=crop" alt="" fill className="object-cover opacity-50" />
         <div className="absolute inset-0 flex items-center container-content pt-16">
           <div>
             <p className="eyebrow mb-3">{isFa ? 'تجربه‌ها' : 'Experiences'}</p>
